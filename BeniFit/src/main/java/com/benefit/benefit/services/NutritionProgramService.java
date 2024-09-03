@@ -1,6 +1,6 @@
 package com.fitlifepro.services;
 
-import com.fitlifepro.entities.FitnessProgram;
+import com.fitlifepro.entities.NutritionProgram;
 import com.fitlifepro.repositories.ProgramRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,27 +9,27 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProgramService {
+public class NutritionProgramService {
     @Autowired
     private ProgramRepository programRepository;
 
     // Create
-    public FitnessProgram save(FitnessProgram program) {
+    public NutritionProgram save(NutritionProgram program) {
         return programRepository.save(program);
     }
 
-    // Read - Get All Programs
-    public List<FitnessProgram> findAll() {
+    // Read - Get All Nutrition Programs
+    public List<NutritionProgram> findAll() {
         return programRepository.findAll();
     }
 
-    // Read - Get Program by ID
-    public Optional<FitnessProgram> findById(Long id) {
+    // Read - Get Nutrition Program by ID
+    public Optional<NutritionProgram> findById(Long id) {
         return programRepository.findById(id);
     }
 
     // Update
-    public FitnessProgram update(FitnessProgram program) {
+    public NutritionProgram update(NutritionProgram program) {
         return programRepository.save(program);
     }
 
