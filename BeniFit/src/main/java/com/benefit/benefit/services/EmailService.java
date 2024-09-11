@@ -1,4 +1,4 @@
 package com.benefit.benefit.services;
 
-public class NutritionProgramService {
+public class EmailService {
 }

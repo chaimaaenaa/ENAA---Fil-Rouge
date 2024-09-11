@@ -1,7 +1,7 @@
 package com.benefit.benefit.mappers;
 
 import com.benefit.benefit.dto.ProgramDTO;
-import com.benefit.benefit.entities.FitnessProgram;
+import com.benefit.benefit.model.FitnessProgram;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -2,8 +2,7 @@ package com.benefit.benefit.controllers;
 
 import com.benefit.benefit.dto.UserDTO;
 
-import com.benefit.benefit.entities.User;
-import com.benefit.benefit.services.AuthService;
+import com.benefit.benefit.model.User;
 import com.benefit.benefit.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,33 +1,15 @@
-package com.benefit.benefit.mappers;
+package benefit.mappers;
 
-import com.benefit.benefit.dto.UserDTO;
-import com.benefit.benefit.entities.User;
-import org.springframework.stereotype.Component;
+import benefit.dto.UserDto;
+import benefit.model.User;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
-@Component
-public class UserMapper {
+@Mapper(componentModel = "spring")
+public interface UserMapper {
+    UserDto toDto(User user);
 
-    public UserDTO toDTO(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setFirstName(user.getFirstName());
-        userDTO.setLastName(user.getLastName());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setAge(user.getAge());
-        userDTO.setGender(user.getGender());
-        userDTO.setWeight(user.getWeight());
-        userDTO.setChronicDiseases(user.getChronicDiseases());
-        return userDTO;
-    }
+    User toEntity(UserDto userDto);
 
-    public User toEntity(UserDTO userDTO) {
-        User user = new User();
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
-        user.setEmail(userDTO.getEmail());
-        user.setAge(userDTO.getAge());
-        user.setGender(userDTO.getGender());
-        user.setWeight(userDTO.getWeight());
-        user.setChronicDiseases(userDTO.getChronicDiseases());
-        return user;
-    }
+    void updateEntity(UserDto userDto, @MappingTarget User user);
 }

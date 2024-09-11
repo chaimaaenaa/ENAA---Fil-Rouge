@@ -1,11 +1,10 @@
 package com.benefit.benefit.repositories;
 
-import com.fitlifepro.entities.User;
+import benefit.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-    Boolean existsByEmail(String email);
+    // Tu peux ajouter des méthodes de requêtes personnalisées ici
 }

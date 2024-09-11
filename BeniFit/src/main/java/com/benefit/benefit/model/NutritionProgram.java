@@ -1,19 +1,19 @@
-package com.benefit.benefit.entities;
+package com.benefit.benefit.model;
 
 import jakarta.persistence.*;
 import org.apache.catalina.User;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class FitnessProgram {
+public class NutritionProgram {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
     private String description;
-    private String level; // e.g., Beginner, Intermediate, Advanced
     private Date createdDate;
 
     @ManyToOne

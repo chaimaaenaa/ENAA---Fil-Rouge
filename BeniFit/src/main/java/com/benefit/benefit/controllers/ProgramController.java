@@ -2,7 +2,6 @@ package com.fitlifepro.controllers;
 
 import com.fitlifepro.dtos.ProgramDTO;
 import com.fitlifepro.entities.FitnessProgram;
-import com.fitlifepro.services.ProgramService;
 import com.fitlifepro.mappers.ProgramMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

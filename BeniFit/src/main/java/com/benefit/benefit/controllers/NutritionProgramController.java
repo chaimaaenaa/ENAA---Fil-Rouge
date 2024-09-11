@@ -1,8 +1,7 @@
-package com.fitlifepro.controllers;
+package com.benefit.benefit.controllers;
 
 import com.fitlifepro.dtos.ProgramDTO;
 import com.fitlifepro.entities.NutritionProgram;
-import com.fitlifepro.services.NutritionProgramService;
 import com.fitlifepro.mappers.ProgramMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
