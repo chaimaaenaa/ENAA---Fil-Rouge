@@ -1,8 +1,9 @@
 package com.benefit.benefit.controllers;
 
+import com.benefit.benefit.dto.LoginRequest;
 import com.benefit.benefit.dto.UserDTO;
 import com.benefit.benefit.services.UserService;
-import org.apache.catalina.User;
+import com.benefit.benefit.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

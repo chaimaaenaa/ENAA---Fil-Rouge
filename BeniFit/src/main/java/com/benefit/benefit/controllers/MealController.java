@@ -23,7 +23,7 @@ public class MealController {
     }
 
     @GetMapping("/{userId}/meals")
-    public ResponseEntity<List<Meal>> getUserMeals(@PathVariable int userId) {
+    public ResponseEntity<List<Meal>> getUserMeals(@PathVariable Long userId) {
         List<Meal> meals = mealService.getMealsByUser(userId);
         return ResponseEntity.ok(meals);
     }

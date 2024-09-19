@@ -1,7 +1,7 @@
 package com.benefit.benefit.mappers;
 
 import com.benefit.benefit.dto.UserDTO;
-import org.apache.catalina.User;
+import com.benefit.benefit.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,8 +11,9 @@ public class UserMapper {
         User user = new User();
         user.setName(userDTO.getName());
         user.setEmail(userDTO.getEmail());
-        user.setPassword(userDTO.getPassword());
-        // khdmtak lik
+        user.setPassword(userDTO.getPassword());  // Rah l-Password khassha tatsalchi mn UserService l-encoder
+        user.setPhoneNumber(userDTO.getPhoneNumber());
+        user.setGender(userDTO.getGender());
         return user;
     }
 
@@ -20,7 +21,8 @@ public class UserMapper {
         UserDTO userDTO = new UserDTO();
         userDTO.setName(user.getName());
         userDTO.setEmail(user.getEmail());
-        // khdmtak lik
+        userDTO.setPhoneNumber(user.getPhoneNumber());
+        userDTO.setGender(user.getGender());
         return userDTO;
     }
 }

@@ -16,11 +16,15 @@ public class MealService {
     @Autowired
     private MealRepository mealRepository;
 
+    @Autowired
+    private MealMapper mealMapper;
+
     public Meal logMeal(MealDTO mealDTO) {
-        // kaylog meal
+        Meal meal = mealMapper.mealDTOToMeal(mealDTO);
+        return mealRepository.save(meal);
     }
 
-    public List<Meal> getMealsByUser(int userId) {
-        // kayjib l-lista dial meals mn db
+    public List<Meal> getMealsByUser(Long userId) {
+        return mealRepository.findByUserId(userId);
     }
 }

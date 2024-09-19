@@ -9,5 +9,5 @@ public class UserDTO {
     private String email;
     private String phoneNumber;
     private String gender;
-    // Don't include password for security reasons
+    private String password;  // L-password khassha tatsft f-register bach tansh l-encoding
 }
