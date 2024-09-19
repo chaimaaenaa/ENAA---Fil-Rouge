@@ -1,15 +1,26 @@
-package benefit.mappers;
+package com.benefit.benefit.mappers;
 
-import benefit.dto.UserDto;
-import benefit.model.User;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+import com.benefit.benefit.dto.UserDTO;
+import org.apache.catalina.User;
+import org.springframework.stereotype.Component;
 
-@Mapper(componentModel = "spring")
-public interface UserMapper {
-    UserDto toDto(User user);
+@Component
+public class UserMapper {
 
-    User toEntity(UserDto userDto);
+    public User toEntity(UserDTO userDTO) {
+        User user = new User();
+        user.setName(userDTO.getName());
+        user.setEmail(userDTO.getEmail());
+        user.setPassword(userDTO.getPassword());
+        // khdmtak lik
+        return user;
+    }
 
-    void updateEntity(UserDto userDto, @MappingTarget User user);
+    public UserDTO toDTO(User user) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setName(user.getName());
+        userDTO.setEmail(user.getEmail());
+        // khdmtak lik
+        return userDTO;
+    }
 }

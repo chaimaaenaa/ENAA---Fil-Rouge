@@ -1,8 +1,9 @@
 package com.benefit.benefit.model;
 
 import jakarta.persistence.*;
-import java.util.List;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "users")
 public class User {
@@ -11,36 +12,19 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
-    private String nom;
-
-    @Column(nullable = false)
-    private String prenom;
-
-    @Column(nullable = false)
-    private int age;
-
-    @Column(nullable = false)
-    private String sexe;
-
-    @Column(nullable = false)
-    private double poids;
+    private String name;
 
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
-    private String telephone;
+    private String password;
 
-    @ElementCollection
-    @CollectionTable(name = "user_maladies_chroniques", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "maladie")
-    private List<String> maladiesChroniques;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FitnessProgram> fitnessPrograms;
+    @Column(nullable = false)
+    private String gender;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<NutritionProgram> nutritionPrograms;
-
-    // Constructeurs, getters et setters
+    // Add other fields as necessary
 }

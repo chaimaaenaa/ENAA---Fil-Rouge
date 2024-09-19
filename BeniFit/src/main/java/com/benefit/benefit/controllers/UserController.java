@@ -1,11 +1,11 @@
 package com.benefit.benefit.controllers;
 
-import benefit.dto.UserDto;
-import benefit.services.UserService;
+import com.benefit.benefit.dto.UserDTO;
+import com.benefit.benefit.services.UserService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
@@ -14,28 +14,21 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    public List<UserDto> getAllUsers() {
-        return userService.getAllUsers();
+    @PostMapping("/register")
+    public ResponseEntity<User> registerUser(@RequestBody UserDTO userDTO) {
+        User user = userService.register(userDTO);
+        return ResponseEntity.ok(user);
     }
 
-    @GetMapping("/{id}")
-    public UserDto getUserById(@PathVariable Long id) {
-        return userService.getUserById(id);
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+        String token = userService.login(loginRequest);
+        return ResponseEntity.ok(token);
     }
 
-    @PostMapping
-    public UserDto createUser(@RequestBody UserDto userDto) {
-        return userService.createUser(userDto);
-    }
-
-    @PutMapping("/{id}")
-    public UserDto updateUser(@PathVariable Long id, @RequestBody UserDto userDto) {
-        return userService.updateUser(id, userDto);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    @PutMapping("/update")
+    public ResponseEntity<User> updateProfile(@RequestBody UserDTO userDTO) {
+        User updatedUser = userService.updateProfile(userDTO);
+        return ResponseEntity.ok(updatedUser);
     }
 }
