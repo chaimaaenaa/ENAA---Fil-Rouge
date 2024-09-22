@@ -1,9 +1,15 @@
 package com.benefit.benefit.dto;
 
-public class ActivityDTO {
-    private Long id;
-    private String name;
-    private String description;
+import com.benefit.benefit.model.User;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
-    // Getters and Setters
+import java.time.LocalDateTime;
+@Data
+public class ActivityDTO {
+    private LocalDateTime date;
+    private int caloriesBurned;
+    private User user;
 }

@@ -6,18 +6,14 @@ import com.benefit.benefit.model.Activity;
 import com.benefit.benefit.model.CardioActivity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.ReportingPolicy;
 
-@Mapper(componentModel = "spring", uses = {UserMapper.class})
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ActivityMapper {
-    @Mapping(target = "userId", source = "user.id")
     ActivityDTO activityToActivityDTO(Activity activity);
 
-    @Mapping(target = "user.id", source = "userId")
-    Activity activityDTOToActivity(ActivityDTO activityDTO);
-
-    @Mapping(target = "userId", source = "user.id")
     CardioActivityDTO cardioActivityToCardioActivityDTO(CardioActivity cardioActivity);
 
-    @Mapping(target = "user.id", source = "userId")
     CardioActivity cardioActivityDTOToCardioActivity(CardioActivityDTO cardioActivityDTO);
 }

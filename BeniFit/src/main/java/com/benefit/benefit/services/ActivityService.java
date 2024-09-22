@@ -15,14 +15,17 @@ import java.util.stream.Collectors;
 @Service
 public class ActivityService {
 
+
     @Autowired
     private ActivityRepository activityRepository;
 
     public Activity logActivity(ActivityDTO activityDTO) {
         // kaylog activité
+        return null;
     }
 
     public List<Activity> getActivitiesByUser(int userId) {
         // kayjib l-lista dial activités
+        return List.of();
     }
 }

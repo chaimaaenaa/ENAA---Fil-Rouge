@@ -1,5 +1,6 @@
 package com.benefit.benefit.dto;
 
+import com.benefit.benefit.model.User;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -11,5 +12,9 @@ public class MealDTO {
     private LocalDateTime date;
     private int caloriesConsumed;
     private List<String> foodItems;
-    private Long userId;
+    private User user;
 }
+
+
+
+

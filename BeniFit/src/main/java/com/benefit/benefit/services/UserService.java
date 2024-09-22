@@ -57,4 +57,12 @@ public class UserService {
         }
         throw new RuntimeException("User not found");
     }
+
+    public UserDTO createUser(UserDTO userDTO, String password) {
+        return userDTO;
+    }
+
+    public User findUserById(Long userId) {
+        return null;
+    }
 }

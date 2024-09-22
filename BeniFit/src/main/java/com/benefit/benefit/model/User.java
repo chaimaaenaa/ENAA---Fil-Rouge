@@ -1,30 +1,56 @@
 package com.benefit.benefit.model;
 
+import com.benefit.benefit.enums.Gender;
+import com.benefit.benefit.enums.Role;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Data
+import java.util.Collection;
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Inheritance(strategy = InheritanceType.JOINED)
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false, unique = true)
-    private String email;
-
-    @Column(nullable = false)
+    private String username;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-
-    @Column(name = "phone_number")
+    private String email;
     private String phoneNumber;
 
-    @Column(nullable = false)
-    private String gender;
 
-    // Add other fields as necessary
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
 }
