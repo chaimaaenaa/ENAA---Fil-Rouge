@@ -1,6 +1,6 @@
 package com.benefit.benefit.config;
 
-import com.artisanat_backend.service.JwtService;
+import com.benefit.benefit.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

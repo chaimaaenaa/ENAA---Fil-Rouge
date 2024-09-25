@@ -26,13 +26,15 @@ public class UserService {
     public User register(UserDTO userDTO) {
         User user = userMapper.toEntity(userDTO);
         // Kat-encode l-password qbal l-save
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));  // Should work now
         return userRepository.save(user);
     }
 
+
+
     public String login(LoginRequest loginRequest) {
         // Login logic: kat9lb 3la user b-email
-        Optional<User> optionalUser = userRepository.findByEmail(loginRequest.getEmail());
+        Optional<User> optionalUser = userRepository.findByEmail(loginRequest.getEmail());  // Should work now
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             // Kayverify wach l-password hiya lmchfrada mzyan
@@ -43,6 +45,7 @@ public class UserService {
         }
         throw new RuntimeException("Invalid credentials");
     }
+
 
     public User updateProfile(UserDTO userDTO) {
         Optional<User> optionalUser = userRepository.findById(userDTO.getId());
