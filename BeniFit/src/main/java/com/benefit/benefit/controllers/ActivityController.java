@@ -2,7 +2,6 @@ package com.benefit.benefit.controllers;
 
 import com.benefit.benefit.dto.ActivityDTO;
 import com.benefit.benefit.model.Activity;
-import com.benefit.benefit.services.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

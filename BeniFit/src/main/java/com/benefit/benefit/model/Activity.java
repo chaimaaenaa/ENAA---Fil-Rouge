@@ -1,4 +1,5 @@
 package com.benefit.benefit.model;
+import com.benefit.benefit.dto.ActivityDTO;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.*;
@@ -11,7 +12,7 @@ import java.util.Date;
 
 @Data
 @Entity
-public abstract class Activity {
+public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,6 +20,15 @@ public abstract class Activity {
     private int steps;
     private double distance;
     private  int caloriesBurned;
+    public ActivityDTO getActivityDTO() {
+        ActivityDTO activityDTO = new ActivityDTO();
+        activityDTO.setId(id);
+        activityDTO.setDate(date);
+        activityDTO.setSteps(steps);
+        activityDTO.setDistance(distance);
+        activityDTO.setCaloriesBurned(caloriesBurned);
+        return activityDTO;
+    }
 
 
 
