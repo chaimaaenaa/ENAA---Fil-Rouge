@@ -51,7 +51,7 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findById(userDTO.getId());
         if (optionalUser.isPresent()) {
             User existingUser = optionalUser.get();
-            existingUser.setName(userDTO.getName());
+            existingUser.setUsername(userDTO.getName());
             existingUser.setEmail(userDTO.getEmail());
             existingUser.setPhoneNumber(userDTO.getPhoneNumber());
             existingUser.setGender(userDTO.getGender());

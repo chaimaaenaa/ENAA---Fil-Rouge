@@ -1,7 +1,6 @@
 package com.benefit.benefit.model;
 
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 import java.time.LocalDate;
 
@@ -12,11 +11,10 @@ public class Workout {
     private Long id;
 
     private int caloriesBurned;
-    private int duration; // minutes
+    private int duration;
     private LocalDate date;
     private String type;
 
     @ManyToOne
-    private User user; // Relation avec User
-    // Getters et setters
+    private User user;
 }

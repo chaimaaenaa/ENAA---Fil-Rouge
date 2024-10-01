@@ -1,16 +1,18 @@
 package com.benefit.benefit.model;
+
 import com.benefit.benefit.dto.ActivityDTO;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.*;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.*;
 
-
-import java.time.LocalDateTime;
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Activity {
     @Id
@@ -20,17 +22,5 @@ public class Activity {
     private int steps;
     private double distance;
     private  int caloriesBurned;
-    public ActivityDTO getActivityDTO() {
-        ActivityDTO activityDTO = new ActivityDTO();
-        activityDTO.setId(id);
-        activityDTO.setDate(date);
-        activityDTO.setSteps(steps);
-        activityDTO.setDistance(distance);
-        activityDTO.setCaloriesBurned(caloriesBurned);
-        return activityDTO;
-    }
-
-
-
 
 }

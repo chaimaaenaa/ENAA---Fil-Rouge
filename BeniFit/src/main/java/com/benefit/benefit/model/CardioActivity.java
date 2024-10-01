@@ -7,7 +7,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "cardio_activities")
 public class CardioActivity extends Activity {
     @Column(name = "distance_run")
     private double distanceRun;

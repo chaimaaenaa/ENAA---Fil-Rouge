@@ -13,6 +13,8 @@ import org.mapstruct.ReportingPolicy;
 public interface ActivityMapper {
     ActivityDTO activityToActivityDTO(Activity activity);
 
+    Activity activityDTOToActivity(ActivityDTO activityDTO);
+
     CardioActivityDTO cardioActivityToCardioActivityDTO(CardioActivity cardioActivity);
 
     CardioActivity cardioActivityDTOToCardioActivity(CardioActivityDTO cardioActivityDTO);
