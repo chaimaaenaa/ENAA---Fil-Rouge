@@ -23,4 +23,11 @@ public class Activity {
     private double distance;
     private  int caloriesBurned;
 
+
+    public  ActivityDTO getActivityDTO() {
+        ActivityDTO activityDTO = new ActivityDTO();
+
+        return activityDTO;
+    }
+
 }

@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/login", "/api/auth/signup").permitAll()
                         .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
@@ -46,6 +47,8 @@ public class SecurityConfiguration {
 
         return http.build();
     }
+
+
 
 //    @Bean
 //    CorsConfigurationSource corsConfigurationSource() {
