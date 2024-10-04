@@ -60,3 +60,14 @@ nz-content{
 nz-footer{
   text-align: center;
 }
+ul[nz-menu] li[nz-menu-item] {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Space between menu items */
+}
+
+ul[nz-menu] li[nz-menu-item] span[nz-icon] {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 18px; /* Increase icon size if necessary */
+  color: white; /* Icon color to match your theme */
+}
