@@ -11,3 +11,42 @@
     </ul>
   </div>
 </nav>
+<header class="header">
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li *ngFor="let item of navItems" class="nav-item">
+        <a href="#" [class.active]="item === 'Home'">{{ item }}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="action-buttons">
+    <button class="gift-plan-btn">Gift A Plan</button>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
+  </div>
+  <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign up</button>
+  </div>
+</header>
+
+<main class="main-content">
+  <h1 class="hero-title">
+    Get Your Perfect Workout <br />
+    With The <span class="highlight">Perfect</span> <span class="highlight">Trainers</span>
+  </h1>
+
+  <section class="trainer-showcase">
+    <div class="trainer-column">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ac9adee125e76f334ac744b15fe2e8eb1a09e500d8e9e003c2d5b9952d35068?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer icon" class="trainer-icon" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f94527b54cd3227d183c21714ad53a3ffb24f806a8c7ac26181087300985e204?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer portrait" class="trainer-portrait" />
+    </div>
+    <div class="trainer-column main-trainer">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b53e7a758ea10db6cb5a8e3673fb8370625c6920398b6f1875e056228b7f428?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Main trainer portrait" class="trainer-portrait" />
+    </div>
+    <div class="trainer-column">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/855119a9d1139344466fafa51885fdcd4598aa42649ee112ccbdfc6c475657da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer icon" class="trainer-icon" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19505f22d4174239f7b6640be2c095aefd54f479cac2c4a1a24d54c303133f41?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer portrait" class="trainer-portrait" />
+    </div>
+  </section>
+</main>
+

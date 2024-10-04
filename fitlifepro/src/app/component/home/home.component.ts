@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: "workout-trainer",
+  templateUrl: "./workout-trainer.component.html",
+  styleUrls: ["./workout-trainer.component.css"]
 })
-export class HOMEComponent {
-
+export class WorkoutTrainerComponent {
+  navItems: string[] = ["Home", "About Us", "Contact Us", "Category", "Blogs", "Recipes"];
 }
