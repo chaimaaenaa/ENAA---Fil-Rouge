@@ -9,6 +9,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserService } from "../../service/user.service";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatListModule } from "@angular/material/list";
 
 @Component({
   selector: 'app-activity',
@@ -24,11 +26,14 @@ import { UserService } from "../../service/user.service";
     MatNativeDateModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    MatListModule
   ]
 })
 export class ActivityComponent implements OnInit {
   activityForm!: FormGroup;
+  activities: any[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -43,6 +48,7 @@ export class ActivityComponent implements OnInit {
       steps: ['', Validators.required],
       date: ['', Validators.required]
     });
+    this.getAllActivities();
   }
 
   submitForm() {
@@ -54,6 +60,7 @@ export class ActivityComponent implements OnInit {
             panelClass: ['success-snackbar']
           });
           this.activityForm.reset();
+          this.getAllActivities();
         },
         (error: any) => {
           this.snackBar.open("Error while posting Activity", "Close", {
@@ -63,5 +70,11 @@ export class ActivityComponent implements OnInit {
         }
       );
     }
+  }
+
+  getAllActivities() {
+    this.userService.getActivities().subscribe(res => {
+      this.activities = res;
+    });
   }
 }

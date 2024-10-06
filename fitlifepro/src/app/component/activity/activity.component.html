@@ -1,55 +1,40 @@
 <div class="container">
-  <div class="row">
-    <h1 class="col">Activity</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Post New Activity</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <form [formGroup]="activityForm" class="custom-form" (ngSubmit)="submitForm()">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Calories Burned</mat-label>
-              <input matInput type="text" formControlName="caloriesBurned" placeholder="Enter the calories you burned">
-              <mat-error *ngIf="activityForm.get('caloriesBurned')?.errors?.['required']">
-                Please input the calories!
-              </mat-error>
-            </mat-form-field>
+  <h1>Activity</h1>
+  <div class="content-wrapper">
+    <div class="new-activity">
+      <h2>Post New Activity</h2>
+      <form [formGroup]="activityForm" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="caloriesBurned" placeholder="Enter the calories you burned">
+        </mat-form-field>
 
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Distance</mat-label>
-              <input matInput type="number" formControlName="distance" placeholder="Enter distance">
-              <mat-error *ngIf="activityForm.get('distance')?.errors?.['required']">
-                Please input the distance!
-              </mat-error>
-            </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="distance" placeholder="Enter distance">
+        </mat-form-field>
 
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Steps</mat-label>
-              <input matInput type="number" formControlName="steps" placeholder="Enter the steps">
-              <mat-error *ngIf="activityForm.get('steps')?.errors?.['required']">
-                Please input the steps!
-              </mat-error>
-            </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="steps" placeholder="Enter steps">
+        </mat-form-field>
 
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker" formControlName="date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="activityForm.get('date')?.errors?.['required']">
-                Please input the date!
-              </mat-error>
-            </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Select date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-            <button mat-raised-button color="primary" class="w-100" [disabled]="activityForm.invalid">
-              Post Activity
-            </button>
-          </form>
-        </mat-card-content>
-      </mat-card>
+        <button mat-raised-button color="primary" type="submit" [disabled]="activityForm.invalid">
+          Post Activity
+        </button>
+      </form>
+    </div>
+
+    <div class="past-activities">
+      <h2>Past Activities</h2>
+      <div class="activity-list">
+        <div *ngFor="let activity of activities" class="activity-item">
+          <span>Calories Burned: {{ activity.caloriesBurned }} - Distance: {{ activity.distance }} KM - Steps: {{ activity.steps }} - Date: {{ activity.date | date:'MMM dd, yyyy' }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
