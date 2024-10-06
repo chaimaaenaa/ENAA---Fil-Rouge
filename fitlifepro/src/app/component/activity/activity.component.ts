@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserService } from "../../service/user.service";
 
 @Component({
   selector: 'app-activity',
@@ -30,8 +30,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 export class ActivityComponent implements OnInit {
   activityForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,
-              private snackBar: MatSnackBar) {}
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.activityForm = this.fb.group({
@@ -40,5 +43,25 @@ export class ActivityComponent implements OnInit {
       steps: ['', Validators.required],
       date: ['', Validators.required]
     });
+  }
+
+  submitForm() {
+    if (this.activityForm.valid) {
+      this.userService.postActivity(this.activityForm.value).subscribe(
+        (res: any) => {
+          this.snackBar.open("Activity posted successfully", "Close", {
+            duration: 5000,
+            panelClass: ['success-snackbar']
+          });
+          this.activityForm.reset();
+        },
+        (error: any) => {
+          this.snackBar.open("Error while posting Activity", "Close", {
+            duration: 5000,
+            panelClass: ['error-snackbar']
+          });
+        }
+      );
+    }
   }
 }
