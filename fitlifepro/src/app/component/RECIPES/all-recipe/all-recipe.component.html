@@ -1,1 +1,308 @@
-<p>all-recipe works!</p>
+<style>
+  .header-nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 78px; background-color: #fff; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); font: 400 32px 'Open Sans', sans-serif; }
+  .nav-links { display: flex; gap: 53px; }
+  .nav-link { color: #000; }
+  .nav-link.active { color: #fed233; font-weight: 600; }
+  .logo { width: 50px; height: 44px; object-fit: contain; }
+  .main-content { display: flex; max-width: 1760px; margin: 0 auto; }
+  .sidebar { background-color: #fed233; width: 668px; height: 1064px; }
+  .recipe-showcase { position: relative; margin-top: 82px; padding: 65px 80px; min-height: 900px; }
+  .recipe-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .recipe-title { position: relative; color: #fff; text-align: center; font: italic 700 72px 'Roboto', sans-serif; }
+  .recipe-description { position: relative; color: #fff; margin-top: 19px; font: 400 32px 'Open Sans', sans-serif; }
+  .recipe-controls { position: relative; display: flex; justify-content: space-between; align-items: center; margin-top: 444px; width: 415px; }
+  .control-button { width: 48px; height: 48px; }
+  .pagination { display: flex; gap: 21px; }
+  .pagination-dot { background-color: #fff; border-radius: 50%; width: 28px; height: 28px; }
+  .pagination-dot.small { width: 18px; height: 18px; }
+  .search-bar { display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; width: 1222px; max-width: 100%; margin: 110px auto 0; padding-left: 33px; }
+  .search-input { color: #5a5a5a; font: 400 32px 'Open Sans', sans-serif; }
+  .search-button { background-color: #fed233; width: 97px; height: 88px; }
+  .category-section { margin-top: 110px; padding: 0 50px; text-align: center; }
+  .category-title { color: #fed233; font: italic 700 72px 'Roboto', sans-serif; text-align: left; margin-left: 15px; }
+  .category-grid { display: flex; flex-wrap: wrap; gap: 51px; margin-top: 80px; }
+  .category-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
+  .category-image { width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 50%; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); }
+  .category-name { margin-top: 30px; color: #5a5a5a; font: 400 32px 'Open Sans', sans-serif; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 991px) {
+    .header-nav { padding: 18px 20px; }
+    .main-content { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; }
+    .recipe-showcase { margin-top: 40px; padding: 65px 20px; }
+    .recipe-title { font-size: 40px; }
+    .recipe-controls { margin-top: 40px; }
+    .search-bar { margin-top: 40px; padding-left: 20px; }
+    .category-section { margin-top: 40px; padding: 0 20px; }
+    .category-title { font-size: 40px; }
+    .category-grid { margin-top: 40px; }
+  }
+
+  .container { display: flex; flex-direction: column; }
+  .recipes-section { width: 100%; }
+  @media (max-width: 991px) { .recipes-section { max-width: 100%; } }
+  .recipes-grid { gap: 20px; display: flex; }
+  @media (max-width: 991px) { .recipes-grid { flex-direction: column; align-items: stretch; gap: 0; } }
+  .recipe-column { display: flex; flex-direction: column; line-height: normal; width: 56%; margin-left: 0; }
+  @media (max-width: 991px) { .recipe-column { width: 100%; } }
+  .recipe-content { display: flex; flex-grow: 1; flex-direction: column; color: #fed233; text-align: center; font: 700 72px Roboto, sans-serif; }
+  @media (max-width: 991px) { .recipe-content { max-width: 100%; margin-top: 40px; font-size: 40px; } }
+  .section-title { font-style: italic; align-self: start; }
+  @media (max-width: 991px) { .section-title { max-width: 100%; font-size: 40px; } }
+  .recipe-image { background-color: #000; display: flex; margin-top: 80px; height: 701px; }
+  @media (max-width: 991px) { .recipe-image { max-width: 100%; margin-top: 40px; } }
+  .recipe-details { display: flex; flex-direction: column; line-height: normal; width: 44%; margin-left: 20px; }
+  @media (max-width: 991px) { .recipe-details { width: 100%; } }
+  .recipe-info { display: flex; margin-top: 259px; flex-grow: 1; flex-direction: column; align-items: start; font-family: Open Sans, sans-serif; }
+  @media (max-width: 991px) { .recipe-info { max-width: 100%; margin-top: 40px; } }
+  .recipe-text { align-self: stretch; display: flex; padding-left: 8px; flex-direction: column; }
+  @media (max-width: 991px) { .recipe-text { max-width: 100%; } }
+  .recipe-title { color: #000; text-align: center; font-size: 42px; font-weight: 600; align-self: start; }
+  @media (max-width: 991px) { .recipe-title { max-width: 100%; } }
+  .recipe-description { color: #fff; font-size: 32px; font-weight: 400; margin-top: 30px; }
+  @media (max-width: 991px) { .recipe-description { max-width: 100%; } }
+  .author-name { color: #000; font-size: 42px; font-weight: 600; margin-top: 65px; }
+  @media (max-width: 991px) { .author-name { margin-top: 40px; } }
+  .publish-date { color: #000; font-size: 42px; font-weight: 600; }
+  .read-recipe-btn { background-color: #fed233; margin-top: 57px; font-size: 32px; color: #fff; font-weight: 600; padding: 10px 25px; }
+  @media (max-width: 991px) { .read-recipe-btn { margin-top: 40px; padding: 10px 20px; } }
+  .second-recipe-section { margin-top: 195px; width: 100%; }
+  @media (max-width: 991px) { .second-recipe-section { max-width: 100%; margin-top: 40px; } }
+  .second-recipe-grid { gap: 20px; display: flex; }
+  @media (max-width: 991px) { .second-recipe-grid { flex-direction: column; align-items: stretch; gap: 0; } }
+  .second-recipe-details { display: flex; flex-direction: column; line-height: normal; width: 44%; margin-left: 0; }
+  @media (max-width: 991px) { .second-recipe-details { width: 100%; } }
+  .second-recipe-info { display: flex; margin-top: 95px; flex-grow: 1; flex-direction: column; align-items: start; font-family: Open Sans, sans-serif; }
+  @media (max-width: 991px) { .second-recipe-info { max-width: 100%; margin-top: 40px; } }
+  .second-recipe-text { align-self: stretch; display: flex; padding-left: 8px; flex-direction: column; }
+  @media (max-width: 991px) { .second-recipe-text { max-width: 100%; } }
+  .second-recipe-title { color: #fed233; text-align: center; font-size: 42px; font-weight: 600; align-self: start; }
+  @media (max-width: 991px) { .second-recipe-title { max-width: 100%; } }
+  .second-read-recipe-btn { background-color: #000; margin-top: 57px; font-size: 32px; color: #fff; font-weight: 600; padding: 10px 25px; }
+  @media (max-width: 991px) { .second-read-recipe-btn { margin-top: 40px; padding: 10px 20px; } }
+  .second-recipe-image { display: flex; flex-direction: column; line-height: normal; width: 56%; margin-left: 20px; }
+  @media (max-width: 991px) { .second-recipe-image { width: 100%; } }
+  .recipe-img { aspect-ratio: 1.41; object-fit: contain; object-position: center; width: 100%; flex-grow: 1; }
+  @media (max-width: 991px) { .recipe-img { max-width: 100%; margin-top: 40px; } }
+  .video-section-title { color: #fed233; text-align: center; align-self: start; margin-top: 153px; font: italic 700 72px Roboto, sans-serif; }
+  @media (max-width: 991px) { .video-section-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
+  .video-thumbnail { aspect-ratio: 2.17; object-fit: contain; object-position: center; width: 100%; align-self: center; margin-top: 85px; max-width: 1314px; }
+  @media (max-width: 991px) { .video-thumbnail { max-width: 100%; margin-top: 40px; } }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+
+
+  .recipe-section { display: flex; flex-direction: column; }
+  .recipe-title { color: #fed233; text-align: center; align-self: center; z-index: 10; margin-top: -13px; font: 600 42px Open Sans, sans-serif; }
+  .view-all-btn { background-color: #fed233; align-self: center; margin-top: 24px; width: 238px; max-width: 100%; overflow: hidden; color: #111010; padding: 10px 60px; font: 600 32px Open Sans, sans-serif; }
+  .section-header { display: flex; margin-top: 153px; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
+  .all-recipes-title { color: #fed233; text-align: center; font: italic 700 72px Roboto, sans-serif; }
+  .view-all-link { color: #004ca6; align-self: end; margin-top: 33px; font: 400 32px Open Sans, sans-serif; }
+  .recipe-images { margin-top: 80px; width: 100%; }
+  .image-grid { gap: 20px; display: flex; }
+  .recipe-image { aspect-ratio: 1.64; object-fit: contain; object-position: center; width: 100%; flex-grow: 1; }
+  .recipe-details { margin-top: 30px; width: 100%; }
+  .details-grid { gap: 20px; display: flex; }
+  .recipe-info { display: flex; flex-grow: 1; flex-direction: column; font-family: Open Sans, sans-serif; }
+  .recipe-name { color: #fed233; font-size: 32px; font-weight: 400; }
+  .recipe-description { color: #111010; font-size: 24px; font-weight: 300; margin-top: 13px; }
+  .recipe-actions { margin-top: 30px; width: 100%; }
+  .actions-grid { gap: 20px; display: flex; }
+  .read-recipe-btn { background-color: #fed233; margin-top: 41px; flex-grow: 1; overflow: hidden; color: #111010; width: 100%; padding: 8px 23px; font: 400 32px Open Sans, sans-serif; }
+  .recipe-meta { display: flex; flex-grow: 1; flex-direction: column; color: #fff; font: 400 32px Open Sans, sans-serif; }
+  .recipe-date { margin-bottom: 13px; }
+  .recipe-author { align-self: start; }
+
+  @media (max-width: 991px) {
+    .recipe-title, .recipe-name, .recipe-description { max-width: 100%; }
+    .view-all-btn { padding: 0 20px; }
+    .section-header { max-width: 100%; margin: 40px 2px 0 0; }
+    .all-recipes-title { font-size: 40px; }
+    .recipe-images, .recipe-details, .recipe-actions { max-width: 100%; margin-top: 40px; }
+    .image-grid, .details-grid, .actions-grid { flex-direction: column; align-items: stretch; gap: 0; }
+    .recipe-image { max-width: 100%; margin-top: 40px; }
+    .recipe-info, .recipe-meta, .read-recipe-btn { margin-top: 40px; }
+    .read-recipe-btn { padding: 0 20px; }
+  }
+</style>
+
+<header class="header-nav">
+  <nav class="nav-links">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">About Us</a>
+    <a href="#" class="nav-link">Contact Us</a>
+    <a href="#" class="nav-link">Category</a>
+    <a href="#" class="nav-link">Blogs</a>
+    <a href="#" class="nav-link active">Recipes</a>
+    <a href="#" class="nav-link">Gift A Plan</a>
+  </nav>
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/aea7bcda91f8962062b196fd20fa929821de883fec34e4c9148ce4bf1f03d9da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Website Logo" class="logo">
+</header>
+
+<main class="main-content">
+  <aside class="sidebar"></aside>
+  <section class="recipe-showcase">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8970ccbcd9da3cb5e7bbecddb91f2a1775ff41de1fd60d45045970a5e579f055?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured Recipe" class="recipe-image">
+    <h2 class="recipe-title">Recipe name will be here</h2>
+    <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus</p>
+    <div class="recipe-controls">
+      <button class="control-button" aria-label="Previous recipe">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d316dc02c9f1328e6981e02afe6be882b23fcae5f2c8d973c6177f989aacf8e0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="control-button">
+      </button>
+      <div class="pagination">
+        <span class="pagination-dot"></span>
+        <span class="pagination-dot small"></span>
+        <span class="pagination-dot small"></span>
+        <span class="pagination-dot small"></span>
+        <span class="pagination-dot small"></span>
+      </div>
+      <button class="control-button" aria-label="Next recipe">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d3d010608a8368607fbdc83a3a1ee1f88850189d32ccf81a8fefa1169576df59?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="control-button">
+      </button>
+    </div>
+  </section>
+</main>
+
+<form class="search-bar" role="search">
+  <label for="recipe-search" class="visually-hidden">Search recipes</label>
+  <input type="search" id="recipe-search" class="search-input" placeholder="Search here..." aria-label="Search recipes">
+  <button type="submit" class="search-button" aria-label="Submit search"></button>
+</form>
+
+<section class="category-section">
+  <h2 class="category-title"><span style="color: #b1ae8c;">Select the</span> <span style="color: #fed233;">Category For Recipes</span></h2>
+  <div class="category-grid">
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b63fe13689e62d4d135a108f9194fd5eb613476da6a78a0272a71e9fb20a0350?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 1" class="category-image">
+      <p class="category-name">Category 1</p>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7e54362c5dd6fac746497c9a64eedf3028f1309f0c7d3b986d5993fd52a2d20f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 2" class="category-image">
+      <p class="category-name">Category 2</p>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d89d1342b5b79e20112403eba5c78a693d930d8626ac33ee75390d67d3223e4?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 3" class="category-image">
+      <p class="category-name">Category 3</p>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/94fdd111e88ccfd4305f2864615802b96dbedcf190eb2eb475018bf30a5fcf03?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 4" class="category-image">
+      <p class="category-name">Category 4</p>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d215df709bbfa829153715a10bce70404f4e30713c558557148d7d34cc13f532?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 5" class="category-image">
+      <p class="category-name">Category 5</p>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/829004b0effcc974bceb14d906b38680721c41ed03b6ec25d6e22ee500dd4fd0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 6" class="category-image">
+      <p class="category-name">Category 6</p>
+    </div>
+  </div>
+</section>
+<br><br>
+
+<section class="container">
+  <div class="recipes-section">
+    <div class="recipes-grid">
+      <div class="recipe-column">
+        <div class="recipe-content">
+          <h2 class="section-title">
+            <span style="color: #b1ae8c;">Popular</span>
+            <span style="color: #fed233;">Healthy Recipes</span>
+          </h2>
+          <div class="recipe-image" role="img" aria-label="Popular healthy recipe image"></div>
+        </div>
+      </div>
+      <div class="recipe-details">
+        <div class="recipe-info">
+          <div class="recipe-text">
+            <h3 class="recipe-title">Name of the recipe will come here</h3>
+            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+          </div>
+          <p class="author-name">Name will be here</p>
+          <p class="publish-date">21 January, 2022</p>
+          <a href="#" class="read-recipe-btn" role="button">Read Recipe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="second-recipe-section">
+    <div class="second-recipe-grid">
+      <div class="second-recipe-details">
+        <div class="second-recipe-info">
+          <div class="second-recipe-text">
+            <h3 class="second-recipe-title">Name of the recipe will come here</h3>
+            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+          </div>
+          <p class="author-name">Name will be here</p>
+          <p class="publish-date">21 January, 2022</p>
+          <a href="#" class="second-read-recipe-btn" role="button">Read Recipe</a>
+        </div>
+      </div>
+      <div class="second-recipe-image">
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/35e020e8926cfa8e1a1736a57705a4ff1e690e57bd2e730b0d0327622fd99251?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="recipe-img" alt="Second recipe image" />
+      </div>
+    </div>
+  </div>
+  <h2 class="video-section-title">
+    <span style="color: #fff5d3;">Popular</span>
+    <span style="color: #fed233;">Healthy Recipes Videos</span>
+  </h2>
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5c25ce23e7a772c0ca643d626b3913ea5a20fc8f580b99f3b2142b20aa979de?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="video-thumbnail" alt="Popular healthy recipes videos thumbnail" />
+</section><br><br>
+
+
+<section class="recipe-section">
+  <h1 class="recipe-title">Name of the recipe will come here</h1>
+  <button class="view-all-btn">View all</button>
+
+  <header class="section-header">
+    <h2 class="all-recipes-title">All Recipes</h2>
+    <a href="#" class="view-all-link">View all</a>
+  </header>
+
+  <div class="recipe-images">
+    <div class="image-grid">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="recipe-image" alt="Recipe 1" />
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="recipe-image" alt="Recipe 2" />
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="recipe-image" alt="Recipe 3" />
+    </div>
+  </div>
+
+  <div class="recipe-details">
+    <div class="details-grid">
+      <article class="recipe-info">
+        <h3 class="recipe-name">Name of the recipe will be here Name of the recipe will be here</h3>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+      <article class="recipe-info">
+        <h3 class="recipe-name">Name of the recipe will be here Name of the recipe will be here</h3>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+      <article class="recipe-info">
+        <h3 class="recipe-name">Name of the recipe will be here Name of the recipe will be here</h3>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="recipe-actions">
+    <div class="actions-grid">
+      <button class="read-recipe-btn">Read Recipe</button>
+      <div class="recipe-meta">
+        <time class="recipe-date">24 January 2022</time>
+        <span class="recipe-author">-Name here</span>
+      </div>
+      <button class="read-recipe-btn">Read Recipe</button>
+      <div class="recipe-meta">
+        <time class="recipe-date">24 January 2022</time>
+        <span class="recipe-author">-Name here</span>
+      </div>
+      <button class="read-recipe-btn">Read Recipe</button>
+      <div class="recipe-meta">
+        <time class="recipe-date">24 January 2022</time>
+        <span class="recipe-author">-Name here</span>
+      </div>
+    </div>
+  </div>
+</section>

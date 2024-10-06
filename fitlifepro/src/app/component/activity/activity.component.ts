@@ -1,54 +1,38 @@
 import { Component } from '@angular/core';
-import {NzCardComponent, NzCardGridDirective} from "ng-zorro-antd/card";
-import {NzColDirective, NzRowDirective} from "ng-zorro-antd/grid";
-import {NgStyle} from "@angular/common";
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {NzFormControlComponent} from "ng-zorro-antd/form";
-import {NzInputDirective} from "ng-zorro-antd/input";
-import {NzDatePickerComponent} from "ng-zorro-antd/date-picker";
-import {NzButtonComponent} from "ng-zorro-antd/button";
-import {SharedModule} from  '../../shared/shared.module'
-import {NzMessageService} from "ng-zorro-antd/message";
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-activity',
+  templateUrl: './activity.component.html',
+  styleUrls: ['./activity.component.css'],
   standalone: true,
   imports: [
-    SharedModule,
-    NzCardGridDirective,
-    NzRowDirective,
-    NgStyle,
-    NzColDirective,
-    NzCardComponent,
-    ReactiveFormsModule,
-    NzFormControlComponent,
-    NzInputDirective,
-    NzDatePickerComponent,
-    NzButtonComponent
-  ],
-  templateUrl: './activity.component.html',
-  styleUrl: './activity.component.css'
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    ReactiveFormsModule
+  ]
 })
 export class ActivityComponent {
+  activityForm: FormGroup;
 
-  gridstyle ={
-    width:'1001%',
-    textAlign:'center'
-  };
-  activityForm!: FormGroup;
-  constructor(private fb:FormBuilder,
-              private message:NzMessageService){}
-
-  ngOnInit(){
+  constructor(private fb: FormBuilder) {
     this.activityForm = this.fb.group({
-      caloriesBurned:[null , [Validators.required]],
-      steps:[null , [Validators.required]],
-      distance:[null , [Validators.required]],
-      date:[null , [Validators.required]],
-
-
-
-    })
+      caloriesBurned: ['', Validators.required],
+      distance: ['', Validators.required],
+      steps: ['', Validators.required],
+      date: ['', Validators.required]
+    });
   }
-
 }

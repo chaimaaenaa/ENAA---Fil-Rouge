@@ -1,44 +1,55 @@
-<div>
-  <div nz-row>
-    <h1  nz-card-grid [ngStyle]="gridStyle">Activity</h1>
+<div class="container">
+  <div class="row">
+    <h1 class="col">Activity</h1>
   </div>
-  <div nz-row>
-    <div nz-col nzFlex="2">
-      <nz-card nzType="inner" style="margin-top:16px;" nzTitle="post New Activity">
-        <form nz-form [formGroup]="activityForm" class="custom-form" >
-          <nz-form-item>
-            <nz-form-control nzErrorTip="please input the calories !">
-              <input type="text" nz-input formControlName = "caloriesBurned"  placeholder="Enter the calories you burned" />
-            </nz-form-control>
-          </nz-form-item>
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Post New Activity</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="activityForm" class="custom-form">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Calories Burned</mat-label>
+              <input matInput type="text" formControlName="caloriesBurned" placeholder="Enter the calories you burned">
+              <mat-error *ngIf="activityForm.get('caloriesBurned')?.errors?.['required']">
+                Please input the calories!
+              </mat-error>
+            </mat-form-field>
 
-          <nz-form-item>
-            <nz-form-control nzErrorTip="please input the distance !">
-              <input type="number" nz-input formControlName = "distance"  placeholder="Enter distance" />
-            </nz-form-control>
-          </nz-form-item>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Distance</mat-label>
+              <input matInput type="number" formControlName="distance" placeholder="Enter distance">
+              <mat-error *ngIf="activityForm.get('distance')?.errors?.['required']">
+                Please input the distance!
+              </mat-error>
+            </mat-form-field>
 
-          <nz-form-item>
-            <nz-form-control nzErrorTip="please input the steps !">
-              <input type="number" nz-input formControlName = "steps"  placeholder="Enter the steps" />
-            </nz-form-control>
-          </nz-form-item>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Steps</mat-label>
+              <input matInput type="number" formControlName="steps" placeholder="Enter the steps">
+              <mat-error *ngIf="activityForm.get('steps')?.errors?.['required']">
+                Please input the steps!
+              </mat-error>
+            </mat-form-field>
 
-          <nz-form-item>
-            <nz-form-control nzErrorTip="please input the date !">
-              <nz-date-picker style="width: 100%;" formControlName="date"
-            </nz-form-control>
-          </nz-form-item>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="activityForm.get('date')?.errors?.['required']">
+                Please input the date!
+              </mat-error>
+            </mat-form-field>
 
-          <button nz-button nzType="primary" nzBlock class="w-100" [disabled]="activityForm.invalid" >
-            Post Activity
-          </button>
-
-        </form>
-      </nz-card>
-
+            <button mat-raised-button color="primary" class="w-100" [disabled]="activityForm.invalid">
+              Post Activity
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
-
-
 </div>

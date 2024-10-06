@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "workout-trainer",
-  templateUrl: "./workout-trainer.component.html",
-  styleUrls: ["./workout-trainer.component.css"]
+  selector: 'app-evolve-lifestyle',
+  templateUrl: 'home.component.html',
+  standalone: true,
+  styleUrls: ['home.component.css']
 })
-export class WorkoutTrainerComponent {
-  navItems: string[] = ["Home", "About Us", "Contact Us", "Category", "Blogs", "Recipes"];
+export class EvolveLifestyleComponent {
+  // Component logic here
 }

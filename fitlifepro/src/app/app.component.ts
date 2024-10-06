@@ -3,20 +3,21 @@ import { RouterOutlet } from '@angular/router';
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {LoginComponent} from "./component/login/login.component";
 import {SharedModule} from "./shared/shared.module";
-import {NzContentComponent, NzLayoutComponent, NzLayoutModule, NzSiderComponent} from "ng-zorro-antd/layout";
-import {NzMenuDirective, NzMenuModule} from "ng-zorro-antd/menu";
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { IconDefinition } from '@ant-design/icons-angular';
-import { UserOutline, LockOutline } from '@ant-design/icons-angular/icons';
 import {rename} from "node:fs";
-imports: [RouterOutlet, NzLayoutModule, NzMenuModule, NzIconModule];
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SignUpComponent, LoginComponent, SharedModule, NzLayoutComponent, NzSiderComponent, NzMenuDirective, NzContentComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet,MatSidenavModule,
+    MatListModule,
+    MatIconModule, MatButtonModule ,MatToolbarModule,SignUpComponent, LoginComponent, SharedModule, ],
+  templateUrl: './component/dashboard/user-dashboard/user-dashboard.component.html',
+  styleUrl: './component/dashboard/user-dashboard/user-dashboard.component.css'
 })
 export class AppComponent {
   title = 'fitlifepro';

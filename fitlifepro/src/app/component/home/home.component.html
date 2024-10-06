@@ -1,52 +1,133 @@
-<nav class="nav-container">
-  <div class="nav-wrapper">
-    <ul class="nav-menu">
-      <li class="nav-item nav-item-active"><a href="#home">Home</a></li>
-      <li class="nav-item"><a href="#about">About Us</a></li>
-      <li class="nav-item"><a href="#contact">Contact Us</a></li>
-      <li class="nav-item"><a href="#category">Category</a></li>
-      <li class="nav-item"><a href="#blogs">Blogs</a></li>
-      <li class="nav-item"><a href="#recipes">Recipes</a></li>
-      <li class="nav-item"><a href="#gift">Gift A Plan</a></li>
-    </ul>
-  </div>
-</nav>
 <header class="header">
   <nav class="main-nav">
     <ul class="nav-list">
-      <li *ngFor="let item of navItems" class="nav-item">
-        <a href="#" [class.active]="item === 'Home'">{{ item }}</a>
-      </li>
+      <li><a href="#" class="nav-link nav-link-active">Home</a></li>
+      <li><a href="#" class="nav-link">About Us</a></li>
+      <li><a href="#" class="nav-link">Contact Us</a></li>
+      <li><a href="#" class="nav-link">Category</a></li>
+      <li><a href="#" class="nav-link">Blogs</a></li>
+      <li><a href="#" class="nav-link">Recipes</a></li>
     </ul>
   </nav>
-  <div class="action-buttons">
-    <button class="gift-plan-btn">Gift A Plan</button>
+  <div class="gift-plan">
+    <a href="#" class="gift-link">Gift A Plan</a>
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
   </div>
   <div class="auth-buttons">
-    <button class="login-btn">Login</button>
-    <button class="signup-btn">Sign up</button>
+    <a href="#" class="auth-button">Login</a>
+    <a href="#" class="auth-button">Sign up</a>
   </div>
 </header>
 
-<main class="main-content">
-  <h1 class="hero-title">
-    Get Your Perfect Workout <br />
-    With The <span class="highlight">Perfect</span> <span class="highlight">Trainers</span>
-  </h1>
+<main>
+  <section class="hero-section">
+    <div class="hero-content">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ac9adee125e76f334ac744b15fe2e8eb1a09e500d8e9e003c2d5b9952d35068?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="hero-decoration top-left" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f94527b54cd3227d183c21714ad53a3ffb24f806a8c7ac26181087300985e204?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Fitness enthusiast" class="hero-image left" />
+      <h1 class="hero-title">
+        Get Your Perfect Workout <br />
+        With The <span class="highlight">Perfect</span> <span class="highlight">Trainers</span>
+      </h1>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b53e7a758ea10db6cb5a8e3673fb8370625c6920398b6f1875e056228b7f428?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Fitness trainer" class="hero-image center" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/855119a9d1139344466fafa51885fdcd4598aa42649ee112ccbdfc6c475657da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="hero-decoration top-right" />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19505f22d4174239f7b6640be2c095aefd54f479cac2c4a1a24d54c303133f41?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Fitness equipment" class="hero-image right" />
+    </div>
+  </section>
 
-  <section class="trainer-showcase">
-    <div class="trainer-column">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ac9adee125e76f334ac744b15fe2e8eb1a09e500d8e9e003c2d5b9952d35068?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer icon" class="trainer-icon" />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f94527b54cd3227d183c21714ad53a3ffb24f806a8c7ac26181087300985e204?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer portrait" class="trainer-portrait" />
+  <section class="about-section">
+    <h2 class="section-title">
+      What Is <span class="highlight">Evolve Your Lifestyle</span>
+    </h2>
+    <p class="section-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.
+    </p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,
+        </p>
+        <a href="#" class="cta-button">Contact Us</a>
+      </div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b8e02bfda896ff25065fc15267d29e072a45eb4d5204d11c57f1ef4360c71ec?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="About us illustration" class="about-image" />
     </div>
-    <div class="trainer-column main-trainer">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b53e7a758ea10db6cb5a8e3673fb8370625c6920398b6f1875e056228b7f428?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Main trainer portrait" class="trainer-portrait" />
+  </section>
+
+  <section class="health-advice-section">
+    <h2 class="section-title">
+      Why People Should Take <span class="highlight">Health Advice</span>
+    </h2>
+    <p class="section-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.
+    </p>
+  </section>
+
+  <section class="why-choose-us-section">
+    <div class="why-choose-us-content">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c99efe164fac75e9fbab478208828dee4a63dc6222ad548838e993de3290989d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Our team" class="team-image" />
+      <div class="reasons">
+        <h2 class="section-title">
+          Why <span class="highlight">Choose Us</span>
+        </h2>
+        <p class="section-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <ul class="reasons-list">
+          <li class="reason-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6fec4f585a00f8e87c7f3d65126acd3b6aa87a9866db3bf016cd8f6ab2165c5c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="reason-icon" />
+            <div class="reason-text">
+              <h3 class="reason-title">10+ Experience</h3>
+              <p class="reason-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+              </p>
+            </div>
+          </li>
+          <li class="reason-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7381ddcef193d2b78f1f6e4897d30aa8208ad7c9ebaab0501aba5b606d6ae28e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="reason-icon" />
+            <div class="reason-text">
+              <h3 class="reason-title">Best Plan</h3>
+              <p class="reason-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+              </p>
+            </div>
+          </li>
+          <li class="reason-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b344dbda68398f0d8e7d60a0c138958e3b10029ba1edcb8e874a5855f10cc15?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="reason-icon" />
+            <div class="reason-text">
+              <h3 class="reason-title">Guarantee Results</h3>
+              <p class="reason-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="trainer-column">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/855119a9d1139344466fafa51885fdcd4598aa42649ee112ccbdfc6c475657da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer icon" class="trainer-icon" />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19505f22d4174239f7b6640be2c095aefd54f479cac2c4a1a24d54c303133f41?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Trainer portrait" class="trainer-portrait" />
+    <div class="testimonial">
+      <p class="testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <a href="#" class="cta-button dark">Contact Us</a>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c0f5ca6157c804f1fe73896b3e7e6ea89ebf0c3d548ac76c970cfc716c24b06?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Happy client" class="testimonial-image" />
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <h2 class="section-title">
+      Categories <span class="dark">To Which We Provide</span>
+    </h2>
+    <p class="section-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.
+    </p>
+    <div class="categories-grid">
+      <div class="category-item"></div>
+      <div class="category-item"></div>
+      <div class="category-item"></div>
+      <div class="category-item"></div>
+      <div class="category-item"></div>
+      <div class="category-item"></div>
     </div>
   </section>
 </main>
-

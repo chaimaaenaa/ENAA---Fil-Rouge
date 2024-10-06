@@ -1,1 +1,38 @@
-<p>user-dashboard works!</p>
+<mat-sidenav-container class="layout">
+  <mat-sidenav mode="side" opened>
+    <div class="logo">
+      <img src="../../IMG/logo1.png" alt="avatar" class="avatar"/>
+      <div class="user-info">
+        <strong>chaimaa</strong>
+      </div>
+    </div>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+
+      <a mat-list-item routerLink="/workout">
+        <mat-icon>fitness_center</mat-icon>
+        <span>Workout</span>
+      </a>
+
+      <a mat-list-item routerLink="/activity">
+        <mat-icon>directions_run</mat-icon>
+        <span>Activity</span>
+      </a>
+
+      <a mat-list-item routerLink="/goal">
+        <mat-icon>assessment</mat-icon>
+        <span>Goal</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="right-layout">
+    <div class="inner-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
