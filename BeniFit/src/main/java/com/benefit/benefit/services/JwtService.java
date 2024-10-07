@@ -89,4 +89,20 @@ public class JwtService {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+    public String generateToken(String username) {
+        Map<String, Object> extraClaims = new HashMap<>();
+        return buildToken(extraClaims, username, jwtExpiration);
+    }
+
+    private String buildToken(Map<String, Object> extraClaims, String username, long expiration) {
+        return Jwts
+                .builder()
+                .setClaims(extraClaims)
+                .setSubject(username)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
 }

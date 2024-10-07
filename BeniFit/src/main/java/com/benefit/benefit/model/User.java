@@ -22,6 +22,5 @@ public class User {
     private String gender;
     private String password;
 
-    @OneToMany
-    private List<Workout> workout;
+
 }

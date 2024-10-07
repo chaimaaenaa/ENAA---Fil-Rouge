@@ -1,5 +1,6 @@
 package com.benefit.benefit.model;
 
+import com.benefit.benefit.dto.WorkoutDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,6 +19,15 @@ public class Workout {
     private Date date;
     private String type;
 
-    @ManyToOne
-    private User user;
+   public WorkoutDTO getWorkoutDto() {
+       WorkoutDTO workoutDTO = new WorkoutDTO();
+
+       workoutDTO.setId(id);
+       workoutDTO.setCaloriesBurned(caloriesBurned);
+       workoutDTO.setDuration(duration);
+       workoutDTO.setDate(date);
+       workoutDTO.setType(type);
+       return workoutDTO;
+
+   }
 }

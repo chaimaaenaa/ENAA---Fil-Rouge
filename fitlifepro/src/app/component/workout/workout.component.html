@@ -1,0 +1,46 @@
+<div>
+  <div class="mat-row">
+    <h1>Workout</h1>
+  </div>
+
+  <div class="mat-row">
+    <div class="mat-col">
+      <mat-card style="margin-top:16px;">
+        <mat-card-title>Post New Workout</mat-card-title>
+        <form *ngIf="workoutForm" [formGroup]="workoutForm" class="custom-form">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Enter the calories you burned</mat-label>
+            <input matInput type="text" formControlName="caloriesBurned" placeholder="Enter the calories you burned">
+            <mat-error *ngIf="workoutForm.get('caloriesBurned')?.invalid">Please input the calories!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Enter duration</mat-label>
+            <input matInput type="number" formControlName="duration" placeholder="Enter duration">
+            <mat-error *ngIf="workoutForm.get('duration')?.invalid">Please input the duration!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Select date</mat-label>
+            <input matInput [matDatepicker]="datePicker" formControlName="date" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+            <mat-error *ngIf="workoutForm.get('date')?.invalid">Please input the date!</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Select the type</mat-label>
+            <mat-select formControlName="type" placeholder="Select the type">
+              <mat-option *ngFor="let type of listOfType" [value]="type">{{ type }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="workoutForm.get('type')?.invalid">Please input the type!</mat-error>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" class="w-100" [disabled]="workoutForm.invalid">
+            Post Workout
+          </button>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

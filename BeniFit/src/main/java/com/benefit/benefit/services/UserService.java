@@ -1,15 +1,17 @@
 package com.benefit.benefit.services;
 
+import com.benefit.benefit.dto.LoginRequestDTO;
 import com.benefit.benefit.dto.UserDTO;
-import com.benefit.benefit.dto.LoginRequest;
-import com.benefit.benefit.mappers.UserMapper;
 import com.benefit.benefit.model.User;
 import com.benefit.benefit.repositories.UserRepository;
+import com.benefit.benefit.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -18,54 +20,45 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
-    private UserMapper userMapper;
+    private JwtService jwtService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     public User register(UserDTO userDTO) {
+        if (userRepository.existsByEmail(userDTO.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+
         User user = userMapper.toEntity(userDTO);
-        // Kat-encode l-password qbal l-save
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));  // Should work now
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userRepository.save(user);
     }
 
+    public String login(LoginRequestDTO loginRequest) {
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+            );
 
-
-    public String login(LoginRequest loginRequest) {
-        // Login logic: kat9lb 3la user b-email
-        Optional<User> optionalUser = userRepository.findByEmail(loginRequest.getEmail());  // Should work now
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            // Kayverify wach l-password hiya lmchfrada mzyan
-            if (passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-                // Return JWT token (hla tbddelha b JWT)
-                return "JWT_TOKEN_HERE";
+            if (authentication.isAuthenticated()) {
+                User user = userRepository.findByUsername(loginRequest.getUsername())
+                        .orElseThrow(() -> new RuntimeException("User not found"));
+                return jwtService.generateToken(user.getUsername());
+            } else {
+                throw new RuntimeException("Invalid username or password");
             }
+        } catch (AuthenticationException e) {
+            throw new RuntimeException("Invalid username or password");
         }
-        throw new RuntimeException("Invalid credentials");
     }
 
-
-    public User updateProfile(UserDTO userDTO) {
-        Optional<User> optionalUser = userRepository.findById(userDTO.getId());
-        if (optionalUser.isPresent()) {
-            User existingUser = optionalUser.get();
-            existingUser.setUsername(userDTO.getName());
-            existingUser.setEmail(userDTO.getEmail());
-            existingUser.setPhoneNumber(userDTO.getPhoneNumber());
-            existingUser.setGender(userDTO.getGender());
-            // Password ghadi mat-tbdlach, khssek method fardiya l-update dyalha ila khssha ttbdl
-            return userRepository.save(existingUser);
-        }
-        throw new RuntimeException("User not found");
-    }
-
-    public UserDTO createUser(UserDTO userDTO, String password) {
-        return userDTO;
-    }
-
-    public User findUserById(Long userId) {
-        return null;
-    }
+    // ... (methods li mazalin bḥalhom)
 }
