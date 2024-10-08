@@ -31,34 +31,34 @@ public class UserService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    public User register(UserDTO userDTO) {
-        if (userRepository.existsByEmail(userDTO.getEmail())) {
-            throw new RuntimeException("Email already exists");
-        }
+//    public User register(UserDTO userDTO) {
+//        if (userRepository.existsByEmail(userDTO.getEmail())) {
+//            throw new RuntimeException("Email already exists");
+//        }
+//
+//        User user = userMapper.toEntity(userDTO);
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//
+//        return userRepository.save(user);
+//    }
+//
+//    public String login(LoginRequestDTO loginRequest) {
+//        try {
+//            Authentication authentication = authenticationManager.authenticate(
+//                    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+//            );
+//
+//            if (authentication.isAuthenticated()) {
+//                User user = userRepository.findByUsername(loginRequest.getUsername())
+//                        .orElseThrow(() -> new RuntimeException("User not found"));
+//                return jwtService.generateToken(user.getUsername());
+//            } else {
+//                throw new RuntimeException("Invalid username or password");
+//            }
+//        } catch (AuthenticationException e) {
+//            throw new RuntimeException("Invalid username or password");
+//        }
+//    }
 
-        User user = userMapper.toEntity(userDTO);
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        return userRepository.save(user);
-    }
-
-    public String login(LoginRequestDTO loginRequest) {
-        try {
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
-            );
-
-            if (authentication.isAuthenticated()) {
-                User user = userRepository.findByUsername(loginRequest.getUsername())
-                        .orElseThrow(() -> new RuntimeException("User not found"));
-                return jwtService.generateToken(user.getUsername());
-            } else {
-                throw new RuntimeException("Invalid username or password");
-            }
-        } catch (AuthenticationException e) {
-            throw new RuntimeException("Invalid username or password");
-        }
-    }
-
-    // ... (methods li mazalin bḥalhom)
 }

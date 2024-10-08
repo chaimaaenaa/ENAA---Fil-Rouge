@@ -1,51 +1,60 @@
 package com.benefit.benefit.controllers;
 
-import com.benefit.benefit.dto.UserDTO;
+import com.benefit.benefit.dto.AdminDTO;
+import com.benefit.benefit.dto.AthleteDTO;
 import com.benefit.benefit.dto.LoginRequestDTO;
+import com.benefit.benefit.dto.LoginResponse;
+import com.benefit.benefit.enums.Role;
 import com.benefit.benefit.model.User;
-import com.benefit.benefit.services.UserService;
-import jakarta.validation.Valid;
+import com.benefit.benefit.services.AuthenticationService;
+import com.benefit.benefit.services.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@Validated
 public class AuthController {
 
-    @Autowired
-    private UserService userService;
+    private final JwtService jwtService;
+    private final AuthenticationService authenticationService;
 
-    @PostMapping("/admin/register")
-    public ResponseEntity<?> registerAdmin(@Valid @RequestBody UserDTO userDTO) {
-        try {
-            User createdUser = userService.register(userDTO);
-            return ResponseEntity.ok(createdUser);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
-        }
+    @Autowired
+    public AuthController(JwtService jwtService, AuthenticationService authenticationService) {
+        this.jwtService = jwtService;
+        this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/user/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody UserDTO userDTO) {
-        try {
-            User user = userService.register(userDTO);
-            return ResponseEntity.ok(user);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: " + e.getMessage());
-        }
+    @PostMapping("/signup")
+    public ResponseEntity<User> register(@RequestBody AthleteDTO customerDTO) {
+        User registeredUser = authenticationService.signup(customerDTO);
+        return ResponseEntity.ok(registeredUser);
+    }
+
+    @PostMapping("/add-admin")
+    public ResponseEntity<User> addAdmin(@RequestBody AdminDTO adminDTO) {
+        User newAdmin = authenticationService.addAdmin(adminDTO);
+        return ResponseEntity.ok(newAdmin);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@Valid @RequestBody LoginRequestDTO loginRequestDTO) {
+    public ResponseEntity<?> authenticate(@RequestBody LoginRequestDTO loginUserDto) {
         try {
-            String token = userService.login(loginRequestDTO);
-            return ResponseEntity.ok(token);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error: " + e.getMessage());
+            User authenticatedUser = authenticationService.authenticate(loginUserDto);
+            Role role = authenticatedUser.getRole();
+            Long userId = authenticatedUser.getId();
+
+            String jwtToken = jwtService.generateToken(authenticatedUser, userId, role);
+
+            LoginResponse loginResponse = new LoginResponse();
+            loginResponse.setToken(jwtToken);
+            loginResponse.setExpiresIn(jwtService.getExpirationTime());
+
+            return ResponseEntity.ok(loginResponse);
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during login.");
         }
     }
 }

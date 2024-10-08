@@ -3,7 +3,6 @@ package com.benefit.benefit.mappers;
 import com.benefit.benefit.dto.MealDTO;
 import com.benefit.benefit.model.Meal;
 import com.benefit.benefit.model.User;
-import com.benefit.benefit.services.UserService;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

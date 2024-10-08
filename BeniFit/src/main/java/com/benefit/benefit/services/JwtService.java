@@ -1,6 +1,5 @@
 package com.benefit.benefit.services;
 
-//import com.benefit.benefit..enums.Role;
 import com.benefit.benefit.enums.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -34,13 +33,13 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-    public String generateToken(UserDetails userDetails,Long currentUserId, Role role) {
-        return generateToken(new HashMap<>(), userDetails, currentUserId, role);
+    public String generateToken(UserDetails userDetails,Long userId, Role role) {
+        return generateToken(new HashMap<>(), userDetails, userId, role);
     }
 
     public String generateToken(Map<String, Object> extraClaims, UserDetails userDetails, Long currentUserId, Role role) {
         extraClaims.put("role", role);
-        extraClaims.put("currentUserId", currentUserId);
+        extraClaims.put("userId", currentUserId);
         return buildToken(extraClaims, userDetails, jwtExpiration);
     }
 

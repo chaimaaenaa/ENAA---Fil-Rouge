@@ -21,23 +21,24 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/api/auth/user/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody UserDTO userDTO) {
-        try {
-            User user = userService.register(userDTO);
-            return ResponseEntity.ok(user);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
-    }
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO loginRequest) {
-        try {
-            String token = userService.login(loginRequest);
-            return ResponseEntity.ok(token);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
-        }
-    }
+//    @PostMapping("/api/auth/user/register")
+//    public ResponseEntity<?> registerUser(@Valid @RequestBody UserDTO userDTO) {
+//        try {
+//            User user = userService.register(userDTO);
+//            return ResponseEntity.ok(user);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+//        }
+//    }
+//
+//    @PostMapping("/login")
+//    public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO loginRequest) {
+//        try {
+//            String token = userService.login(loginRequest);
+//            return ResponseEntity.ok(token);
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+//        }
+//    }
 }
