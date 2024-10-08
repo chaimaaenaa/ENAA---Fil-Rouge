@@ -3,10 +3,33 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-about-us',
   standalone: true,
-  imports: [],
   templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.css'
+  styleUrls: ['./about-us.component.css'] // Fixed 'styleUrl' to 'styleUrls'
 })
-export class ABOUTUSComponent {
+export class AboutUsComponent {
+  // Corrected the array structure
+  sections = [
+    { label: 'Recipes', isActive: false },
+    { label: 'Gift A Plan', isActive: false }
+  ];
 
+  teamMembers = [
+    {
+      name: 'Name here',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet'
+    },
+    {
+      name: 'Name here',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet'
+    },
+    {
+      name: 'Name here',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet'
+    },
+    {
+      name: 'Name here',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet'
+    }
+  ];
+  navItems: any;
 }

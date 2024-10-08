@@ -1,1 +1,97 @@
-<p>about-us works!</p>
+<main class="about-us">
+  <header class="header">
+    <nav class="navigation">
+      <ul class="nav-list">
+        <li *ngFor="let item of navItems" [class.active]="item.isActive">
+          <a href="#" class="nav-link">{{ item.label }}</a>
+        </li>
+      </ul>
+    </nav>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a4bfe87151e017d481dcd3270274933b661e61ebf8589f720b6c6bc7bccb149f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company logo" class="logo" />
+  </header>
+
+  <section class="intro-section">
+    <div class="intro-content">
+      <h1 class="intro-title">Get To Know <span class="highlight">About Us</span></h1>
+      <p class="intro-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+      <p class="intro-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+      <a href="#contact" class="cta-button">Contact Us</a>
+    </div>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be79c6baf6b8ab7ab0282054c67c62d1fe6cb24a6f891c8b32cf681044ed1664?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Team working together" class="intro-image" />
+  </section>
+
+  <section class="coach-section">
+    <h2 class="section-title">Our <span class="highlight">Coach</span></h2>
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="coach-content">
+      <div class="coach-image-wrapper">
+        <div class="coach-image-background"></div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be79c6baf6b8ab7ab0282054c67c62d1fe6cb24a6f891c8b32cf681044ed1664?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Our coach" class="coach-image" />
+      </div>
+      <div class="coach-details">
+        <p class="coach-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="coach-achievements">
+          <div class="achievement-background"></div>
+          <div class="achievement-content">
+            <p class="achievement-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+            <p class="achievement-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <h2 class="section-title">Meet <span class="highlight">Our Team</span></h2>
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="team-grid">
+      <div *ngFor="let member of teamMembers" class="team-member">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/24757160b6fd5035d2da4dff936fb102b4291b1502df508a590c7b6e96340678?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" [alt]="member.name" class="member-image" />
+        <h3 class="member-name">{{ member.name }}</h3>
+        <p class="member-description">{{ member.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients-section">
+    <h2 class="section-title"><span class="highlight">Take A Look At</span> Our Clients</h2>
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="client-testimonial">
+      <div class="testimonial-content">
+        <h3 class="client-name">Name of the client here</h3>
+        <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+      </div>
+      <div class="before-after">
+        <div class="before-image">
+          <div class="image-placeholder"></div>
+          <p class="image-label">Before</p>
+        </div>
+        <div class="after-image">
+          <div class="image-placeholder"></div>
+          <p class="image-label">After</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-navigation">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66606a5c0ae6645f3bad7635401ca055973e7db6757d8928c01d25b67a50d20e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Previous testimonial" class="nav-arrow" />
+      <div class="nav-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ac4fd6c50bbb572c4a88abb1e7385e2ca1fcd1cae72ec8cb3ab617477a6c7f6?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Next testimonial" class="nav-arrow" />
+    </div>
+  </section>
+
+  <section class="join-section">
+    <h2 class="section-title"><span class="highlight">Join</span> Evolve Your Life Style</h2>
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <form class="join-form">
+      <label for="nameInput" class="visually-hidden">Let us know your name</label>
+      <input type="text" id="nameInput" placeholder="Write your name here" class="name-input" aria-label="Let us know your name" />
+      <button type="submit" class="submit-button">Next</button>
+    </form>
+  </section>
+</main>

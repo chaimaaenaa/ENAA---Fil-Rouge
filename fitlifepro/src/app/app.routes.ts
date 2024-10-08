@@ -11,6 +11,8 @@ import {GiftAPlanComponent} from "./component/workout/gift-a-plan/gift-a-plan.co
 import {AllRecipeComponent} from "./component/RECIPES/all-recipe/all-recipe.component";
 import {RecipePageComponent} from "./component/RECIPES/recipe-page-open/recipe-page-open.component";
 import {RecipesPageComponent} from "./component/RECIPES/recipes-page/recipes-page.component";
+import {AboutUsComponent} from "./component/about-us/about-us.component";
+import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 
 export const routes: Routes = [
 
@@ -26,6 +28,10 @@ export const routes: Routes = [
   {path: "app-all-recipe" , component:AllRecipeComponent},
   {path: "app-recipe-page" , component:RecipePageComponent },
   {path: "app-recipes-page" , component:RecipesPageComponent },
+  {path: "app-about-us" , component:AboutUsComponent},
+  {path: "app-contact-us" , component:ContactUsComponent},
+
+
 
 
 

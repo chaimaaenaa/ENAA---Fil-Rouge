@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-recipes-page',
   standalone: true,
   templateUrl: './recipes-page.component.html',
-  styleUrls: ['./recipes-page.component.css'] 
+  styleUrls: ['./recipes-page.component.css']
 })
 export class RecipesPageComponent {
   recipes = [

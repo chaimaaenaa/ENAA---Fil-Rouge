@@ -1,1 +1,51 @@
-<p>contact-us works!</p>
+<header class="header">
+  <nav class="navigation">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#" class="nav-link">About Us</a>
+    <a href="#" class="nav-link active">Contact Us</a>
+    <a href="#" class="nav-link">Category</a>
+    <a href="#" class="nav-link">Blogs</a>
+    <a href="#" class="nav-link">Recipes</a>
+    <a href="#" class="nav-link">Gift A Plan</a>
+  </nav>
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/05162b2cf9cb47c31ae7b28cfa91e283865e9d25413c9644168ce0b0e012bf37?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
+</header>
+
+<main class="main-content">
+  <section class="contact-info">
+    <h1 class="section-title">Contact Us</h1>
+    <h2 class="subsection-title">Give us a call</h2>
+    <div class="phone-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c343a711fa1f237412427a6062720ead17ba189dd737f2429307b106a18701e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Phone Icon" class="phone-icon" />
+      <p class="phone-number">+91- 9876425797</p>
+    </div>
+    <p class="business-hours">
+      Monday- Sunday <br />
+      09:00 – 21:00 IST
+    </p>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5562be915ba196e2c80e7dede8b14b4fe9656c442bec4124d559f69acbad308?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Contact Illustration" class="contact-illustration" />
+  </section>
+
+  <section class="contact-form">
+    <h2 class="form-title">Get In Touch</h2>
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email Id</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-textarea" required></textarea>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </section>
+</main>
