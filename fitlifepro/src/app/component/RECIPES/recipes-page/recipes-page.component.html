@@ -1,1 +1,80 @@
-<p>recipes-page works!</p>
+<main class="recipe-list">
+  <header class="header">
+    <nav class="navigation">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Contact Us</a>
+      <a href="#" class="nav-link">Category</a>
+      <a href="#" class="nav-link">Blogs</a>
+      <a href="#" class="nav-link active">Recipes</a>
+      <a href="#" class="nav-link">Gift A Plan</a>
+    </nav>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d7622e9a04dc2a4e009ec95eb83b68780f48d16b00345b725e3b5f0f1962fc8?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Logo" class="logo" />
+  </header>
+
+  <form class="search-form">
+    <label for="search-input" class="visually-hidden">Search here...</label>
+    <input type="text" id="search-input" class="search-input" placeholder="Search here..." />
+    <button type="submit" class="search-button" aria-label="Search"></button>
+  </form>
+
+  <section class="featured-images">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 1" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 2" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 3" class="featured-image" />
+  </section>
+
+  <section class="recipe-grid">
+    <article *ngFor="let recipe of recipes" class="recipe-card">
+      <h2 class="recipe-title">{{ recipe.title }}</h2>
+      <p class="recipe-description">{{ recipe.description }}</p>
+      <div class="recipe-footer">
+        <button class="read-recipe-btn">Read Recipe</button>
+        <div class="recipe-meta">
+          <time class="recipe-date">{{ recipe.date }}</time>
+          <span class="recipe-author">-{{ recipe.author }}</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="featured-images">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 4" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 5" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 6" class="featured-image" />
+  </section>
+
+  <section class="recipe-grid">
+    <article *ngFor="let recipe of recipes" class="recipe-card">
+      <h2 class="recipe-title">{{ recipe.title }}</h2>
+      <p class="recipe-description">{{ recipe.description }}</p>
+      <div class="recipe-footer">
+        <button class="read-recipe-btn">Read Recipe</button>
+        <div class="recipe-meta">
+          <time class="recipe-date">{{ recipe.date }}</time>
+          <span class="recipe-author">-{{ recipe.author }}</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="featured-images">
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 7" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 8" class="featured-image" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 9" class="featured-image" />
+  </section>
+
+  <section class="recipe-grid">
+    <article *ngFor="let recipe of recipes" class="recipe-card">
+      <h2 class="recipe-title">{{ recipe.title }}</h2>
+      <p class="recipe-description">{{ recipe.description }}</p>
+      <div class="recipe-footer">
+        <button class="read-recipe-btn">Read Recipe</button>
+        <div class="recipe-meta">
+          <time class="recipe-date">{{ recipe.date }}</time>
+          <span class="recipe-author">-{{ recipe.author }}</span>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>

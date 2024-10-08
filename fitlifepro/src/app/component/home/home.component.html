@@ -630,4 +630,55 @@
       </details>
     </div>
   </section>
+
+  ////////
+  <section class="advice-section">
+    <h2 class="section-title">Advice From <span class="highlight">Successful Members</span></h2>
+    <div class="advice-container">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ac9adee125e76f334ac744b15fe2e8eb1a09e500d8e9e003c2d5b9952d35068?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="decorative-image" />
+      <div class="advice-card" *ngFor="let item of adviceItems">
+        <img [src]="item.imageSrc" [alt]="item.name" class="member-image" />
+        <h3 class="member-name">{{ item.name }}</h3>
+        <p class="member-advice">{{ item.advice }}</p>
+        <div class="rating">
+          <span class="star active"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+        </div>
+      </div>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/855119a9d1139344466fafa51885fdcd4598aa42649ee112ccbdfc6c475657da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="decorative-image" />
+    </div>
+  </section>
+
+
+  ////
+
+  <section class="features-section">
+    <div class="features-container">
+      <header class="features-header">
+        <h1 class="features-title">
+          <span class="features-title-highlight">What You Will Get In</span> Our Application
+        </h1>
+        <p class="features-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam
+        </p>
+      </header>
+      <div class="features-content">
+        <div class="features-image-wrapper">
+          <img src="path-to-your-image.jpg" alt="Application features illustration" class="features-image">
+        </div>
+        <div class="features-list">
+          <article *ngFor="let feature of features" class="feature-item">
+            <h2 class="feature-title">{{ feature.title }}</h2>
+            <p class="feature-description">{{ feature.description }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <footer class="features-footer">
+      <p class="copyright-text">Copyright © 2017 - 2021 Evolveyourlifestyle</p>
+    </footer>
+  </section>
 </main>

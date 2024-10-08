@@ -1161,4 +1161,252 @@
       padding: 0 20px 30px;
     }
   }
+
+
+  .advice-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-title {
+    color: #fed233;
+    align-self: flex-start;
+    z-index: 10;
+    margin-top: -12px;
+    font: italic 700 72px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  .highlight {
+    color: #fed233;
+  }
+
+  .advice-container {
+    align-self: center;
+    display: flex;
+    margin-top: 252px;
+    width: 100%;
+    max-width: 1519px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .decorative-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 124px;
+    align-self: stretch;
+    max-width: 100%;
+    margin: auto 0;
+  }
+
+  .advice-card {
+    background-color: #fed233;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 70px 61px;
+  }
+
+  .member-image {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 348px;
+    border-radius: 50%;
+    z-index: 10;
+    margin-top: -162px;
+    max-width: 100%;
+  }
+
+  .member-name {
+    color: #5a5a5a;
+    margin-top: 42px;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  .member-advice {
+    color: #5a5a5a;
+    text-align: center;
+    align-self: stretch;
+    margin-top: 42px;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  .rating {
+    display: flex;
+    margin-top: 57px;
+    width: 175px;
+    max-width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .star {
+    background-color: #111010;
+    border-radius: 50%;
+    display: flex;
+    width: 18px;
+    height: 18px;
+  }
+
+  .star.active {
+    background-color: #454545;
+  }
+
+  @media (max-width: 991px) {
+    .section-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+
+    .advice-container {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .advice-card {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+
+    .member-name,
+    .member-advice,
+    .rating {
+      margin-top: 40px;
+    }
+
+    .member-advice {
+      max-width: 100%;
+    }
+  }
+
+
+  .features-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .features-container {
+    display: flex;
+    margin-right: 50px;
+    width: 100%;
+    max-width: 1820px;
+    flex-direction: column;
+  }
+
+  .features-header {
+    margin-bottom: 80px;
+  }
+
+  .features-title {
+    color: #fed233;
+    text-align: center;
+    align-self: flex-start;
+    font: italic 700 72px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  .features-title-highlight {
+    color: rgba(69, 69, 69, 1);
+  }
+
+  .features-description {
+    color: #000;
+    margin-top: 50px;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  .features-content {
+    display: flex;
+    gap: 20px;
+  }
+
+  .features-image-wrapper {
+    width: 61%;
+  }
+
+  .features-image {
+    width: 100%;
+    max-width: 1267px;
+    height: auto;
+  }
+
+  .features-list {
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .feature-item {
+    margin-bottom: 99px;
+  }
+
+  .feature-title {
+    color: #fed233;
+    font: 400 32px Open Sans, sans-serif;
+    margin-bottom: 20px;
+  }
+
+  .feature-description {
+    color: #000;
+    font: 300 24px Open Sans, sans-serif;
+  }
+
+  .features-footer {
+    background-color: #fed233;
+    margin-top: 814px;
+    width: 100%;
+    max-width: 1920px;
+    overflow: hidden;
+    padding: 530px 70px 82px;
+  }
+
+  .copyright-text {
+    color: #454545;
+    letter-spacing: -0.2px;
+    font: 400 18px Inter, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .features-container {
+      max-width: 100%;
+      margin-right: 10px;
+    }
+
+    .features-title {
+      font-size: 40px;
+    }
+
+    .features-description {
+      margin-top: 40px;
+    }
+
+    .features-content {
+      flex-direction: column;
+    }
+
+    .features-image-wrapper,
+    .features-list {
+      width: 100%;
+    }
+
+    .features-image {
+      margin-top: 40px;
+    }
+
+    .feature-item {
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    .features-footer {
+      margin-top: 40px;
+      padding: 100px 20px 110px;
+    }
+  }
 }

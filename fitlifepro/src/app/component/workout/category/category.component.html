@@ -1,1 +1,90 @@
-<p>category works!</p>
+<section class="category-section">
+  <header class="main-header">
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li *ngFor="let item of navItems" [class.active]="item.isActive">
+          <a href="#" class="nav-link">{{ item.label }}</a>
+        </li>
+      </ul>
+    </nav>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f000178228e259b88e3295bac79ad7e6a4590bb716fe4276a326b3dc6c1abc2?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company logo" class="company-logo" />
+  </header>
+
+  <main class="main-content">
+    <h1 class="main-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</h1>
+    <div class="content-wrapper">
+      <p class="main-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida
+      </p>
+      <div class="image-placeholder yellow-bg"></div>
+      <div class="accent-block yellow-bg"></div>
+    </div>
+
+    <section class="problem-solution">
+      <h2 class="section-title">How To <span class="highlight">Solve The Problem</span></h2>
+      <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+      <div class="image-placeholder yellow-bg large"></div>
+    </section>
+
+    <section class="advantages">
+      <h2 class="section-title">Advantage <span class="highlight">To Join Us</span></h2>
+      <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+      <ul class="advantage-list">
+        <li *ngFor="let item of advantageItems" class="advantage-item">
+          <span class="advantage-number">{{ item.number }}</span>
+          <p class="advantage-description">{{ item.description }}</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="client-benefits">
+      <div class="benefit-item" *ngFor="let item of [1, 2, 3, 4]">
+        <img src="http://b.io/ext_{{item}}-" alt="Client benefit icon" class="benefit-icon" />
+        <p class="benefit-description">Lorem ipsum dolor sit amet, consectetur</p>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">Our Clients <span class="highlight">Testimonials</span></h2>
+      <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+      <div class="testimonial-list">
+        <div class="testimonial-item" *ngFor="let testimonial of clientTestimonials">
+          <img [src]="testimonial.image" alt="Client avatar" class="testimonial-avatar" />
+          <p class="testimonial-text">{{ testimonial.text }}</p>
+        </div>
+      </div>
+      <div class="client-stories">
+        <div class="client-story" *ngFor="let story of clientStories">
+          <img [src]="story.image" alt="Client avatar" class="story-avatar" />
+          <div class="story-details">
+            <p class="client-name">{{ story.name }}</p>
+            <p class="story-date">{{ story.date }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="success-stories">
+      <h2 class="section-title"><span class="highlight">Our Clients</span> Success Stories</h2>
+      <div class="story-content">
+        <div class="story-text">
+          <p class="story-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+          <div class="client-testimonial yellow-bg">
+            <h3 class="client-name">Name of the client here</h3>
+            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+          </div>
+        </div>
+        <div class="before-after">
+          <div class="before-image">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c789343a1330aeca256a9c526fd681be6a02b4cd160abc3721ab309da4626630?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Before transformation" class="transformation-image" />
+            <p class="image-label">Before</p>
+          </div>
+          <div class="after-image">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ac4fd6c50bbb572c4a88abb1e7385e2ca1fcd1cae72ec8cb3ab617477a6c7f6?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="After transformation" class="transformation-image" />
+            <p class="image-label">After</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</section>
