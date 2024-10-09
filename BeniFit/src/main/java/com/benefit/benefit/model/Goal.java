@@ -1,23 +1,31 @@
 package com.benefit.benefit.model;
 
 
+import com.benefit.benefit.dto.ActivityDTO;
+import com.benefit.benefit.dto.GoalDTO;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
+@Data
     public class Goal {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
         private String description;
-        private LocalDate startDate;
-        private LocalDate endDate;
+        private Date startDate;
+        private Date endDate;
         private boolean achieved;
 
-        @ManyToOne
-        private User user; // Relation avec User
-        // Getters et setters
+
+    public GoalDTO getGoalDTO() {
+        GoalDTO goalDTO = new GoalDTO();
+
+        return goalDTO;
     }
+}
 

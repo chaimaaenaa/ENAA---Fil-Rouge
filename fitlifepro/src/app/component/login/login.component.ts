@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FormsModule, NgIf]
 })
 export class LoginComponent {
   username = '';
@@ -17,7 +20,7 @@ export class LoginComponent {
 
   login() {
     const credentials = {
-      username: this.username,
+      usernameOrEmail: this.username,
       password: this.password,
     };
     this.authService.login(credentials).subscribe({

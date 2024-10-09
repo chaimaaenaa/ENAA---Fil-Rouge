@@ -1,25 +1,7 @@
 <main class="sign-up-page">
   <header class="header">
     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9be251b86c6b0dc2bb7c03e113d5a9a6e62c3e4f49fe3870d94b0d038a25c401?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
-    <nav class="navigation">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#" class="nav-link active">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Workout Programs</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Recipes</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">Store</a>
-        </li>
-      </ul>
-    </nav>
+
     <div class="auth-buttons">
       <a href="#" class="login-button">Login</a>
       <a href="#" class="signup-button">Sign up</a>
@@ -33,14 +15,14 @@
 
   <section class="signup-section">
     <div class="signup-container">
-      <form class="signup-form">
-        <input type="text" placeholder="Enter your name" class="form-input" aria-label="Enter your name" />
-        <input type="email" placeholder="xyz@gmail.com" class="form-input" aria-label="Enter your email" />
-        <input type="password" placeholder="Enter your password" class="form-input" aria-label="Enter your password" />
-        <input type="password" placeholder="Confirm your password" class="form-input" aria-label="Confirm your password" />
-        <input type="tel" placeholder="Enter your phone number" class="form-input" aria-label="Enter your phone number" />
+      <form class="signup-form" (ngSubmit)="signup()">
+        <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" class="form-input" aria-label="Enter your name" required />
+        <input type="email" [(ngModel)]="email" name="email" placeholder="xyz@gmail.com" class="form-input" aria-label="Enter your email" required />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" class="form-input" aria-label="Enter your password" required />
+        <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm your password" class="form-input" aria-label="Confirm your password" required />
+        <input type="tel" [(ngModel)]="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" class="form-input" aria-label="Enter your phone number" required />
         <div class="checkbox-container">
-          <input type="checkbox" id="notifications" class="checkbox-input" />
+          <input type="checkbox" id="notifications" [(ngModel)]="sendNotifications" name="sendNotifications" class="checkbox-input" />
           <label for="notifications" class="checkbox-label">
             Send me email notifications for new program launches, website or store updates (optional)
           </label>
@@ -50,4 +32,8 @@
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e64b3e8c9fbd709e4c0059e9030bc1bedbb882b73714193a0d3c084d54bfb989?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Fitness motivation" class="signup-image" />
     </div>
   </section>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
 </main>

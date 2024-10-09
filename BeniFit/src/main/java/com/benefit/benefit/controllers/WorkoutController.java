@@ -21,4 +21,12 @@ public class WorkoutController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("some thing went wrong");
         }
     }
+    @GetMapping("/workout")
+    public ResponseEntity<?> getWorkouts(){
+        try {
+            return ResponseEntity.ok(workoutService.getAllWorkouts());
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("some thing went wrong");
+        }
+    }
 }

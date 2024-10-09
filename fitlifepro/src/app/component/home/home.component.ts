@@ -10,7 +10,4 @@ export class HomeComponent {
   adviceItems: any;
   features: any;
 
-  
-
-
 }
