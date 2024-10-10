@@ -16,9 +16,11 @@ import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {LoginComponent} from "./component/login/login.component";
 import {GoalComponent} from "./component/goal/goal.component";
+import {DashboardComponent} from "./component/dashboard/dashboard.component";
 
 export const routes: Routes = [
 
+  { path:"app-dashboard" , component:DashboardComponent},
   { path:"activity" , component:ActivityComponent},
   { path: 'dashboard', component: UserDashboardComponent },
   {path: "app-workout" , component:WorkoutDashComponent},

@@ -37,5 +37,10 @@ export class UserService {
     return this.http.get<any>(BASIC_URL + "api/goal/status/"+id);
   }
 
+  getStats(): Observable<any> {
+
+    return this.http.get<any>(BASIC_URL + "api/stats");
+  }
+
 
 }
