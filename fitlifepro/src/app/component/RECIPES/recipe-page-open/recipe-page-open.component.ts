@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-recipe-page',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./recipe-page-open.component.css']
 })
 export class RecipePageComponent {
-  // Component logic here
+
+  imports: [CommonModule,  ]
 }

@@ -22,8 +22,11 @@ export class LoginComponent {
     const credentials = {
       usernameOrEmail: this.username,
       password: this.password,
+      email: ""
+
     };
-    this.authService.login(credentials).subscribe({
+
+    this.authService.login(credentials.email, credentials.password).subscribe({
       next: () => {
         console.log('Logged in successfully');
         this.router.navigate(['/dashboard']);

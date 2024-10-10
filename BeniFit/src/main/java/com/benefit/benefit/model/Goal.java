@@ -24,8 +24,14 @@ import java.util.Date;
 
     public GoalDTO getGoalDTO() {
         GoalDTO goalDTO = new GoalDTO();
-
+        goalDTO.setId(id);
+        goalDTO.setDescription(description);
+        goalDTO.setStartDate(startDate);
+        goalDTO.setEndDate(endDate);
+        goalDTO.setAchieved(achieved);
         return goalDTO;
+
+
     }
 }
 

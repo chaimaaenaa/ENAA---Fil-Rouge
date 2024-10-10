@@ -1,36 +1,50 @@
-<div>
-  <div nz-row>
-    <h1 nz-card-grid [ngStyle]="gridStyle" >Goal</h1>
+<div class="container">
+  <div class="row">
+    <h1 class="mat-h1">Goal</h1>
   </div>
-  <div nz-row>
-    <div nz-col nzFlex="2">
-      <nz-card nzType="inner" style="margin-top:16px;"nzTitle="Post New Goal">
-         <form nz-form[formGroup]="goalForm" class="custom-form">
-           <nz-form-item>
-             <nz-form-control>
-                 <textarea nz-input Placeholder="Enter description"
-                           formControlName="description" [nzAutosize]="{minRows:2,maxRows:6}" ></textarea>
-             </nz-form-control>
-           </nz-form-item>
+  <div class="row">
+    <div class="col-4">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Post New Goal</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="goalForm" class="custom-form" (ngSubmit)="submitForm()">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Description</mat-label>
+              <textarea matInput placeholder="Enter description"
+                        formControlName="description" rows="2" maxrows="6"></textarea>
+            </mat-form-field>
 
-           <nz-form-item>
-             <nz-form-control nzErrorTip="Please input the start date!">
-               <z-date-picker style="width:100%;" formControlName="startDate"></z-date-picker>
-             </nz-form-control>
-           </nz-form-item>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Start Date</mat-label>
+              <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+              <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+              <mat-datepicker #startPicker></mat-datepicker>
+              <mat-error *ngIf="goalForm.get('startDate')?.hasError('required')">
+                Please input the start date!
+              </mat-error>
+            </mat-form-field>
 
-           <nz-form-item>
-             <nz-form-control nzErrorTip="Please input the end date!">
-               <z-date-picker style="width:100%;" formControlName="endDate"></z-date-picker>
-             </nz-form-control>
-           </nz-form-item>
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>End Date</mat-label>
+              <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+              <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+              <mat-datepicker #endPicker></mat-datepicker>
+              <mat-error *ngIf="goalForm.get('endDate')?.hasError('required')">
+                Please input the end date!
+              </mat-error>
+            </mat-form-field>
 
-           <button nz-button nzType="primary" nzBlock class="w-100" [disabled]="goalForm.invalid" ]>Post Goal</button>
-         </form>
-      </nz-card>
+            <button mat-raised-button color="primary" class="w-100" [disabled]="goalForm.invalid">
+              Post Goal
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </div>
-    <div nz-col nzFlex="3" style="margin-left:20px;">
-
+    <div class="col-8">
+      <!-- Content for the right column -->
     </div>
   </div>
 </div>

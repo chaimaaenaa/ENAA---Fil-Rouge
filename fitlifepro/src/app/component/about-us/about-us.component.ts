@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-about-us',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.css'] // Fixed 'styleUrl' to 'styleUrls'
 })
 export class AboutUsComponent {
+  imports: [CommonModule,  ]
+
   // Corrected the array structure
   sections = [
     { label: 'Recipes', isActive: false },
