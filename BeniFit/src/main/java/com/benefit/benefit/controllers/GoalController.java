@@ -33,4 +33,12 @@ public class GoalController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went wrong");
         }
     }
+    @GetMapping("/goal/status/{id}")
+    public ResponseEntity<?> updateStatus(@PathVariable Long id){
+        try {
+            return ResponseEntity.ok(goalService.updateStatus(id));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
 }

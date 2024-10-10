@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import {CommonModule} from "@angular/common";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-us',
-  standalone: true,
   templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.css'] // Fixed 'styleUrl' to 'styleUrls'
+  styleUrls: ['./about-us.component.css'],
+  standalone: true,
+  imports: [CommonModule]  // Correct way to include imports in a standalone component
 })
 export class AboutUsComponent {
-  imports: [CommonModule,  ]
+  navItems = [
 
-  // Corrected the array structure
-  sections = [
+
     { label: 'Recipes', isActive: false },
     { label: 'Gift A Plan', isActive: false }
   ];
@@ -34,5 +34,4 @@ export class AboutUsComponent {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet'
     }
   ];
-  navItems: any;
 }

@@ -4,10 +4,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-recipe-page',
   templateUrl: './recipe-page-open.component.html',
+  styleUrls: ['./recipe-page-open.component.css'],
   standalone: true,
-  styleUrls: ['./recipe-page-open.component.css']
+  imports: [CommonModule]  // Correct way to include imports in a standalone component
 })
 export class RecipePageComponent {
-
-  imports: [CommonModule,  ]
-}
+  recipes: any[] = [];}

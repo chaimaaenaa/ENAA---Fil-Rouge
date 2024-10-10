@@ -44,7 +44,28 @@
       </mat-card>
     </div>
     <div class="col-8">
-      <!-- Content for the right column -->
+      <mat-card style="margin-top:20px;">
+        <mat-card-header>
+          <mat-card-title>Past Goals</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let goal of goals">
+              <div class="goal-item">
+                Description: <strong>{{goal.description}}</strong>
+                -
+                Start date: <strong>{{goal.startDate | date}}</strong>
+                -
+                End date: <strong>{{goal.endDate | date}}</strong>
+                -
+                Achieved: <strong>{{goal.achieved}}</strong>
+                <mat-icon *ngIf="!goal.achieved"  (click)="updateStatus(goal.id)" )
+                          color="primary" style="margin-left:15px;">check_circle</mat-icon>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>

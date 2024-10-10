@@ -22,10 +22,20 @@ export class UserService {
     return this.http.post<any>(BASIC_URL + "api/workout", workoutDto);
   }
   getWorkouts(): Observable<any> {
-    return this.http.get<any>(BASIC_URL + "api/Workouts");
+    return this.http.get<any>(BASIC_URL + "api/workouts");
   }
   postGoal(goalDto: any): Observable<any> {
     return this.http.post<any>(BASIC_URL + "api/goal", goalDto);
   }
+
+  getGoal(): Observable<any> {
+
+    return this.http.get<any>(BASIC_URL + "api/goals");
+  }
+  updateGoalStatus(id:number): Observable<any> {
+
+    return this.http.get<any>(BASIC_URL + "api/goal/status/"+id);
+  }
+
 
 }

@@ -5,18 +5,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import {CommonModule} from "@angular/common";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    MatSnackBarModule,
     RouterOutlet,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    CommonModule
   ],
   template: `
     <mat-sidenav-container>
