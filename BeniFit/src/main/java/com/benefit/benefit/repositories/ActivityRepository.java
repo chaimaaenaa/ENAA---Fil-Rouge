@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.awt.print.Pageable;
 import java.util.List;
 @Repository
 public interface ActivityRepository extends JpaRepository<Activity, Long> {
@@ -17,4 +18,11 @@ public interface ActivityRepository extends JpaRepository<Activity, Long> {
     @Query("SELECT SUM(a.caloriesBurned) FROM Activity a")
 
     Integer getTotalActivityCalories();
+
+
+
+    @Query("SELECT a FROM Activity a ORDER BY a.date DESC")
+    List<Activity> findLast7Activities(Pageable pageable);
+
+
 }

@@ -1,5 +1,6 @@
 package com.benefit.benefit.controllers;
 
+import com.benefit.benefit.dto.GraphDTO;
 import com.benefit.benefit.services.StatsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,16 @@ public class StatsController {
     @GetMapping("/stats")
     public ResponseEntity<?> getStats(){
         return ResponseEntity.ok(statsService.getStats());
+    }
+    @GetMapping("/graphs")
+
+    public ResponseEntity<?> getGraphStats(){
+        GraphDTO graphDTO = statsService.getGraphStats();
+        if(graphDTO != null){
+            return ResponseEntity.ok(graphDTO);
+        }else {
+            return ResponseEntity.status(404).body(null);
+        }
     }
 
 }
