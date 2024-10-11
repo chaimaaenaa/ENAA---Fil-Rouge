@@ -55,7 +55,7 @@ public class StatsService {
 
     public GraphDTO getGraphStats() {
         Pageable pageable = PageRequest.of(0, 7);
-        List<Workout> workouts = workoutRepository.findLast7Workouts(pageable);
+        List<Workout> workouts = workoutRepository.findLast7Workouts( pageable);
         List<Activity> activities = activityRepository.findLast7Activities(pageable);
 
         GraphDTO graphDTO = new GraphDTO();
