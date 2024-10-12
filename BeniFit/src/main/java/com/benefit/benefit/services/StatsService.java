@@ -11,7 +11,7 @@ import com.benefit.benefit.repositories.WorkoutRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.config.PageableHandlerMethodArgumentResolverCustomizer;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 
@@ -24,7 +24,6 @@ public class StatsService {
     private final GoalRepository goalRepository;
     private final ActivityRepository activityRepository;
     private final WorkoutRepository workoutRepository;
-    private final PageableHandlerMethodArgumentResolverCustomizer pageableCustomizer;
 
     public StatsDTO getStats(){
         Long achievedGoals = goalRepository.countAchievedGoals();
@@ -55,12 +54,12 @@ public class StatsService {
 
     public GraphDTO getGraphStats() {
         Pageable pageable = PageRequest.of(0, 7);
-        List<Workout> workouts = workoutRepository.findLast7Workouts( pageable);
+        List<Workout> workouts = workoutRepository.findLast7Workouts(pageable);
         List<Activity> activities = activityRepository.findLast7Activities(pageable);
 
         GraphDTO graphDTO = new GraphDTO();
-        graphDTO.setWorkouts(workouts.stream().map(WorkoutDTO::getWorkoutDto).collect(Collectors.toList()));
-        graphDTO.setActivities(activities.stream().map(ActivityDTO::getActivityDto).collect(Collectors.toList()));
+        graphDTO.setWorkouts(workouts.stream().map(Workout::getWorkoutDto).collect(Collectors.toList()));
+        graphDTO.setActivities(activities.stream().map(Activity::getActivityDTO).collect(Collectors.toList()));
         return graphDTO;
     }
 }

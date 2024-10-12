@@ -11,12 +11,12 @@ import java.util.List;
 
 
 
-import com.benefit.benefit.service.AdminService;
+import com.benefit.benefit.services.AdminService;
 
 
 
 
-public class AdminController {
+
     @RestController
     @RequestMapping("/api/admins")
     public class AdminController {
@@ -24,36 +24,21 @@ public class AdminController {
         @Autowired
         private AdminService adminService;
 
-        /**
-         * Retrieve all admins.
-         *
-         * @return List of all admins.
-         */
+
         @GetMapping("/all")
         public ResponseEntity<List<Admin>> getAllAdmins() {
             List<Admin> admins = adminService.getAllAdmins();
             return new ResponseEntity<>(admins, HttpStatus.OK);
         }
 
-        /**
-         * Retrieve an admin by ID.
-         *
-         * @param id The ID of the admin to retrieve.
-         * @return The admin with the specified ID.
-         */
+
         @GetMapping("/details/{id}")
         public ResponseEntity<Admin> getAdminById(@PathVariable Long id) {
             Admin admin = adminService.getAdminById(id);
             return admin != null ? new ResponseEntity<>(admin, HttpStatus.OK) : new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        /**
-         * Update an existing admin.
-         *
-         * @param id The ID of the admin to update.
-         * @param admin The admin with updated information.
-         * @return The updated admin.
-         */
+
         @PutMapping("/update/{id}")
         public ResponseEntity<Admin> updateAdmin(@PathVariable Long id, @RequestBody Admin admin) {
             admin.setId(id);
@@ -61,15 +46,11 @@ public class AdminController {
             return new ResponseEntity<>(updatedAdmin, HttpStatus.OK);
         }
 
-        /**
-         * Delete an admin by ID.
-         *
-         * @param id The ID of the admin to delete.
-         */
+
         @DeleteMapping("/delete/{id}")
         public ResponseEntity<Void> deleteAdmin(@PathVariable Long id) {
             adminService.deleteAdmin(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
-}
+
