@@ -1,137 +1,392 @@
-<header class="header">
-  <nav class="navigation">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#" class="nav-link">About Us</a>
-    <a href="#" class="nav-link">Contact Us</a>
-    <a href="#" class="nav-link">Category</a>
-    <a href="#" class="nav-link">Blogs</a>
-    <a href="#" class="nav-link">Recipes</a>
-    <a href="#" class="nav-link nav-link-active">Gift A Plan</a>
-  </nav>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc24d4c7ff28c1d007543c0c4e6a0cce93020b02716bd06cfd4b4bc0da2c9a20?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
-</header>
+<style>
+  .pricing-section {
+    background-color: #242424;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: start;
+    padding: 80px 80px 426px 0;
+  }
 
-<main class="main-content">
-  <section class="hero-section">
-    <div class="hero-image"></div>
+  .pricing-container {
+    display: flex;
+    width: 100%;
+    max-width: 2192px;
+    gap: 20px;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  .hero-image {
+    background-color: #454545;
+    display: flex;
+    width: 970px;
+    max-width: 100%;
+    height: 679px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto 0;
+  }
+
+  .hero-title {
+    color: #fed233;
+    text-align: center;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  .hero-description {
+    align-self: stretch;
+    margin-top: 50px;
+  }
+
+  .cta-button {
+    background-color: #fed233;
+    margin-top: 85px;
+    overflow: hidden;
+    padding: 8px 44px;
+  }
+
+  .pricing-header {
+    display: flex;
+    width: 100%;
+    max-width: 2206px;
+    flex-direction: column;
+    align-items: start;
+    margin: 153px 0 0 50px;
+  }
+
+  .pricing-title {
+    color: #fed233;
+    text-align: center;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  .pricing-subtitle {
+    color: #fff;
+    margin-top: 50px;
+    width: 1351px;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  .pricing-plans {
+    align-self: center;
+    display: flex;
+    margin-top: 85px;
+    width: 100%;
+    max-width: 1875px;
+    gap: 40px 100px;
+    flex-wrap: wrap;
+  }
+
+  .pricing-plan {
+    background-color: #fff;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07);
+    display: flex;
+    padding-bottom: 16px;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .plan-header {
+    background-color: #fed233;
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px 126px 0;
+  }
+
+  .plan-type {
+    background-color: #fffdf6;
+    align-self: start;
+    color: #454545;
+    padding: 10px 54px;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  .plan-price {
+    color: #454545;
+    align-self: center;
+    margin: 31px 0 -25px;
+    font: 700 132px Roboto, sans-serif;
+  }
+
+  .plan-features {
+    display: flex;
+    width: 446px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: start;
+    color: #454545;
+    margin: 61px 0 0 54px;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 40px 47px;
+  }
+
+  .feature-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 50px;
+  }
+
+  .feature-text {
+    flex-basis: auto;
+    margin: auto 0;
+  }
+
+  .get-started-button {
+    background-color: #454545;
+    align-self: end;
+    overflow: hidden;
+    color: #fff;
+    font-weight: 600;
+    margin: 61px 42px 0 0;
+    padding: 10px 31px;
+  }
+
+  .enroll-text {
+    align-self: end;
+    margin: 24px 25px 0 0;
+  }
+
+  .monthly-price {
+    align-self: end;
+    margin-top: 10px;
+  }
+
+  .services-title {
+    color: #fed233;
+    text-align: center;
+    margin-top: 153px;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  .services-container {
+    align-self: stretch;
+    display: flex;
+    margin-top: 85px;
+    gap: 40px 100px;
+    flex-wrap: wrap;
+  }
+
+  .service-card {
+    background-color: #fff;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+    padding: 75px 0 0 25px;
+  }
+
+  .service-title {
+    color: #454545;
+    text-align: center;
+    align-self: center;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  .service-content {
+    margin-top: 15px;
+  }
+
+  .service-description {
+    color: #454545;
+    margin: 43px -106px 0 0;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  .service-image {
+    aspect-ratio: 0.97;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  @media (max-width: 991px) {
+    .pricing-section {
+      padding: 0 20px 100px 0;
+    }
+
+    .pricing-container,
+    .pricing-header,
+    .pricing-plans,
+    .plan-header,
+    .plan-features,
+    .services-container,
+    .service-card {
+      max-width: 100%;
+    }
+
+    .hero-title,
+    .pricing-title,
+    .services-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+
+    .hero-description,
+    .pricing-subtitle {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .cta-button,
+    .pricing-plans,
+    .plan-features,
+    .get-started-button,
+    .services-container {
+      margin-top: 40px;
+    }
+
+    .cta-button,
+    .plan-type,
+    .get-started-button {
+      padding: 0 20px;
+    }
+
+    .plan-price {
+      max-width: 100%;
+      margin-bottom: 10px;
+      font-size: 40px;
+    }
+
+    .monthly-price,
+    .enroll-text {
+      margin-right: 10px;
+    }
+
+    .service-image {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<section class="pricing-section">
+  <div class="pricing-container">
+    <div class="hero-image" role="img" aria-label="Decorative image representing gift plans"></div>
     <div class="hero-content">
-      <h1 class="hero-title">Gift Your <span class="highlight">Loved Ones</span></h1>
-      <p class="hero-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus
-      </p>
+      <h1 class="hero-title">Gift Your <span>Loved Ones</span></h1>
+      <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus</p>
       <button class="cta-button">See Plans</button>
     </div>
-  </section>
+  </div>
 
-  <section class="pricing-section">
-    <h2 class="section-title">Take A Look at Our <span class="highlight">Affordable Pricing</span></h2>
-    <p class="section-description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.
-    </p>
-    <div class="pricing-plans">
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <span class="plan-type">ONE TIME</span>
-          <span class="plan-price">Rs. 9998</span>
-        </div>
-        <ul class="plan-features">
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Workout Plan</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Nutrition Plan</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Health Tips</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Expert Guidance</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Program Revision</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Money Back Guarantee</span>
-          </li>
-        </ul>
-        <button class="plan-cta">Get Started</button>
-        <p class="plan-note">Enroll Now For Just</p>
-        <p class="plan-rate">Rs.3,333 Per Month</p>
+  <div class="pricing-header">
+    <h2 class="pricing-title"><span>Take A Look at Our</span> Affordable Pricing</h2>
+    <p class="pricing-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.</p>
+  </div>
+
+  <div class="pricing-plans">
+    <div class="pricing-plan">
+      <div class="plan-header">
+        <span class="plan-type">ONE TIME</span>
+        <span class="plan-price">Rs. 9998</span>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <span class="plan-type">THREE TIMES</span>
-          <span class="plan-price">Rs. 3999</span>
-        </div>
-        <ul class="plan-features">
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Workout Plan</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Nutrition Plan</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Health Tips</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Expert Guidance</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Program Revision</span>
-          </li>
-          <li class="feature-item">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
-            <span class="feature-text">Money Back Guarantee</span>
-          </li>
-        </ul>
-        <button class="plan-cta">Get Started</button>
-        <p class="plan-note">Enroll Now For Just</p>
-        <p class="plan-rate">Rs.3,999 Per Month</p>
+      <ul class="plan-features">
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Workout Plan</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Nutrition Plan</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Health Tips</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Expert Guidance</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Program Revision</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Money Back Guarantee</span>
+        </li>
+      </ul>
+      <button class="get-started-button">Get Started</button>
+      <p class="enroll-text">Enroll Now For Just</p>
+      <p class="monthly-price">Rs.3,333 Per Month</p>
+    </div>
+
+    <div class="pricing-plan">
+      <div class="plan-header">
+        <span class="plan-type">THREE TIMES</span>
+        <span class="plan-price">Rs. 3999</span>
+      </div>
+      <ul class="plan-features">
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Workout Plan</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Nutrition Plan</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Health Tips</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Expert Guidance</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Program Revision</span>
+        </li>
+        <li class="feature-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/157e3674aea30972ba6182a499a7d549c2f337842b8debe6d82700b35087d8e5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="feature-icon" />
+          <span class="feature-text">Money Back Guarantee</span>
+        </li>
+      </ul>
+      <button class="get-started-button">Get Started</button>
+      <p class="enroll-text">Enroll Now For Just</p>
+      <p class="monthly-price">Rs.3,999 Per Month</p>
+    </div>
+  </div>
+
+  <h2 class="services-title">What <span>We Will Provide</span></h2>
+
+  <div class="services-container">
+    <div class="service-card">
+      <h3 class="service-title">10 + Experience</h3>
+      <div class="service-content">
+        <p class="service-description">Get Guidance of our experienced coach Get Guidance of our experienced coach</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c28e12f4985c055e6df2001372716c8bb6cab0e581e9e15d0bca5c79c53bca4?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Experienced coach illustration" class="service-image" />
       </div>
     </div>
-  </section>
 
-  <section class="features-section">
-    <h2 class="section-title">What <span class="highlight">We Will Provide</span></h2>
-    <div class="feature-cards">
-      <article class="feature-card">
-        <h3 class="feature-title">10+ Experience</h3>
-        <div class="feature-content">
-          <p class="feature-description">
-            Get Guidance of our experienced coach Get Guidance of our experienced coach
-          </p>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c28e12f4985c055e6df2001372716c8bb6cab0e581e9e15d0bca5c79c53bca4?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Experienced coach guiding a client" class="feature-image" />
-        </div>
-      </article>
-      <article class="feature-card">
-        <h3 class="feature-title">Best Plan</h3>
-        <div class="feature-content">
-          <p class="feature-description">
-            We will provide you best plan for your body. We will provide you best plan for your body.
-          </p>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b47d16378550f1526d19a234200528a19daee6cb3efc1ebc48d7dbe58e8868ab?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Customized fitness plan illustration" class="feature-image" />
-        </div>
-      </article>
-      <article class="feature-card">
-        <h3 class="feature-title">Guarantee Results</h3>
-        <div class="feature-content">
-          <p class="feature-description">
-            Get Guidance of our experienced coach Get Guidance of our experienced coach
-          </p>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/87c18ef4c1a591ca8c13718d02273ed40aaed88fa50954f6dd4a114dd3cf2eda?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Guaranteed results chart" class="feature-image" />
-        </div>
-      </article>
+    <div class="service-card">
+      <h3 class="service-title">Best Plan</h3>
+      <div class="service-content">
+        <p class="service-description">We will provide you best plan for your body. We will provide you best plan for your body.</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b47d16378550f1526d19a234200528a19daee6cb3efc1ebc48d7dbe58e8868ab?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Best plan illustration" class="service-image" />
+      </div>
     </div>
-  </section>
-</main>
+
+    <div class="service-card">
+      <h3 class="service-title">Guarantee Results</h3>
+      <div class="service-content">
+        <p class="service-description">Get Guidance of our experienced coach Get Guidance of our experienced coach</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/87c18ef4c1a591ca8c13718d02273ed40aaed88fa50954f6dd4a114dd3cf2eda?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Guaranteed results illustration" class="service-image" />
+      </div>
+    </div>
+  </div>
+</section>

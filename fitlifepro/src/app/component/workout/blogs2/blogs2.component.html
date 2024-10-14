@@ -1,122 +1,478 @@
-<header class="header">
-  <nav class="navigation">
-    <a href="#" class="nav-link nav-link-active">Home</a>
-    <a href="#" class="nav-link">About Us</a>
-    <a href="#" class="nav-link">Contact Us</a>
-    <a href="#" class="nav-link">Category</a>
-    <a href="#" class="nav-link">Blogs</a>
-    <a href="#" class="nav-link">Recipes</a>
-    <a href="#" class="nav-link">Gift A Plan</a>
-  </nav>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0dbe7b21803d02325050a411149b7495f11bd0b175953fae8c4f590dd3d45259?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Header logo" class="header-logo" />
-</header>
+<style>
+  .blog-article {
+    max-width: none !important;
+    display: flex;
+    flex-direction: column;
+  }
 
-<main class="main-content">
-  <article class="article">
-    <h1 class="article-title">Name of the article will be here</h1>
-    <div class="article-meta">
-      <time datetime="2022-01-24" class="article-date">24 January 2022</time>
-      <span class="article-author">-Name here</span>
-    </div>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b4869c032246485c3185bd06eb7f7470fdc97a82be29f041522fc383a2ac0c6?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article main image" class="article-image" />
-    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas.</p>
+  .article-content {
+    background-color: #242424;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 147px 0 297px;
+  }
 
-    <section class="article-section">
-      <div class="article-image-wrapper">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3961d517093aa6cb5623d436653db4676f62695427cbd60f87de6bca5075550f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article section image" class="article-section-image" />
+  .article-header {
+    display: flex;
+    margin-left: 50px;
+    width: 100%;
+    max-width: 1578px;
+    flex-direction: column;
+    align-items: start;
+    color: #fed233;
+    font: 600 42px 'Open Sans', sans-serif;
+  }
+
+  .article-title {
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  .article-date {
+    margin-top: 49px;
+  }
+
+  .article-author {
+    margin-top: 20px;
+  }
+
+  .article-image {
+    aspect-ratio: 1.66;
+    object-fit: contain;
+    object-position: center;
+    width: 1249px;
+    align-self: end;
+    margin-top: 267px;
+    max-width: 100%;
+  }
+
+  .article-body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    margin: 255px 0 -59px;
+    padding: 0 50px;
+  }
+
+  .article-text {
+    color: #fff;
+    font: 400 32px 'Open Sans', sans-serif;
+  }
+
+  .image-text-container {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1938px;
+  }
+
+  .image-text-wrapper {
+    gap: 20px;
+    display: flex;
+  }
+
+  .image-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 0;
+  }
+
+  .content-image {
+    aspect-ratio: 1.64;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .text-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  .comments-section {
+    color: #fff;
+    margin-top: 112px;
+    font: 600 42px 'Open Sans', sans-serif;
+  }
+
+  .comment {
+    color: #fff;
+    margin-top: 41px;
+    font: 400 32px 'Open Sans', sans-serif;
+  }
+
+  .comment-text {
+    color: #fff;
+    margin-top: 18px;
+    font: 300 24px 'Open Sans', sans-serif;
+  }
+
+  .comment-actions {
+    display: flex;
+    margin-top: 21px;
+    gap: 16px;
+    color: #004ca6;
+    white-space: nowrap;
+    font: 300 18px 'Open Sans', sans-serif;
+  }
+
+  .action-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 25px;
+  }
+
+  .nested-comment {
+    margin: 37px 0 0 135px;
+  }
+
+  .similar-articles-section {
+    align-self: stretch;
+    margin: 219px 46px 0 0;
+  }
+
+  .similar-articles-grid {
+    gap: 20px;
+    display: flex;
+  }
+
+  .similar-article-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 69%;
+    margin-left: 0;
+  }
+
+  .similar-articles-title {
+    color: #fed233;
+    text-align: center;
+    align-self: start;
+    font: 600 42px 'Open Sans', sans-serif;
+  }
+
+  .similar-articles-wrapper {
+    margin-top: 50px;
+  }
+
+  .similar-article {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .similar-article-image {
+    aspect-ratio: 1.64;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  .similar-article-title {
+    color: #fed233;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+
+  .similar-article-excerpt {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 13px;
+  }
+
+  .article-meta {
+    align-self: stretch;
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    gap: 40px 100px;
+    flex-wrap: wrap;
+  }
+
+  .read-article-btn {
+    background-color: #fed233;
+    margin-top: 41px;
+    flex-grow: 1;
+    overflow: hidden;
+    color: #fff;
+    width: 100%;
+    padding: 8px 25px;
+    font: 400 32px 'Open Sans', sans-serif;
+  }
+
+  .article-date-author {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    color: #fed233;
+    font: 400 32px 'Open Sans', sans-serif;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 991px) {
+    .article-content {
+      max-width: 100%;
+      padding: 100px 0;
+    }
+
+    .article-header {
+      max-width: 100%;
+    }
+
+    .article-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+
+    .article-date {
+      margin-top: 40px;
+    }
+
+    .article-image {
+      margin-top: 40px;
+    }
+
+    .article-body {
+      max-width: 100%;
+      margin: 40px 0 10px;
+      padding: 0 20px;
+    }
+
+    .article-text {
+      max-width: 100%;
+    }
+
+    .image-text-container {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .image-text-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .image-column,
+    .text-column {
+      width: 100%;
+    }
+
+    .content-image {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .comments-section {
+      margin-top: 40px;
+    }
+
+    .comment {
+      margin-top: 40px;
+    }
+
+    .comment-actions {
+      white-space: initial;
+    }
+
+    .nested-comment {
+      margin-left: 10px;
+    }
+
+    .similar-articles-section {
+      max-width: 100%;
+      margin: 40px 10px 0 0;
+    }
+
+    .similar-articles-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .similar-article-column {
+      width: 100%;
+    }
+
+    .similar-articles-wrapper {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .similar-article {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+
+    .similar-article-image {
+      max-width: 100%;
+    }
+
+    .similar-article-title,
+    .similar-article-excerpt {
+      max-width: 100%;
+    }
+
+    .article-meta {
+      max-width: 100%;
+    }
+
+    .read-article-btn {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .article-date-author {
+      margin-top: 40px;
+    }
+  }
+</style>
+
+<article class="blog-article">
+  <div class="article-content">
+    <header class="article-header">
+      <h1 class="article-title">Name of the article will be here</h1>
+      <time class="article-date" datetime="2024-01-24">24 January 2024</time>
+      <p class="article-author">-Name here</p>
+    </header>
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c155a7c31c8c278f411db933410dffe757c4f322f97b575c000b4a89dd69696b?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article main image" class="article-image" />
+    <div class="article-body">
+      <p class="article-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas.
+      </p>
+      <div class="image-text-container">
+        <div class="image-text-wrapper">
+          <div class="image-column">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3961d517093aa6cb5623d436653db4676f62695427cbd60f87de6bca5075550f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article content image" class="content-image" />
+          </div>
+          <div class="text-column">
+            <p class="article-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat.
+            </p>
+          </div>
+        </div>
       </div>
-      <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat.</p>
+      <p class="article-text">
+        Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa.
+      </p>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b4869c032246485c3185bd06eb7f7470fdc97a82be29f041522fc383a2ac0c6?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Additional article image" class="article-image" />
+      <p class="article-text">
+        Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa.
+      </p>
+    </div>
+    <section class="comments-section">
+      <h2>Comments</h2>
+      <div class="comment">
+        <h3 class="comment-author">Name will be here</h3>
+        <p class="comment-text">
+        <p class="comment-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt faucibus lobortis convallis est malesuada duis. Pellentesque at sed purus, eget ac parturient quis.
+        </p>
+        <div class="comment-actions">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <button>Reply</button>
+        </div>
+      </div>
+      <div class="comment nested-comment">
+        <h3 class="comment-author">Name will be here</h3>
+        <p class="comment-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt
+        </p>
+        <div class="comment-actions">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <button>Reply</button>
+        </div>
+      </div>
+      <div class="comment">
+        <h3 class="comment-author">Name will be here</h3>
+        <p class="comment-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt faucibus lobortis convallis est malesuada duis. Pellentesque at sed purus, eget ac parturient quis.
+        </p>
+        <div class="comment-actions">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
+          <button>Reply</button>
+        </div>
+      </div>
     </section>
-
-    <p class="article-text">Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa.</p>
-
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b4869c032246485c3185bd06eb7f7470fdc97a82be29f041522fc383a2ac0c6?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Additional article image" class="article-image" />
-
-    <p class="article-text">Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa. Dolor viverra id aliquet purus quis vestibulum. Laoreet gravida elementum sed varius metus lobortis ornare cras. pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida lectus sed consequat. Et fringilla est malesuada amet integer ac, posuere ac nec. Sit arcu blandit magnis id etiam. Cursus nisl enim mauris, pharetra risus adipiscing pretium. Velit nibh pretium tincidunt adipiscing lectus massa.</p>
-  </article>
-
-  <section class="comments-section">
-    <h2 class="comments-title">Comments</h2>
-    <div class="comment">
-      <h3 class="comment-author">Name will be here</h3>
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt faucibus lobortis convallis est malesuada duis. Pellentesque at sed purus, eget ac parturient quis.</p>
-      <div class="comment-actions">
-        <button class="action-button" aria-label="Like">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="action-button" aria-label="Dislike">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="reply-button">Reply</button>
-      </div>
-    </div>
-    <div class="comment comment-reply">
-      <h3 class="comment-author">Name will be here</h3>
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt</p>
-      <div class="comment-actions">
-        <button class="action-button" aria-label="Like">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="action-button" aria-label="Dislike">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="reply-button">Reply</button>
-      </div>
-    </div>
-    <div class="comment">
-      <h3 class="comment-author">Name will be here</h3>
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra laoreet orci blandit sagittis, purus. Proin rhoncus enim enim cras aliquam, vel at consectetur. Felis suspendisse sollicitudin mattis interdum eget ornare. Cursus a parturient facilisis in aliquam sed a habitant. Mi donec ullamcorper ut fusce dolor, mauris tincidunt. Ut bibendum adipiscing tincidunt faucibus lobortis convallis est malesuada duis. Pellentesque at sed purus, eget ac parturient quis.</p>
-      <div class="comment-actions">
-        <button class="action-button" aria-label="Like">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/de088b949196a1a0640c4895cba68f9670329c1167f2045536d4512858b30217?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="action-button" aria-label="Dislike">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7e1d3e48e251dfa5ccbed005ac53da903cd89280d4aef59425b8209dd8ea5db?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="action-icon" />
-        </button>
-        <button class="reply-button">Reply</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="similar-articles">
-    <h2 class="similar-articles-title">Similar Articles</h2>
-    <div class="article-grid">
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article thumbnail" class="article-card-image" />
-        <h3 class="article-card-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-card-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-card-footer">
-          <button class="read-article-button">Read Article</button>
-          <div class="article-card-meta">
-            <time datetime="2022-01-24" class="article-card-date">24 January 2022</time>
-            <span class="article-card-author">-Name here</span>
+    <section class="similar-articles-section">
+      <div class="similar-articles-grid">
+        <div class="similar-article-column">
+          <h2 class="similar-articles-title">Similar Articles</h2>
+          <div class="similar-articles-wrapper">
+            <div class="similar-article">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Similar article thumbnail" class="similar-article-image" />
+              <h3 class="similar-article-title">Name of the article will be here Name of the article will be here</h3>
+              <p class="similar-article-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+              </p>
+            </div>
+            <div class="similar-article">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Similar article thumbnail" class="similar-article-image" />
+              <h3 class="similar-article-title">Name of the article will be here Name of the article will be here</h3>
+              <p class="similar-article-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+              </p>
+            </div>
           </div>
         </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article thumbnail" class="article-card-image" />
-        <h3 class="article-card-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-card-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-card-footer">
-          <button class="read-article-button">Read Article</button>
-          <div class="article-card-meta">
-            <time datetime="2022-01-24" class="article-card-date">24 January 2022</time>
-            <span class="article-card-author">-Name here</span>
+        <div class="similar-article-column">
+          <div class="similar-article">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Similar article thumbnail" class="similar-article-image" />
+            <h3 class="similar-article-title">Name of the article will be here Name of the article will be here</h3>
+            <p class="similar-article-excerpt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            </p>
           </div>
         </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article thumbnail" class="article-card-image" />
-        <h3 class="article-card-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-card-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-card-footer">
-          <button class="read-article-button">Read Article</button>
-          <div class="article-card-meta">
-            <time datetime="2022-01-24" class="article-card-date">24 January 2022</time>
-            <span class="article-card-author">-Name here</span>
+      </div>
+      <div class="article-meta">
+        <div class="article-meta-item">
+          <button class="read-article-btn">Read Article</button>
+          <div class="article-date-author">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <p class="article-author">-Name here</p>
           </div>
         </div>
-      </article>
-    </div>
-  </section>
-</main>
+        <div class="article-meta-item">
+          <button class="read-article-btn">Read Article</button>
+          <div class="article-date-author">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <p class="article-author">-Name here</p>
+          </div>
+        </div>
+        <div class="article-meta-item">
+          <button class="read-article-btn">Read Article</button>
+          <div class="article-date-author">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <p class="article-author">-Name here</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</article>

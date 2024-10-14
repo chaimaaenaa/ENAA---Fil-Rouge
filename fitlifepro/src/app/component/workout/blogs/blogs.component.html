@@ -1,168 +1,280 @@
-<header class="main-header">
-  <nav class="main-nav">
-    <ul class="nav-list">
-      <li><a href="#" class="nav-link">Home</a></li>
+
+
+<style>
+  .navbar {
+    font-family: Open Sans, sans-serif;
+    padding-top: 3px;
+  }
+  .navbar-content {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 40px;
+  }
+  .company-logo {
+    aspect-ratio: 0.99;
+    object-fit: contain;
+    width: 149px;
+    margin-top: -6px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 11px;
+    font-size: 18px;
+    color: #454545;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav-link-active {
+    color: #fed233;
+    font-weight: 600;
+  }
+  .nav-actions {
+    display: flex;
+    gap: 24px;
+    font-size: 24px;
+    align-items: center;
+  }
+  .cart-button {
+    width: 50px;
+    height: 44px;
+    background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-button {
+    border-radius: 20px;
+    background-color: #454545;
+    color: #fed233;
+    text-decoration: none;
+    padding: 9px 27px;
+    font-weight: 600;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 991px) {
+    .navbar-content {
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+    .nav-links, .nav-actions {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+    .nav-button {
+      padding: 9px 20px;
+    }
+  }
+  .blogs-section { background-color: #242424; display: flex; flex-direction: column; overflow: hidden; padding: 143px 50px 517px; }
+  .section-title { color: #454545; text-align: center; font: italic 700 72px Roboto, sans-serif; }
+  .section-subtitle { color: #5a5a5a; text-align: center; margin-top: 27px; max-width: 849px; font: 600 42px Open Sans, sans-serif; }
+  .search-container { display: flex; width: 100%; max-width: 1725px; gap: 20px; justify-content: space-between; margin: 63px 0 0; font: 400 32px Open Sans, sans-serif; }
+  .search-input { background-color: #f1f1f1; padding: 22px 33px; }
+  .search-button { background-color: #fed233; width: 97px; height: 88px; }
+  .category-title { color: #454545; text-align: center; margin: 70px 0 0; font: 600 42px Open Sans, sans-serif; }
+  .category-list { display: flex; width: 100%; max-width: 2043px; gap: 20px; justify-content: space-between; margin: 45px 0 0; font: 400 32px Open Sans, sans-serif; }
+  .category-item { display: flex; flex-direction: column; align-items: center; }
+  .category-image { aspect-ratio: 1; object-fit: contain; width: 100%; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); border-radius: 50%; }
+  .category-name { margin-top: 30px; }
+  .popular-articles-title { color: #454545; text-align: center; margin: 121px 0 0; font: 600 42px Open Sans, sans-serif; }
+  .article-grid { display: flex; margin-top: 50px; width: 100%; max-width: 2255px; gap: 40px 100px; flex-wrap: wrap; }
+  .article-item { display: flex; flex-direction: column; }
+  .article-image { aspect-ratio: 1.47; object-fit: contain; width: 100%; max-width: 932px; }
+  .article-content { display: flex; flex-direction: column; color: #fed233; font: 400 32px Open Sans, sans-serif; }
+  .article-title { color: #fed233; }
+  .article-description { color: #fff; font-size: 24px; font-weight: 300; margin-top: 24px; }
+  .article-date { color: #454545; margin-top: 17px; }
+  .article-author { color: #454545; margin-top: 13px; }
+  .read-more-button { background-color: #fed233; align-self: start; margin-top: 59px; color: #fff; padding: 8px 26px; }
+  .recent-articles-title { color: #454545; text-align: center; margin: 120px 0 0; font: 600 42px Open Sans, sans-serif; }
+  .recent-articles-grid { display: flex; margin-top: 50px; width: 100%; max-width: 2324px; gap: 40px 100px; flex-wrap: wrap; }
+  .recent-article-item { display: flex; flex-direction: column; flex: 1; }
+  .recent-article-image { aspect-ratio: 1.64; object-fit: contain; width: 100%; }
+  .recent-article-title { color: #fed233; font-size: 32px; font-weight: 400; margin-top: 30px; }
+  .recent-article-description { color: #fff; font-size: 24px; font-weight: 300; margin-top: 13px; }
+  .all-articles-section { margin-top: 120px; }
+  .all-articles-grid { display: flex; gap: 20px; }
+  .all-articles-column { display: flex; flex-direction: column; }
+  .all-articles-title { color: #454545; text-align: center; font: 600 42px Open Sans, sans-serif; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 991px) {
+    .blogs-section { padding: 100px 20px; }
+    .section-title { font-size: 40px; }
+    .search-container { margin-top: 40px; }
+    .search-input { padding: 0 20px; }
+    .category-title, .popular-articles-title, .recent-articles-title { margin: 40px 0 0 10px; }
+    .category-list, .article-grid, .recent-articles-grid { margin-top: 40px; }
+    .read-more-button { margin-top: 40px; padding: 0 20px; }
+    .all-articles-section { margin: 40px 10px 0 0; }
+  }
+</style>
+
+
+<nav class="navbar">
+  <div class="navbar-content">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e5188a6ffa33ceac53e40d44849bdb63fa0d1aea68f686be38a0c0e68f884c5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="company-logo" />
+    <ul class="nav-links">
+      <li><a href="home" class="nav-link nav-link-active">Home</a></li>
       <li><a href="#" class="nav-link">About Us</a></li>
       <li><a href="#" class="nav-link">Contact Us</a></li>
       <li><a href="#" class="nav-link">Category</a></li>
-      <li><a href="#" class="nav-link active">Blogs</a></li>
-      <li><a href="#" class="nav-link">Recipes</a></li>
-      <li><a href="#" class="nav-link">Gift A Plan</a></li>
+      <li><a href="#" class="nav-link">Blogs</a></li>
+      <li><a href="" class="nav-link">Recipes</a></li>
     </ul>
-  </nav>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d198183264bc3d4a8ff7b5b66ca6ce18c58710cbb3146f5a4b20f88c2c9a2ee8?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="header-logo">
-</header>
+    <div class="nav-actions">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
 
-<main class="main-content">
-  <h1 class="page-title">Blogs <span class="highlight">&</span> Articles</h1>
-  <p class="page-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+      <a href="#" class="nav-link">Gift A Plan</a>
+      <button class="cart-button" aria-label="Shopping Cart">
+        <span class="visually-hidden">Shopping Cart</span>
+      </button>
+      <a href="#" class="nav-button">Login</a>
+      <a href="#" class="nav-button">Sign up</a>
+    </div>
+  </div>
+</nav>
+<section class="blogs-section">
+  <h1 class="section-title">Blogs <span style="color: #454545;">&</span> Articles</h1>
+  <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
 
-  <form class="search-form">
+  <form class="search-container">
     <label for="searchInput" class="visually-hidden">Search here...</label>
-    <input type="search" id="searchInput" placeholder="Search here..." class="search-input">
-    <button type="submit" class="search-button" aria-label="Search"></button>
+    <input id="searchInput" type="text" class="search-input" placeholder="Search here..." aria-label="Search here">
+    <button type="submit" class="search-button" aria-label="Submit search"></button>
   </form>
 
-  <section class="categories-section">
-    <h2 class="section-title">Categories</h2>
-    <div class="categories-grid">
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/93033dbf1996e11b0f3458158171b47482d45abf54ae64ad5ea2898a38e788fa?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 1</h3>
-      </article>
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/32ff38433e4e329b9f7949e15896a9649ac70d06d4bb78088dcf9d7b8a95b9de?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 2</h3>
-      </article>
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e20ff142a4aa569e0bba575b0a4d535b8a66bdbf2a0b5016cf1ab00901b1479b?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 3</h3>
-      </article>
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/119c7f4f6a050700970298382ba057a2cbb204490d7bb415df8a881130cc1879?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 4</h3>
-      </article>
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a01b7f75ab2e594050995e67a55bf6450dae4170b612747d33675f6da7dffee?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 5</h3>
-      </article>
-      <article class="category-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7048a70acb50f895fa841e4ebfad2bb7b8227e5edf18394759460303f47f4139?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
-        <h3 class="category-title">Category 6</h3>
-      </article>
+  <h2 class="category-title">Categories</h2>
+  <div class="category-list">
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/93033dbf1996e11b0f3458158171b47482d45abf54ae64ad5ea2898a38e788fa?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
+      <span class="category-name">Category 1</span>
     </div>
-  </section>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/32ff38433e4e329b9f7949e15896a9649ac70d06d4bb78088dcf9d7b8a95b9de?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
+      <span class="category-name">Category 2</span>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e20ff142a4aa569e0bba575b0a4d535b8a66bdbf2a0b5016cf1ab00901b1479b?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
+      <span class="category-name">Category 3</span>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/119c7f4f6a050700970298382ba057a2cbb204490d7bb415df8a881130cc1879?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
+      <span class="category-name">Category 4</span>
+    </div>
+    <div class="category-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0a01b7f75ab2e594050995e67a55bf6450dae4170b612747d33675f6da7dffee?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="category-image">
+      <span class="category-name">Category 5</span>
+    </div>
+  </div>
 
-  <section class="popular-articles">
-    <h2 class="section-title">Popular Articles</h2>
-    <div class="articles-grid">
-      <article class="article-card featured">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ec80ed4e27d57f20b25deadbebf82ec1bb25d952408920c96bdb59341ed2749?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-      <article class="article-card">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-    </div>
-  </section>
+  <h2 class="popular-articles-title">Popular Articles</h2>
+  <div class="article-grid">
+    <article class="article-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4e3b82c870c6e3fd9ab65a9e10134649a10fefb014eceb50e16f447b9232225?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Popular article image" class="article-image">
+      <div class="article-content">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
+        <time class="article-date">24 January 2022</time>
+        <span class="article-author">-Name here</span>
+        <a href="#" class="read-more-button">Read Article</a>
+      </div>
+    </article>
 
-  <section class="recent-articles">
-    <h2 class="section-title">Recent Articles</h2>
-    <div class="articles-grid">
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ccfa0a4f9e88f93024031dbe951281a20d4470f83e621a44d8a1df265d73d8b7?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ccfa0a4f9e88f93024031dbe951281a20d4470f83e621a44d8a1df265d73d8b7?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ccfa0a4f9e88f93024031dbe951281a20d4470f83e621a44d8a1df265d73d8b7?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-    </div>
-  </section>
+    <article class="article-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4e3b82c870c6e3fd9ab65a9e10134649a10fefb014eceb50e16f447b9232225?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Popular article image" class="article-image">
+      <div class="article-content">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
+        <time class="article-date">24 January 2022</time>
+        <span class="article-author">-Name here</span>
+        <a href="#" class="read-more-button">Read Article</a>
+      </div>
+    </article>
+    <!-- Repeat the article structure for other popular articles -->
+  </div>
 
-  <section class="all-articles">
-    <h2 class="section-title">All Articles</h2>
-    <div class="articles-grid">
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
+  <h2 class="recent-articles-title">Recent Articles</h2>
+  <div class="recent-articles-grid">
+    <article class="recent-article-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recent article image" class="recent-article-image">
+      <h3 class="recent-article-title">Name of the article will be here Name of the article will be here</h3>
+      <p class="recent-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <time class="article-date">24 January 2022</time>
+      <span class="article-author">-Name here</span>
+      <a href="#" class="read-more-button">Read Article</a>
+    </article>
+    <article class="recent-article-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recent article image" class="recent-article-image">
+      <h3 class="recent-article-title">Name of the article will be here Name of the article will be here</h3>
+      <p class="recent-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <time class="article-date">24 January 2022</time>
+      <span class="article-author">-Name here</span>
+      <a href="#" class="read-more-button">Read Article</a>
+    </article>
+    <article class="recent-article-item">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recent article image" class="recent-article-image">
+      <h3 class="recent-article-title">Name of the article will be here Name of the article will be here</h3>
+      <p class="recent-article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      <time class="article-date">24 January 2022</time>
+      <span class="article-author">-Name here</span>
+      <a href="#" class="read-more-button">Read Article</a>
+    </article>
+    <!-- Repeat the recent article structure for other recent articles -->
+  </div>
+
+  <section class="all-articles-section">
+    <h2 class="all-articles-title">All Articles</h2>
+    <div class="all-articles-grid">
+      <div class="all-articles-column">
+        <article class="article-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba1b95251081fd4294b329956c931d5a7aea7e8eafe34b439fa9800a5b1af441?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
           <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
+          <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <time class="article-date">24 January 2022</time>
+          <span class="article-author">-Name here</span>
+          <a href="#" class="read-more-button">Read Article</a>
+        </article>
+      </div>
+      <div class="all-articles-column">
+        <div class="all-articles-column">
+          <article class="article-item">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba1b95251081fd4294b329956c931d5a7aea7e8eafe34b439fa9800a5b1af441?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+            <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+            <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <time class="article-date">24 January 2022</time>
             <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
+            <a href="#" class="read-more-button">Read Article</a>
+          </article>
         </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image">
-        <div class="article-content">
-          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="article-author">-Name here</span>
-          </div>
-          <a href="#" class="read-more">Read Article</a>
-        </div>
+      </div>
+      <article class="article-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba1b95251081fd4294b329956c931d5a7aea7e8eafe34b439fa9800a5b1af441?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <time class="article-date">24 January 2022</time>
+        <span class="article-author">-Name here</span>
+        <a href="#" class="read-more-button">Read Article</a>
       </article>
     </div>
+    <div>
+    <!-- Repeat the all articles column structure for other columns -->
+    </div>
   </section>
-</main>
+</section>

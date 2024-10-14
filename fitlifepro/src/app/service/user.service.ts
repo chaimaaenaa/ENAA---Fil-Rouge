@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { NgModule } from '@angular/core';
 
-const BASIC_URL = "http://localhost:8080/";
+const BASIC_URL = "http://localhost:8081/";
 
 @Injectable({
   providedIn: 'root'
@@ -48,4 +49,7 @@ export class UserService {
   }
 
 
+  getTotalUsers() {
+
+  }
 }

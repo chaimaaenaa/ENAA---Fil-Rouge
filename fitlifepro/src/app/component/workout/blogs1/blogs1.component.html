@@ -1,118 +1,494 @@
-<header class="header">
-  <nav class="navigation">
-    <ul class="nav-list">
-      <li><a href="#" class="nav-link">Home</a></li>
-      <li><a href="#" class="nav-link">About Us</a></li>
-      <li><a href="#" class="nav-link">Contact Us</a></li>
-      <li><a href="#" class="nav-link">Category</a></li>
-      <li><a href="#" class="nav-link active">Blogs</a></li>
-      <li><a href="#" class="nav-link">Recipes</a></li>
-      <li><a href="#" class="nav-link">Gift A Plan</a></li>
-    </ul>
-  </nav>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/10088fb1f2084186be10669b07783b3119f2205db98b47fd6e0abd306dabbcc0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
-</header>
+<style>
+  .blogs-section {
+    background-color: #242424;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    padding: 143px 54px 322px;
+  }
 
-<main class="main-content">
-  <h1 class="main-title">Blogs <span class="highlight">&</span> Articles</h1>
-  <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+  @media (max-width: 991px) {
+    .blogs-section {
+      max-width: 100%;
+      padding: 100px 20px;
+    }
+  }
 
-  <form class="search-form">
+  .section-title {
+    color: #fed233;
+    text-align: center;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .section-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  }
+
+  .section-subtitle {
+    color: #fff;
+    text-align: center;
+    margin-top: 27px;
+    width: 849px;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .section-subtitle {
+      max-width: 100%;
+    }
+  }
+
+  .search-container {
+    display: flex;
+    margin-top: 63px;
+    width: 1725px;
+    max-width: 100%;
+    gap: 20px;
+    color: #5a5a5a;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .search-container {
+      margin-top: 40px;
+    }
+  }
+
+  .search-input {
+    background-color: #f1f1f1;
+    padding: 22px 33px;
+  }
+
+  @media (max-width: 991px) {
+    .search-input {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  .search-button {
+    background-color: #fed233;
+    display: flex;
+    width: 97px;
+    height: 88px;
+  }
+
+  .category-container {
+    align-self: start;
+    display: flex;
+    width: 100%;
+    max-width: 2492px;
+    flex-direction: column;
+    margin: 143px 0 -64px;
+  }
+
+  @media (max-width: 991px) {
+    .category-container {
+      max-width: 100%;
+      margin: 40px 0 10px;
+    }
+  }
+
+  .category-title {
+    color: #454545;
+    text-align: center;
+    align-self: start;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  .article-grid {
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 2324px;
+    gap: 40px 100px;
+    font-family: Open Sans, sans-serif;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 991px) {
+    .article-grid {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  @media (max-width: 991px) {
+    .article-card {
+      max-width: 100%;
+    }
+  }
+
+  .article-image {
+    aspect-ratio: 1.64;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .article-image {
+      max-width: 100%;
+    }
+  }
+
+  .article-title {
+    color: #fed233;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 991px) {
+    .article-title {
+      max-width: 100%;
+    }
+  }
+
+  .article-excerpt {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 13px;
+  }
+
+  @media (max-width: 991px) {
+    .article-excerpt {
+      max-width: 100%;
+    }
+  }
+
+  .article-meta {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    gap: 40px 100px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 991px) {
+    .article-meta {
+      max-width: 100%;
+    }
+  }
+
+  .meta-container {
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+
+  @media (max-width: 991px) {
+    .meta-container {
+      max-width: 100%;
+    }
+  }
+
+  .meta-row {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .meta-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+
+  .meta-column {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 33%;
+    margin-left: 0px;
+  }
+
+  @media (max-width: 991px) {
+    .meta-column {
+      width: 100%;
+    }
+  }
+
+  .read-more-button {
+    background-color: #fed233;
+    margin-top: 41px;
+    flex-grow: 1;
+    overflow: hidden;
+    color: #fff;
+    width: 100%;
+    padding: 8px 25px;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .read-more-button {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+
+  .meta-info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    color: #fed233;
+    font: 400 32px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .meta-info {
+      margin-top: 40px;
+    }
+  }
+
+  .author-name {
+    align-self: start;
+    margin-top: 13px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<section class="blogs-section">
+  <h1 class="section-title">Blogs <span style="color: #fed233;">&</span> Articles</h1>
+  <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+
+  <form class="search-container" role="search">
     <label for="search-input" class="visually-hidden">Search here...</label>
-    <input type="search" id="search-input" class="search-input" placeholder="Search here..." />
-    <button type="submit" class="search-button" aria-label="Search"></button>
+    <input type="search" id="search-input" class="search-input" placeholder="Search here..." aria-label="Search here...">
+    <button type="submit" class="search-button" aria-label="Submit search"></button>
   </form>
 
-  <section class="category-section">
+  <div class="category-container">
     <h2 class="category-title">Category 1</h2>
     <div class="article-grid">
       <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9e57812225034f2998311b477eba2f1d98e3614bb8f99738f6c670cc37226a0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
         <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
         <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
       </article>
       <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9e57812225034f2998311b477eba2f1d98e3614bb8f99738f6c670cc37226a0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
         <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
         <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
       </article>
       <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9e57812225034f2998311b477eba2f1d98e3614bb8f99738f6c670cc37226a0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
         <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
         <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
       </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
-      </article>
-      <article class="article-card">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="article-image" />
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <div class="article-footer">
-          <a href="#" class="read-more">Read Article</a>
-          <div class="article-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <span class="author">-Name here</span>
-          </div>
-        </div>
-      </article>
-      <!-- Repeat the article-card structure for the other articles -->
     </div>
-  </section>
-
-  <!-- Repeat the category-section structure for other categories -->
-</main>
+    <div class="article-meta">
+      <div class="meta-container">
+        <div class="meta-row">
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+          <div class="meta-column">
+            <div class="meta-info">
+              <time datetime="2024-01-24">24 January 2024</time>
+              <span class="author-name">-Name here</span>
+            </div>
+          </div>
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+        </div>
+      </div>
+      <div class="meta-container">
+        <div class="meta-row">
+          <div class="meta-column">
+            <div class="meta-info">
+              <time datetime="2024-01-24">24 January 2024</time>
+              <span class="author-name">-Name here</span>
+            </div>
+          </div>
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <time datetime="2024-01-24">24 January 2024</time>
+        <span class="author-name">-Name here</span>
+      </div>
+    </div>
+    <div class="article-grid">
+      <article class="article-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e237c76353fa71e2fe2294cd63d042450dcfcf638d8bb9e3f8841d4ce84706f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+      <article class="article-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e237c76353fa71e2fe2294cd63d042450dcfcf638d8bb9e3f8841d4ce84706f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+      <article class="article-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e237c76353fa71e2fe2294cd63d042450dcfcf638d8bb9e3f8841d4ce84706f?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+      </article>
+    </div>
+    <div class="article-meta">
+      <div class="meta-container">
+        <div class="meta-row">
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+          <div class="meta-column">
+            <div class="meta-info">
+              <time datetime="2024-01-24">24 January 2024</time>
+              <span class="author-name">-Name here</span>
+            </div>
+          </div>
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+        </div>
+      </div>
+      <div class="meta-container">
+        <div class="meta-row">
+          <div class="meta-column">
+            <div class="meta-info">
+              <time datetime="2024-01-24">24 January 2024</time>
+              <span class="author-name">-Name here</span>
+            </div>
+          </div>
+          <div class="meta-column">
+            <button class="read-more-button">Read Article</button>
+          </div>
+        </div>
+      </div>
+      <div class="meta-info">
+        <time datetime="2024-01-24">24 January 2024</time>
+        <span class="author-name">-Name here</span>
+      </div>
+    </div>
+    <div class="article-grid">
+      <article class="article-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="article-meta">
+          <div class="meta-row">
+            <div class="meta-column">
+              <button class="read-more-button">Read Article</button>
+            </div>
+            <div class="meta-column">
+              <div class="meta-info">
+                <time datetime="2024-01-24">24 January 2024</time>
+                <span class="author-name">-Name here</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="article-card">
+        <article class="article-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+        <article class="article-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0de9b15c3e571acfc7e0c0fc23241cb56d2b5ebbe629200d8ece987a114d140d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+        <div class="article-meta">
+          <button class="read-more-button">Read Article</button>
+          <div class="meta-row">
+            <div class="meta-column">
+              <div class="meta-info">
+                <time datetime="2024-01-24">24 January 2024</time>
+                <span class="author-name">-Name here</span>
+              </div>
+            </div>
+            <div class="meta-column">
+              <button class="read-more-button">Read Article</button>
+            </div>
+          </div>
+          <div class="meta-info">
+            <time datetime="2024-01-24">24 January 2024</time>
+            <span class="author-name">-Name here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article-grid">
+      <article class="article-card">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="article-meta">
+          <div class="meta-row">
+            <div class="meta-column">
+              <button class="read-more-button">Read Article</button>
+            </div>
+            <div class="meta-column">
+              <div class="meta-info">
+                <time datetime="2024-01-24">24 January 2024</time>
+                <span class="author-name">-Name here</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div class="article-card">
+        <article class="article-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+        <article class="article-card">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfb97ac8128f1df1ab8af7d1eb1102147b53954d8c45134d783613fbb5943f45?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Article image" class="article-image">
+          <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+          <p class="article-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+        <div class="article-meta">
+          <button class="read-more-button">Read Article</button>
+          <div class="meta-row">
+            <div class="meta-column">
+              <div class="meta-info">
+                <time datetime="2024-01-24">24 January 2024</time>
+                <span class="author-name">-Name here</span>
+              </div>
+            </div>
+            <div class="meta-column">
+              <button class="read-more-button">Read Article</button>
+            </div>
+          </div>
+          <div class="meta-info">
+            <time datetime="2024-01-24">24 January 2024</time>
+            <span class="author-name">-Name here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

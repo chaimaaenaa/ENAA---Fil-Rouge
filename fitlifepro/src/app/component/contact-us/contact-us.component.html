@@ -1,51 +1,422 @@
-<header class="header">
-  <nav class="navigation">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#" class="nav-link">About Us</a>
-    <a href="#" class="nav-link active">Contact Us</a>
-    <a href="#" class="nav-link">Category</a>
-    <a href="#" class="nav-link">Blogs</a>
-    <a href="#" class="nav-link">Recipes</a>
-    <a href="#" class="nav-link">Gift A Plan</a>
-  </nav>
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/05162b2cf9cb47c31ae7b28cfa91e283865e9d25413c9644168ce0b0e012bf37?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
-</header>
+<style>
+  .contact-us {
+    background-color: #111010;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0 8px 401px 0;
+  }
 
-<main class="main-content">
-  <section class="contact-info">
-    <h1 class="section-title">Contact Us</h1>
-    <h2 class="subsection-title">Give us a call</h2>
-    <div class="phone-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c343a711fa1f237412427a6062720ead17ba189dd737f2429307b106a18701e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Phone Icon" class="phone-icon" />
-      <p class="phone-number">+91- 9876425797</p>
+  @media (max-width: 991px) {
+    .contact-us {
+      padding-bottom: 100px;
+    }
+  }
+
+  .header {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 26px;
+    font: 400 32px Open Sans, sans-serif;
+    color: #454545;
+  }
+
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  .nav-menu {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    gap: 40px 100px;
+  }
+
+  @media (max-width: 991px) {
+    .nav-menu {
+      max-width: 100%;
+    }
+  }
+
+  .logo {
+    aspect-ratio: 1.08;
+    object-fit: contain;
+    object-position: center;
+    width: 149px;
+    align-self: stretch;
+    max-width: 100%;
+  }
+
+  .nav-item {
+    align-self: stretch;
+    margin: auto 0;
+  }
+
+  .nav-item-active {
+    color: #fed233;
+    font-weight: 600;
+  }
+
+  .gift-plan {
+    align-self: stretch;
+    display: flex;
+    gap: 3px;
+    margin: auto 0;
+  }
+
+  .gift-icon {
+    aspect-ratio: 1.04;
+    object-fit: contain;
+    object-position: center;
+    width: 49px;
+  }
+
+  .auth-buttons {
+    align-self: stretch;
+    display: flex;
+    gap: 29px;
+    font-size: 24px;
+    color: #fed233;
+    font-weight: 600;
+    margin: auto 0;
+  }
+
+  .auth-button {
+    border-radius: 20px;
+    background-color: #454545;
+    text-align: center;
+    padding: 9px 27px;
+  }
+
+  @media (max-width: 991px) {
+    .auth-button {
+      padding: 9px 20px;
+    }
+  }
+
+  .main-content {
+    align-self: center;
+    margin-top: 578px;
+    width: 100%;
+    max-width: 1981px;
+  }
+
+  @media (max-width: 991px) {
+    .main-content {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .content-wrapper {
+    gap: 20px;
+    display: flex;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 36%;
+    margin-left: 0;
+  }
+
+  @media (max-width: 991px) {
+    .contact-info {
+      width: 100%;
+    }
+  }
+
+  .contact-details {
+    background-color: #fed233;
+    z-index: 10;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-self: stretch;
+    align-items: start;
+    color: #454545;
+    margin: auto;
+    padding: 101px 67px;
+    font: 600 42px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .contact-details {
+      max-width: 100%;
+      margin: 40px -3px 0 0;
+      padding: 100px 20px 0;
+    }
+  }
+
+  .contact-title {
+    text-align: center;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .contact-title {
+      font-size: 40px;
+    }
+  }
+
+  .call-text {
+    color: #5a5a5a;
+    text-align: center;
+    margin-top: 85px;
+  }
+
+  @media (max-width: 991px) {
+    .call-text {
+      margin-top: 40px;
+    }
+  }
+
+  .phone-info {
+    display: flex;
+    margin-top: 36px;
+    gap: 24px;
+  }
+
+  .phone-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 70px;
+  }
+
+  .phone-number {
+    flex-grow: 1;
+    margin: auto 0;
+  }
+
+  .business-hours {
+    color: #5a5a5a;
+    text-align: center;
+    margin-top: 55px;
+  }
+
+  @media (max-width: 991px) {
+    .business-hours {
+      margin-top: 40px;
+    }
+  }
+
+  .social-icons {
+    aspect-ratio: 7.3;
+    object-fit: contain;
+    object-position: center;
+    width: 495px;
+    margin-top: 92px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .social-icons {
+      margin-top: 40px;
+    }
+  }
+
+  .contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 64%;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .contact-form-wrapper {
+      width: 100%;
+    }
+  }
+
+  .contact-form {
+    background-color: #fff;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: Open Sans, sans-serif;
+    color: #454545;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 51px 80px;
+  }
+
+  @media (max-width: 991px) {
+    .contact-form {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+
+  .form-title {
+    text-align: center;
+    align-self: center;
+    margin-left: 142px;
+    font: italic 700 72px Roboto, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .form-title {
+      font-size: 40px;
+    }
+  }
+
+  .form-label {
+    text-align: center;
+    font-size: 42px;
+    align-self: start;
+    margin-top: 45px;
+  }
+
+  @media (max-width: 991px) {
+    .form-label {
+      margin-top: 40px;
+    }
+  }
+
+  .form-input {
+    align-self: end;
+    display: flex;
+    margin-top: 15px;
+    width: 892px;
+    max-width: 100%;
+    height: 85px;
+    border: 1px solid #454545;
+  }
+
+  .form-textarea {
+    align-self: end;
+    display: flex;
+    margin-top: 15px;
+    width: 892px;
+    max-width: 100%;
+    height: 189px;
+    border: 1px solid #454545;
+  }
+
+  .submit-wrapper {
+    align-self: center;
+    display: flex;
+    margin-top: 49px;
+    width: 602px;
+    max-width: 100%;
+    align-items: start;
+    gap: 20px;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 991px) {
+    .submit-wrapper {
+      margin-top: 40px;
+    }
+  }
+
+  .submit-button {
+    background-color: #454545;
+    margin-top: 13px;
+    overflow: hidden;
+    font-size: 32px;
+    padding: 10px 60px;
+  }
+
+  @media (max-width: 991px) {
+    .submit-button {
+      padding: 10px 20px;
+    }
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<section class="contact-us">
+  <header class="header">
+    <nav class="nav-menu">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d670cf5a1f7f340220b27e43dab33517def53fbfbf86cd066b56703f4c57c21a?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
+      <a href="#" class="nav-item nav-item-active">Home</a>
+      <a href="#" class="nav-item">About Us</a>
+      <a href="#" class="nav-item">Contact Us</a>
+      <a href="#" class="nav-item">Category</a>
+      <a href="#" class="nav-item">Blogs</a>
+      <a href="#" class="nav-item">Recipes</a>
+    </nav>
+    <div class="gift-plan">
+      <a href="#" class="nav-item">Gift A Plan</a>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8c2f43498fe4154e6e486b37f05af0f9a30ed6abe00409de570c36c9628a19e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift Icon" class="gift-icon" />
     </div>
-    <p class="business-hours">
-      Monday- Sunday <br />
-      09:00 – 21:00 IST
-    </p>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5562be915ba196e2c80e7dede8b14b4fe9656c442bec4124d559f69acbad308?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Contact Illustration" class="contact-illustration" />
-  </section>
+    <div class="auth-buttons">
+      <a href="#" class="auth-button">Login</a>
+      <a href="#" class="auth-button">Sign up</a>
+    </div>
+  </header>
 
-  <section class="contact-form">
-    <h2 class="form-title">Get In Touch</h2>
-    <form (ngSubmit)="submitForm()">
-      <div class="form-group">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" id="name" name="name" class="form-input" required>
+  <main class="main-content">
+    <div class="content-wrapper">
+      <aside class="contact-info">
+        <div class="contact-details">
+          <h2 class="contact-title">Contact Us</h2>
+          <p class="call-text">Give us a call</p>
+          <div class="phone-info">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75851159805bddb0e0ba635471363c507f2cd82bd56dba7ccf155cedfe9dc5ec?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Phone Icon" class="phone-icon" />
+            <p class="phone-number">+91- 9876425797</p>
+          </div>
+          <p class="business-hours">
+            Monday- Sunday <br />
+            09:00 – 21:00 IST
+          </p>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c2589790bdfef5e6960c06fbbaf3d2c0c5061cb6da16170c1bbf96ceb5147717?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Social Media Icons" class="social-icons" />
+        </div>
+      </aside>
+
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+          <h2 class="form-title">Get In Touch</h2>
+
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" required />
+
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" required />
+
+          <label for="email" class="form-label">Email Id</label>
+          <input type="email" id="email" name="email" class="form-input" required />
+
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-textarea" required></textarea>
+
+          <div class="submit-wrapper">
+            <button type="submit" class="submit-button">Submit</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="phone" class="form-label">Phone Number</label>
-        <input type="tel" id="phone" name="phone" class="form-input" required>
-      </div>
-      <div class="form-group">
-        <label for="email" class="form-label">Email Id</label>
-        <input type="email" id="email" name="email" class="form-input" required>
-      </div>
-      <div class="form-group">
-        <label for="message" class="form-label">Message</label>
-        <textarea id="message" name="message" class="form-textarea" required></textarea>
-      </div>
-      <button type="submit" class="submit-button">Submit</button>
-    </form>
-  </section>
-</main>
+    </div>
+  </main>
+</section>

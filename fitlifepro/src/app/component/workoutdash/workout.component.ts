@@ -10,21 +10,27 @@ import { CommonModule } from '@angular/common';
 import { UserService } from "../../service/user.service";
 import { MatListModule } from "@angular/material/list";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatIcon} from "@angular/material/icon";
+import {MatSidenav} from "@angular/material/sidenav";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-workout',
   standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatCardModule,
-    MatButtonModule,
-    MatListModule
-  ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatCardModule,
+        MatButtonModule,
+        MatListModule,
+        MatIcon,
+        MatSidenav,
+        RouterLink
+    ],
   templateUrl: './workout.component.html',
   styleUrls: ['./workout.component.css']
 })

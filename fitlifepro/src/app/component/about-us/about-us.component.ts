@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about-us',
-  templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.css'],
+  templateUrl: 'about-us.component.html',
+  styleUrls: ['about-us.component.css'],
   standalone: true,
   imports: [CommonModule]  // Correct way to include imports in a standalone component
 })

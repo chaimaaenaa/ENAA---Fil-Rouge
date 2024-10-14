@@ -1,80 +1,219 @@
-<main class="recipe-list">
+<style>
+  .recipe-section { background-color: #242424; display: flex; padding-bottom: 73px; flex-direction: column; overflow: hidden; align-items: center; }
+  .header { background-color: #fff; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); align-self: stretch; display: flex; width: 100%; gap: 40px 100px; overflow: hidden; color: #fed233; flex-wrap: wrap; padding: 18px 78px; font: 400 32px Open Sans, sans-serif; }
+  .nav-menu { display: flex; gap: 40px 53px; flex-wrap: wrap; }
+  .nav-item { flex-basis: auto; }
+  .nav-item-active { font-weight: 600; }
+  .logo { aspect-ratio: 1.14; object-fit: contain; object-position: center; width: 50px; }
+  .search-bar { background-color: #f1f1f1; display: flex; margin-top: 85px; width: 1222px; max-width: 100%; padding-left: 33px; gap: 20px; color: #fff; text-align: center; flex-wrap: wrap; justify-content: space-between; font: 400 32px Open Sans, sans-serif; }
+  .search-placeholder { margin: auto 0; }
+  .search-button { background-color: #fed233; display: flex; width: 97px; height: 88px; }
+  .image-gallery { margin-top: 144px; width: 100%; max-width: 1821px; }
+  .gallery-row { gap: 20px; display: flex; }
+  .gallery-item { display: flex; flex-direction: column; line-height: normal; width: 33%; }
+  .gallery-image { aspect-ratio: 1.64; object-fit: contain; object-position: center; width: 100%; flex-grow: 1; }
+  .recipe-list { margin-top: 30px; width: 100%; max-width: 1821px; }
+  .recipe-row { gap: 20px; display: flex; }
+  .recipe-item { display: flex; width: 100%; flex-direction: column; }
+  .recipe-title { color: #fed233; font: 400 32px Open Sans, sans-serif; }
+  .recipe-description { color: #fff; margin-top: 13px; font: 300 24px Open Sans, sans-serif; }
+  .recipe-footer { margin-top: 30px; display: flex; justify-content: space-between; }
+  .read-recipe-button { background-color: #fed233; margin-top: 41px; flex-grow: 1; overflow: hidden; color: #fff; width: 100%; padding: 8px 23px; font: 400 32px Open Sans, sans-serif; }
+  .recipe-meta { display: flex; flex-grow: 1; flex-direction: column; color: #fed233; font: 400 32px Open Sans, sans-serif; }
+  .recipe-date { align-self: start; margin-top: 13px; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 991px) {
+    .header { max-width: 100%; padding: 18px 20px; }
+    .nav-menu { max-width: 100%; }
+    .search-bar { padding-left: 20px; margin-top: 40px; }
+    .image-gallery { max-width: 100%; margin-top: 40px; }
+    .gallery-row { flex-direction: column; align-items: stretch; gap: 0; }
+    .gallery-item { width: 100%; }
+    .gallery-image { max-width: 100%; margin-top: 40px; }
+    .recipe-list { max-width: 100%; }
+    .recipe-row { flex-direction: column; align-items: stretch; gap: 0; }
+    .recipe-item { max-width: 100%; margin-top: 40px; }
+    .recipe-title, .recipe-description { max-width: 100%; }
+    .recipe-footer { flex-direction: column; }
+    .read-recipe-button { margin-top: 20px; padding: 8px 20px; }
+    .recipe-meta { margin-top: 20px; }
+  }
+</style>
+
+<section class="recipe-section">
   <header class="header">
-    <nav class="navigation">
-      <a href="#" class="nav-link">Home</a>
-      <a href="#" class="nav-link">About Us</a>
-      <a href="#" class="nav-link">Contact Us</a>
-      <a href="#" class="nav-link">Category</a>
-      <a href="#" class="nav-link">Blogs</a>
-      <a href="#" class="nav-link active">Recipes</a>
-      <a href="#" class="nav-link">Gift A Plan</a>
+    <nav class="nav-menu">
+      <a href="#" class="nav-item">Home</a>
+      <a href="#" class="nav-item">About Us</a>
+      <a href="#" class="nav-item">Contact Us</a>
+      <a href="#" class="nav-item">Category</a>
+      <a href="#" class="nav-item">Blogs</a>
+      <a href="#" class="nav-item nav-item-active">Recipes</a>
+      <a href="#" class="nav-item">Gift A Plan</a>
     </nav>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d7622e9a04dc2a4e009ec95eb83b68780f48d16b00345b725e3b5f0f1962fc8?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Logo" class="logo" />
+    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d7622e9a04dc2a4e009ec95eb83b68780f48d16b00345b725e3b5f0f1962fc8?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Website Logo" class="logo" />
   </header>
 
-  <form class="search-form">
-    <label for="search-input" class="visually-hidden">Search here...</label>
-    <input type="text" id="search-input" class="search-input" placeholder="Search here..." />
-    <button type="submit" class="search-button" aria-label="Search"></button>
+  <form class="search-bar" role="search">
+    <label for="search-input" class="visually-hidden">Search recipes</label>
+    <input type="search" id="search-input" class="search-placeholder" placeholder="Search here..." aria-label="Search recipes" />
+    <button type="submit" class="search-button" aria-label="Submit search"></button>
   </form>
 
-  <section class="featured-images">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 1" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 2" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 3" class="featured-image" />
-  </section>
-
-  <section class="recipe-grid">
-    <article *ngFor="let recipe of recipes" class="recipe-card">
-      <h2 class="recipe-title">{{ recipe.title }}</h2>
-      <p class="recipe-description">{{ recipe.description }}</p>
-      <div class="recipe-footer">
-        <button class="read-recipe-btn">Read Recipe</button>
-        <div class="recipe-meta">
-          <time class="recipe-date">{{ recipe.date }}</time>
-          <span class="recipe-author">-{{ recipe.author }}</span>
-        </div>
+  <div class="image-gallery">
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 1" class="gallery-image" />
       </div>
-    </article>
-  </section>
-
-  <section class="featured-images">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 4" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 5" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 6" class="featured-image" />
-  </section>
-
-  <section class="recipe-grid">
-    <article *ngFor="let recipe of recipes" class="recipe-card">
-      <h2 class="recipe-title">{{ recipe.title }}</h2>
-      <p class="recipe-description">{{ recipe.description }}</p>
-      <div class="recipe-footer">
-        <button class="read-recipe-btn">Read Recipe</button>
-        <div class="recipe-meta">
-          <time class="recipe-date">{{ recipe.date }}</time>
-          <span class="recipe-author">-{{ recipe.author }}</span>
-        </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 2" class="gallery-image" />
       </div>
-    </article>
-  </section>
-
-  <section class="featured-images">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 7" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 8" class="featured-image" />
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 9" class="featured-image" />
-  </section>
-
-  <section class="recipe-grid">
-    <article *ngFor="let recipe of recipes" class="recipe-card">
-      <h2 class="recipe-title">{{ recipe.title }}</h2>
-      <p class="recipe-description">{{ recipe.description }}</p>
-      <div class="recipe-footer">
-        <button class="read-recipe-btn">Read Recipe</button>
-        <div class="recipe-meta">
-          <time class="recipe-date">{{ recipe.date }}</time>
-          <span class="recipe-author">-{{ recipe.author }}</span>
-        </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 3" class="gallery-image" />
       </div>
-    </article>
+    </div>
+  </div>
+
+  <section class="recipe-list">
+    <div class="recipe-row">
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
-</main>
+
+  <div class="image-gallery">
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 4" class="gallery-image" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 5" class="gallery-image" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 6" class="gallery-image" />
+      </div>
+    </div>
+  </div>
+
+  <section class="recipe-list">
+    <div class="recipe-row">
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="image-gallery">
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 7" class="gallery-image" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 8" class="gallery-image" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe 9" class="gallery-image" />
+      </div>
+    </div>
+  </div>
+
+  <section class="recipe-list">
+    <div class="recipe-row">
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+      <article class="recipe-item">
+        <h2 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <div class="recipe-footer">
+          <button class="read-recipe-button">Read Recipe</button>
+          <div class="recipe-meta">
+            <time datetime="2022-01-24">24 January 2022</time>
+            <span class="recipe-date">-Name here</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</section>

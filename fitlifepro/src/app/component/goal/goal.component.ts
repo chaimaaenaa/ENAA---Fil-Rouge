@@ -6,31 +6,38 @@ import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatDatepicker, MatDatepickerInput, MatDatepickerToggle } from '@angular/material/datepicker';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { MatList, MatListItem } from '@angular/material/list';
+import {MatList, MatListItem, MatNavList} from '@angular/material/list';
 import { DatePipe } from '@angular/common';
 import {error} from "@ant-design/icons-angular";
+import {MatSidenav} from "@angular/material/sidenav";
+import {RouterLink} from "@angular/router";
+
+
 
 @Component({
   selector: 'app-goal',
   standalone: true,
-  imports: [
-    MatSnackBarModule,
-    MatError,
-    MatDatepicker,
-    MatLabel,
-    MatDatepickerToggle,
-    MatDatepickerInput,
-    MatFormField,
-    MatCardContent,
-    MatCardTitle,
-    MatCard,
-    MatCardHeader,
-    ReactiveFormsModule,
-    MatIcon,
-    MatListItem,
-    MatList,
-    DatePipe,
-  ],
+    imports: [
+        MatSnackBarModule,
+        MatError,
+        MatDatepicker,
+        MatLabel,
+        MatDatepickerToggle,
+        MatDatepickerInput,
+        MatFormField,
+        MatCardContent,
+        MatCardTitle,
+        MatCard,
+        MatCardHeader,
+        ReactiveFormsModule,
+        MatIcon,
+        MatListItem,
+        MatList,
+        DatePipe,
+        MatNavList,
+        MatSidenav,
+        RouterLink,
+    ],
   templateUrl: './goal.component.html',
   styleUrls: ['./goal.component.css']  // عدلت `styleUrl` إلى `styleUrls`
 })
@@ -81,15 +88,24 @@ export class GoalComponent {
       console.log(this.goals);
     });
   }
-  updateStatus(id: number){
-    this.userService.updateGoalStatus(id).subscribe(res=>{
-      this.message.success("Goal update successfully" , {nzDuration:5000});
-      this.getAllGoals();
-
-    },error=>{
-      this.message.error("Error While updating goal",{nzDuration:5000});
+  updateStatus(id: number) {
+    this.userService.updateGoalStatus(id).subscribe(
+      res => {
+        this.snackBar.open("Goal updated successfully", "Close", {
+          duration: 5000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
+        this.getAllGoals();
+      },
+      error => {
+        this.snackBar.open("Error while updating goal", "Close", {
+          duration: 5000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
       }
-    )
-
+    );
   }
+
 }

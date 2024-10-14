@@ -5,11 +5,15 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {Chart} from 'chart.js/auto';
-import {CategoryScale} from "chart.js";
-import _default from "chart.js/dist/core/core.interaction";
-import dataset = _default.modes.dataset;
+import {CategoryScale} from "chart.js"
+
+import {MatIcon} from "@angular/material/icon";
+import {MatNavList} from "@angular/material/list";
+import {MatSidenav} from "@angular/material/sidenav";
+import { Chart ,} from 'chart.js/auto';
 Chart.register(CategoryScale);
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +26,10 @@ Chart.register(CategoryScale);
     MatCard,
     MatCardTitle,
     MatCardContent,
-    MatGridList
+    MatGridList,
+    MatIcon,
+    MatNavList,
+    MatSidenav
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
@@ -154,3 +161,6 @@ export class DashboardComponent {
 
 
 }
+
+
+

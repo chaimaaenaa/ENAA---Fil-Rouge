@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-page',
-  templateUrl: './recipe-page-open.component.html',
-  styleUrls: ['./recipe-page-open.component.css'],
+  templateUrl: 'recipe-page-open.component.html',
   standalone: true,
-  imports: [CommonModule]  // Correct way to include imports in a standalone component
+  imports: [CommonModule]
 })
 export class RecipePageComponent {
-  recipes: any[] = [];}
+  // Add any component logic here
+}
