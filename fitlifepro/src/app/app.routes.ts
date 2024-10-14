@@ -41,10 +41,10 @@ export const routes: Routes = [
   {path: "app-login" , component:LoginComponent},
   { path: 'dashboard', component: UserDashboardComponent },
 
-  {path: "app-goal" , component:GoalComponent},
-  {path: "app-workout" , component:WorkoutDashComponent},
-  { path:"app-activity" , component:ActivityComponent},
-  { path:"app-dashboard" , component:DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'workout', component: WorkoutDashComponent },
+  { path: 'activity', component: ActivityComponent },
+  { path: 'goal', component: GoalComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirect to dashboard by default
 
   { path: '**', redirectTo: 'home', pathMatch: 'full' },

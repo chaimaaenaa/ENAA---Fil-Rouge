@@ -39,7 +39,7 @@ import {RouterLink} from "@angular/router";
         RouterLink,
     ],
   templateUrl: './goal.component.html',
-  styleUrls: ['./goal.component.css']  // عدلت `styleUrl` إلى `styleUrls`
+  styleUrls: ['./goal.component.css']
 })
 export class GoalComponent {
   goalForm!: FormGroup;
@@ -48,7 +48,7 @@ export class GoalComponent {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private snackBar: MatSnackBar  // هنا ضفنا `snackBar`
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {

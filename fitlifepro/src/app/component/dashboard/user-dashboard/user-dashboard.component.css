@@ -55,3 +55,82 @@ mat-nav-list mat-icon {
   font-size: 18px;
   color: white;
 }
+.navbar {
+  font-family: Open Sans, sans-serif;
+  padding-top: 3px;
+}
+.navbar-content {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0px;
+  gap: 20px;
+}
+.company-logo {
+  aspect-ratio: 0.99;
+  object-fit: contain;
+  width: 149px;
+  margin-top: -6px;
+}
+.nav-links {
+  display: flex;
+  gap: 11px;
+  font-size: 18px;
+  color: #454545;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+.nav-link-active {
+  color: #fed233;
+  font-weight: 600;
+}
+.nav-actions {
+  display: flex;
+  gap: 24px;
+  font-size: 24px;
+  align-items: center;
+}
+.cart-button {
+
+  background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
+  border: none;
+  cursor: pointer;
+}
+.nav-button {
+  border-radius: 20px;
+  background-color: #454545;
+  color: #fed233;
+  text-decoration: none;
+  padding: 9px 27px;
+  font-weight: 600;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 991px) {
+  .navbar-content {
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  .nav-links, .nav-actions {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .nav-button {
+    padding: 9px 20px;
+  }
+}

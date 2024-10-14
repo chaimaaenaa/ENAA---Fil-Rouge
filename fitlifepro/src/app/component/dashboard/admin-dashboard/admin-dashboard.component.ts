@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../service/user.service';
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterOutlet,
+    RouterLink
+  ],
   templateUrl: './admin-dashboard.component.html',
   styleUrl: './admin-dashboard.component.css'
 })
