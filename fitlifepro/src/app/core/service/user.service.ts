@@ -49,7 +49,8 @@ export class UserService {
   }
 
 
-  getTotalUsers() {
+  getTotalUsers(): Observable<any> {
+    return this.http.get<any>(BASIC_URL + "api/graphs");
 
   }
 }

@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {UserService} from "../../service/user.service";
+import {UserService} from "../../core/service/user.service";
 import {DatePipe, DecimalPipe} from "@angular/common";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
@@ -8,9 +8,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {CategoryScale} from "chart.js"
 
 import {MatIcon} from "@angular/material/icon";
-import {MatNavList} from "@angular/material/list";
+import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatSidenav} from "@angular/material/sidenav";
 import { Chart ,} from 'chart.js/auto';
+import {RouterLink} from "@angular/router";
 Chart.register(CategoryScale);
 
 
@@ -29,7 +30,9 @@ Chart.register(CategoryScale);
     MatGridList,
     MatIcon,
     MatNavList,
-    MatSidenav
+    MatSidenav,
+    RouterLink,
+    MatListItem
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',

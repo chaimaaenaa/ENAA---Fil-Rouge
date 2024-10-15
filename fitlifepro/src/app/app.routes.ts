@@ -19,6 +19,7 @@ import {DashboardComponent} from "./component/dashboard/dashboard.component";
 import {RecipePageComponent} from "./component/RECIPES/recipe-page-open/recipe-page-open.component";
 import {RecipesPageComponent} from "./component/RECIPES/recipes-page/recipes-page.component";
 import {NgModule} from "@angular/core";
+import {LandingPageComponent} from "./component/landing-page/landing-page.component";
 
 
 export const routes: Routes = [
@@ -26,10 +27,7 @@ export const routes: Routes = [
   { path:"app-recipe-page" , component:RecipePageComponent},
   { path:"app-recipes-page" , component:RecipesPageComponent},
 
-
-
-
-  {path:"home" , component:HomeComponent},
+  {path:"home" , component:LandingPageComponent},
   {path:"app-blogs" , component:BlogsComponent },
   {path: "app-blogs1" , component:Blogs1Component},
   {path: "app-blogs2" , component:Blogs2Component},
@@ -37,15 +35,17 @@ export const routes: Routes = [
   {path: "app-gift-a-plan" , component:GiftAPlanComponent},
   {path: "app-about-us" , component:AboutUsComponent},
   {path: "app-contact-us" , component:ContactUsComponent},
-  {path: "app-sign-up" , component:SignUpComponent},
-  {path: "app-login" , component:LoginComponent},
-  { path: 'dashboard', component: UserDashboardComponent },
+  {path: "sign-up" , component:SignUpComponent},
+  {path: "login" , component:LoginComponent},
+  { path: 'dashboards', component: UserDashboardComponent ,
+       children:[
+         { path: 'dashboard', component: DashboardComponent },
+         { path: 'workout', component: WorkoutDashComponent },
+         { path: 'activity', component: ActivityComponent },
+         { path: 'goal', component: GoalComponent },
+       ]},
 
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'workout', component: WorkoutDashComponent },
-  { path: 'activity', component: ActivityComponent },
-  { path: 'goal', component: GoalComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirect to dashboard by default
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to dashboard by default
 
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 

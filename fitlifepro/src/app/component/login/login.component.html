@@ -1,21 +1,5 @@
 <main class="login-page">
-  <header class="header">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9be251b86c6b0dc2bb7c03e113d5a9a6e62c3e4f49fe3870d94b0d038a25c401?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="logo" />
-    <nav class="navigation">
-      <ul class="nav-list">
-        <li class="nav-item active">
-          <a href="#" class="nav-link">Home</a>
-          <div class="active-indicator"></div>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Workout Programs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Store</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sign up</a></li>
-      </ul>
-    </nav>
-  </header>
+
 
   <section class="welcome-section">
     <h1 class="welcome-title">Welcome Back!</h1>
@@ -24,20 +8,38 @@
 
   <section class="login-content">
     <div class="login-form-container">
-      <form class="login-form">
-        <input type="text" class="form-input" placeholder="Enter your name" aria-label="Enter your name" />
-        <input type="email" class="form-input" placeholder="xyz@gmail.com" aria-label="Enter your email" />
-        <input type="password" class="form-input" placeholder="Enter your password" aria-label="Enter your password" />
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <input
+          type="text"
+          formControlName="usernameOrEmail"
+          class="form-input"
+          placeholder="here"
+          aria-label="Enter your email or username"
+        />
+
+        <input
+          type="password"
+          formControlName="password"
+          class="form-input"
+          placeholder="Enter your password"
+          aria-label="Enter your password"
+        />
 
         <div class="form-options">
           <label class="checkbox-label">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" formControlName="keepMeSignedIn" class="checkbox-input" />
             <span class="checkbox-text">Keep me signed in</span>
           </label>
           <a href="#" class="forgot-password">Forgot your password?</a>
         </div>
 
-        <button type="submit" class="submit-button">Login</button>
+        <button type="submit" class="submit-button" [disabled]="loginForm.invalid">
+          Login
+        </button>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
       </form>
 
       <div class="divider">

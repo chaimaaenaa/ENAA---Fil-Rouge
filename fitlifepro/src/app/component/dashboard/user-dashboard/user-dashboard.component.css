@@ -98,7 +98,6 @@ mat-nav-list mat-icon {
 }
 .cart-button {
 
-  background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
   border: none;
   cursor: pointer;
 }

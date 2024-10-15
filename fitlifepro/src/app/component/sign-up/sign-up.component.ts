@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../service/auth.service';
+import { AuthService } from '../../core/service/auth.service';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import {UserDTO} from "../../core/models/userDTO.model";
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,7 @@ import { NgIf } from '@angular/common';
   imports: [FormsModule, NgIf]
 })
 export class SignUpComponent {
-  name = '';
+  username = '';
   email = '';
   password = '';
   confirmPassword = '';
@@ -20,7 +21,8 @@ export class SignUpComponent {
   sendNotifications = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   signup() {
     if (this.password !== this.confirmPassword) {
@@ -28,19 +30,17 @@ export class SignUpComponent {
       return;
     }
 
-    const userData = {
-      name: this.name,
+    const userData: UserDTO = {
+      username: this.username,
       email: this.email,
-      password: this.password,
       phoneNumber: this.phoneNumber,
-      sendNotifications: this.sendNotifications
+      password: this.password,
     };
 
     this.authService.signup(userData).subscribe({
       next: () => {
         console.log('Signed up successfully');
-        // Automatically log in the user after successful signup
-        this.login(this.email, this.password);
+        this.router.navigate(['/login'])
       },
       error: (err) => {
         console.error('Signup failed', err);
@@ -49,16 +49,4 @@ export class SignUpComponent {
     });
   }
 
-  private login(email: string, password: string) {
-    this.authService.login(email, password).subscribe({
-      next: () => {
-        console.log('Logged in successfully');
-        this.router.navigate(['/home']);
-      },
-      error: (err) => {
-        console.error('Login failed', err);
-        this.errorMessage = 'Login failed after signup. Please try logging in manually.';
-      },
-    });
-  }
 }
