@@ -7,35 +7,98 @@
     padding-bottom: 87px;
   }
 
-  .header {
+  .navbar {
+    font-family: Open Sans, sans-serif;
+    padding-top: 3px;
+  }
+  .navbar-content {
     background-color: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 18px 78px;
-    color: #fed233;
-    font-size: 32px;
+    justify-content: space-between;
+    padding: 0 0px;
+    gap: 20px;
   }
-
-  .nav-menu {
+  .company-logo {
+    aspect-ratio: 0.99;
+    object-fit: contain;
+    width: 149px;
+    margin-top: -6px;
+  }
+  .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 11px;
+    font-size: 18px;
+    color: #454545;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
-
-  .nav-item {
-    cursor: pointer;
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
   }
-
-  .nav-item.active {
+  .nav-link-active {
+    color: #fed233;
     font-weight: 600;
   }
+  .nav-actions {
+    display: flex;
+    gap: 24px;
+    font-size: 24px;
+    align-items: center;
+  }
+  .cart-button {
 
-  .logo {
-    width: 50px;
-    height: 50px;
+    background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-button {
+    border-radius: 20px;
+    background-color: #454545;
+    color: #fed233;
+    text-decoration: none;
+    padding: 9px 27px;
+    font-weight: 600;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 991px) {
+    .navbar-content {
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+    .nav-links, .nav-actions {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+    .nav-button {
+      padding: 9px 20px;
+    }
   }
 
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
   .main-content {
     padding: 67px 50px 0;
   }
@@ -243,20 +306,31 @@
     }
   }
 </style>
+<nav class="navbar">
+  <div class="navbar-content">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e5188a6ffa33ceac53e40d44849bdb63fa0d1aea68f686be38a0c0e68f884c5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="company-logo" />
+    <ul class="nav-links">
+      <li><a href="home" class="nav-link nav-link-active">Home</a></li>
+      <li><a href="app-about-us" class="nav-link">About Us</a></li>
+      <li><a href="app-contact-us" class="nav-link">Contact Us</a></li>
+      <li><a href="app-category" class="nav-link">Category</a></li>
+      <li><a href="app-blogs" class="nav-link">Blogs</a></li>
+      <li><a href="app-all-recipe" class="nav-link">Recipes</a></li>
+    </ul>
+    <div class="nav-actions">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
+
+      <a href="app-gift-a-plan" class="nav-link">Gift A Plan</a>
+      <button class="cart-button" aria-label="Shopping Cart">
+        <span class="visually-hidden">Shopping Cart</span>
+      </button>
+      <a href="app-login" class="nav-button">Login</a>
+      <a href="app-sign-up" class="nav-button">Sign up</a>
+    </div>
+  </div>
+</nav>
 
 <section class="recipe-page">
-  <header class="header">
-    <nav class="nav-menu">
-      <a href="#" class="nav-item">Home</a>
-      <a href="#" class="nav-item">About Us</a>
-      <a href="#" class="nav-item">Contact Us</a>
-      <a href="#" class="nav-item">Category</a>
-      <a href="#" class="nav-item">Blogs</a>
-      <a href="#" class="nav-item active">Recipes</a>
-      <a href="#" class="nav-item">Gift A Plan</a>
-    </nav>
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d19850885fc91e461b03c877eb042dec6628683016fe341391cd29871712dbce?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Website Logo" class="logo">
-  </header>
 
   <main class="main-content">
     <h1 class="recipe-title">Name of the Recipe will be here</h1>
@@ -355,7 +429,7 @@
             <p class="recipe-card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
             <p class="recipe-card-meta">24 January 2022</p>
             <p class="recipe-card-meta">-Name here</p>
-            <button class="read-recipe-btn">Read Recipe</button>
+           <a href="app-recipes-page" ><button class="read-recipe-btn">Read Recipe</button></a>
           </article>
         </article>
       </div>

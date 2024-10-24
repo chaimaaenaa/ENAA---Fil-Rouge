@@ -1,4 +1,23 @@
 <style>
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+
+
+    background-color: #242424;
+
+  }
+
   :host { display: contents; }
   .navbar {
     font-family: Open Sans, sans-serif;
@@ -9,8 +28,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
-    gap: 40px;
+    padding: 0 0px;
+    gap: 20px;
   }
   .company-logo {
     aspect-ratio: 0.99;
@@ -42,8 +61,7 @@
     align-items: center;
   }
   .cart-button {
-    width: 50px;
-    height: 44px;
+
     background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
     border: none;
     cursor: pointer;
@@ -81,7 +99,20 @@
     }
   }
 
-  .hero-section {
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  main{
     background-color: #111010;
     color: #756940;
     padding: 283px 0 307px;
@@ -90,6 +121,7 @@
   .hero-title {
     font: 700 72px Roboto, sans-serif;
     margin-bottom: 21px;
+    margin-top:3px;
   }
   .highlight {
     color: #fed233;
@@ -100,6 +132,7 @@
     gap: 20px;
     max-width: 1820px;
     margin: 0 auto;
+
   }
   .trainer-column {
     display: flex;
@@ -545,14 +578,7 @@
   }
 
   @media (max-width: 991px) {
-    .main-header {
-      padding: 11px 20px;
-      flex-wrap: wrap;
-    }
 
-    .nav-list {
-      flex-wrap: wrap;
-    }
 
     .hero-title {
       font-size: 40px;
@@ -602,7 +628,7 @@
 
     .section-description {
       font: 600 42px Open Sans, sans-serif;
-      color: #000;
+      color: white;
       margin-top: 50px;
     }
 
@@ -650,7 +676,7 @@
 
     .feature-description {
       font: 400 32px Open Sans, sans-serif;
-      color: #5a5a5a;
+      color: white;
     }
 
     .cta-column {
@@ -1129,61 +1155,26 @@
       margin: 0 auto 39px;
     }
 
-    .icon-image {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
 
-    .vector-icon {
-      background-color: #fed233;
-      width: 177px;
-      height: 123px;
-    }
+
+
 
     .feature-title {
       color: #000;
       font: 600 42px Open Sans, sans-serif;
     }
 
-    .description {
-      color: #000;
-      font: 400 32px Open Sans, sans-serif;
-      margin-bottom: 49px;
-    }
 
-    .enroll-button {
-      background-color: #fed233;
-      color: #111010;
-      font: 600 32px Open Sans, sans-serif;
-      padding: 10px 24px;
-      border: none;
-      cursor: pointer;
-    }
 
-    .testimonial-title,
-    .chat-title {
-      color: #454545;
-      font: italic 700 72px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
-      margin: 153px 0 96px;
-    }
 
-    .testimonial-container {
-      display: flex;
-      background-color: #fed233;
-      padding: 148px 80px 45px;
-    }
+
 
     .testimonial-image {
       width: 40%;
       object-fit: cover;
     }
 
-    .testimonial-content {
-      width: 60%;
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 74px 35px;
-    }
+
 
     .client-name {
       color: #5a5a5a;
@@ -1198,134 +1189,25 @@
       text-align: center;
     }
 
-    .rating {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 55px;
-    }
 
-    .star-icon,
-    .verified-icon {
-      width: 48px;
-      height: 48px;
-    }
 
-    .star-rating {
-      display: flex;
-      margin: 0 21px;
-    }
 
-    .star {
-      width: 18px;
-      height: 18px;
-      background-color: #454545;
-      border-radius: 50%;
-      margin-right: 21px;
-    }
 
-    .star:last-child {
-      margin-right: 0;
-    }
 
-    .dark-text {
-      color: #454545;
-    }
 
-    .contact-section {
-      background-color: #111010;
-      padding: 153px 50px;
-    }
 
-    .contact-title {
-      color: #fed233;
-      font: italic 700 72px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
-      margin-bottom: 85px;
-    }
 
-    .contact-container {
-      display: flex;
-    }
 
-    .contact-image {
-      width: 45%;
-      object-fit: cover;
-    }
 
-    .contact-form {
-      width: 55%;
-      padding-left: 20px;
-    }
 
-    .form-title {
-      color: #fed233;
-      font: 600 42px Open Sans, sans-serif;
-      margin-bottom: 75px;
-    }
 
-    .name-input {
-      width: 100%;
-      border: none;
-      border-bottom: 1px solid #fed233;
-      background-color: transparent;
-      color: #000;
-      font: 400 32px Open Sans, sans-serif;
-      padding: 10px 0;
-      margin-bottom: 50px;
-    }
 
-    .submit-button {
-      background-color: #fed233;
-      color: #111010;
-      font: 600 32px Open Sans, sans-serif;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .faq-section {
-      padding: 161px 50px;
-    }
-
-    .faq-title {
-      color: #fed233;
-      font: italic 700 72px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
-      margin-bottom: 93px;
-    }
-
-    .faq-container {
-      background-color: #111010;
-      box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
-      padding: 44px 50px;
-    }
-
-    .faq-item {
-      background-color: #fed233;
-      margin-bottom: 42px;
-    }
-
-    .faq-question {
-      color: #5a5a5a;
-      font: 600 42px Open Sans, sans-serif;
-      padding: 56px 66px;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    .faq-question::after {
-      content: '+';
-      float: right;
-    }
 
     .faq-item[open] .faq-question::after {
       content: '-';
     }
 
-    .faq-answer {
-      color: #fff;
-      font: 400 32px Open Sans, sans-serif;
-      padding: 0 66px 56px;
-    }
+
 
     .visually-hidden {
       position: absolute;
@@ -1347,13 +1229,7 @@
       }
 
       .guarantee-title,
-      .testimonial-title,
-      .chat-title,
-      .contact-title,
-      .faq-title {
-        font-size: 40px;
-        margin-bottom: 40px;
-      }
+
 
       .features-container {
         flex-direction: column;
@@ -1369,61 +1245,20 @@
         height: 150px;
       }
 
-      .description,
-      .testimonial-text,
-      .form-title,
-      .name-input,
-      .faq-question,
-      .faq-answer {
-        font-size: 24px;
-      }
 
-      .testimonial-container {
-        flex-direction: column;
-        padding: 40px 20px;
-      }
+      .testimonial-text,
+
 
       .testimonial-image,
       .testimonial-content {
         width: 100%;
       }
 
-      .testimonial-content {
-        padding: 40px 20px;
-      }
 
-      .contact-container {
-        flex-direction: column;
-      }
-
-      .contact-image,
-      .contact-form {
-        width: 100%;
-      }
-
-      .contact-form {
-        padding-left: 0;
-        margin-top: 40px;
-      }
-
-      .faq-container {
-        padding: 20px;
-      }
-
-      .faq-question {
-        padding: 30px 20px;
-      }
-
-      .faq-answer {
-        padding: 0 20px 30px;
-      }
     }
 
 
-    .advice-section {
-      display: flex;
-      flex-direction: column;
-    }
+
 
     .section-title {
       color: #fed233;
@@ -1437,82 +1272,6 @@
       color: #fed233;
     }
 
-    .advice-container {
-      align-self: center;
-      display: flex;
-      margin-top: 252px;
-      width: 100%;
-      max-width: 1519px;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .decorative-image {
-      aspect-ratio: 1;
-      object-fit: contain;
-      object-position: center;
-      width: 124px;
-      align-self: stretch;
-      max-width: 100%;
-      margin: auto 0;
-    }
-
-    .advice-card {
-      background-color: #fed233;
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 70px 61px;
-    }
-
-    .member-image {
-      aspect-ratio: 1;
-      object-fit: contain;
-      object-position: center;
-      width: 348px;
-      border-radius: 50%;
-      z-index: 10;
-      margin-top: -162px;
-      max-width: 100%;
-    }
-
-    .member-name {
-      color: #5a5a5a;
-      margin-top: 42px;
-      font: 600 42px Open Sans, sans-serif;
-    }
-
-    .member-advice {
-      color: #5a5a5a;
-      text-align: center;
-      align-self: stretch;
-      margin-top: 42px;
-      font: 400 32px Open Sans, sans-serif;
-    }
-
-    .rating {
-      display: flex;
-      margin-top: 57px;
-      width: 175px;
-      max-width: 100%;
-      gap: 20px;
-      justify-content: space-between;
-    }
-
-    .star {
-      background-color: #111010;
-      border-radius: 50%;
-      display: flex;
-      width: 18px;
-      height: 18px;
-    }
-
-    .star.active {
-      background-color: #454545;
-    }
 
     @media (max-width: 991px) {
       .section-title {
@@ -1520,25 +1279,9 @@
         font-size: 40px;
       }
 
-      .advice-container {
-        max-width: 100%;
-        margin-top: 40px;
-      }
 
-      .advice-card {
-        max-width: 100%;
-        padding: 0 20px;
-      }
 
-      .member-name,
-      .member-advice,
-      .rating {
-        margin-top: 40px;
-      }
 
-      .member-advice {
-        max-width: 100%;
-      }
     }
 
 
@@ -1572,7 +1315,7 @@
     }
 
     .features-description {
-      color: #000;
+      color: WHITE;
       margin-top: 50px;
       font: 600 42px Open Sans, sans-serif;
     }
@@ -1610,7 +1353,7 @@
     }
 
     .feature-description {
-      color: #000;
+      color: WHITE;
       font: 300 24px Open Sans, sans-serif;
     }
 
@@ -1691,24 +1434,25 @@
     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e5188a6ffa33ceac53e40d44849bdb63fa0d1aea68f686be38a0c0e68f884c5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="company-logo" />
     <ul class="nav-links">
       <li><a href="home" class="nav-link nav-link-active">Home</a></li>
-      <li><a href="#" class="nav-link">About Us</a></li>
-      <li><a href="#" class="nav-link">Contact Us</a></li>
-      <li><a href="#" class="nav-link">Category</a></li>
-      <li><a href="#" class="nav-link">Blogs</a></li>
-      <li><a href="" class="nav-link">Recipes</a></li>
+      <li><a href="app-about-us" class="nav-link">About Us</a></li>
+      <li><a href="app-contact-us" class="nav-link">Contact Us</a></li>
+      <li><a href="app-category" class="nav-link">Category</a></li>
+      <li><a href="app-blogs" class="nav-link">Blogs</a></li>
+      <li><a href="app-all-recipe" class="nav-link">Recipes</a></li>
     </ul>
     <div class="nav-actions">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
 
-      <a href="#" class="nav-link">Gift A Plan</a>
+      <a href="app-gift-a-plan" class="nav-link">Gift A Plan</a>
       <button class="cart-button" aria-label="Shopping Cart">
         <span class="visually-hidden">Shopping Cart</span>
       </button>
-      <a routerLink="/login" class="nav-button">Login</a>
-      <a routerLink="/sign-up" class="nav-button">Sign up</a>
+      <a href="login" class="nav-button">Login</a>
+      <a href="sign-up" class="nav-button">Sign up</a>
     </div>
   </div>
 </nav>
+
 <main>
 
   <section class="workout-section">
@@ -2219,172 +1963,6 @@
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d1d77905bfe118b6931e7a77e68cbb373cd6dbd3017dbe1bb8766c95f78fec9?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" />
     </button>
 
-  </section>
-
-
-  <section class="guarantee-section">
-    <h1 class="guarantee-title"><span class="highlight">100%</span> Money Back Guarantee</h1>
-
-    <div class="features-container">
-      <div class="feature">
-        <div class="feature-icon">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a815b824c291786c45114695958085e7f92e10341a68a201c9515f2e3f7093d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Money Back Guarantee Icon" class="icon-image">
-        </div>
-        <h2 class="feature-title">Money Back Guarantee</h2>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">
-          <div class="vector-icon"></div>
-        </div>
-        <h2 class="feature-title">Free Health Tips</h2>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/221bb3de438de6d2131a066c5d60d84418d2d93a095bb36c611212ff98fe4701?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Affordable Icon" class="icon-image">
-        </div>
-        <h2 class="feature-title">Affordable For Everyone</h2>
-      </div>
-    </div>
-
-    <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,
-    </p>
-
-    <button class="enroll-button">Enroll Now</button>
-
-    <h2 class="testimonial-title">Take A Look At <span class="highlight">Our Clients Testimonial</span></h2>
-
-    <div class="testimonial-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a406437420ec5eeae1961b42ccd748cc72d272812ba12a351066ee461507f1d9?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Client Testimonial" class="testimonial-image">
-      <div class="testimonial-content">
-        <h3 class="client-name">Name Here</h3>
-        <p class="testimonial-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit Sed quam sagittis aliquam, tortor sollicitudin egestas convallis.
-        </p>
-        <div class="rating">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d4cbe3d1c64efb2797fc828c91dc874b5993f3a13a0fe3e6601111556a62eb9b?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Star Rating" class="star-icon">
-          <div class="star-rating">
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-          </div>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d1d77905bfe118b6931e7a77e68cbb373cd6dbd3017dbe1bb8766c95f78fec9?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Verified Icon" class="verified-icon">
-        </div>
-      </div>
-    </div>
-
-    <h2 class="chat-title">Take A Look At <span class="dark-text">Our Chats With Customers</span></h2>
-  </section>
-
-  <section class="contact-section">
-    <h2 class="contact-title"><span class="highlight">Get In Touch</span> With Us</h2>
-
-    <div class="contact-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fa79569f8c8f0e9df3737a44b94576f9a9b0d3be36e19517882e20f1c82322fe?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Contact Us" class="contact-image">
-      <form class="contact-form">
-        <h3 class="form-title">To Start Your Fitness Journey Let Us First Know your Name</h3>
-        <label for="name-input" class="visually-hidden">Write your name here</label>
-        <input type="text" id="name-input" class="name-input" placeholder="Write your name here" aria-label="Write your name here">
-        <button type="submit" class="submit-button">Next</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="faq-section">
-    <h2 class="faq-title"><span class="dark-text">Frequently Ask</span> Questions</h2>
-
-    <div class="faq-container">
-      <details class="faq-item">
-        <summary class="faq-question">How does this program works?</summary>
-        <p class="faq-answer">
-          This program works as follows:<br><br>
-          Enroll in the program.<br>
-          You will receive an confirmation email from team Kaish Fitness.<br>
-          You will receive an email within 48 hours from our team in which all the meeting details with your coach are present.<br>
-          After that meeting, your coach will add you to our coaching platform.<br>
-          After the addition in our coaching platform, you will receive an email to set up your account on our platform.<br>
-          After that within 48 hours, your assigned coach will provide you with a nutrition plan and workout plan which you need to follow everyday.<br>
-          Time to time we will give you some tasks that will directly or indirectly help you in achieving your goal. E.g. Reduce sugar intake by 20%. Sleep at 11 pm max and get up early in the morning at 6 am for the next 21 days.<br>
-          You have to log your workout and nutrition on a daily basis, it will help your coach in tracking your progress daily.<br>
-          You need to upload your progress photos and measurements on selected days. (Our system will remind you on time to do so)<br>
-          Assessment sessions (video) will be taken after every two weeks.<br>
-          Your Nutrition/ Workout plan will be revised after analysing your results.<br>
-          Note: You can text your coach anytime, whenever you want for any type of queries.
-        </p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">How we help lose fat without strict diets?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">What's the duration of this program?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">Will this program work for you?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">When will be the program revised?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">What if you don't find the program effective?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">What type of lifestyle changes can you expect?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">Will you get answers individually?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">Is fat loss guaranteed?</summary>
-        <!-- Answer content here -->
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">What's the best part?</summary>
-        <!-- Answer content here -->
-      </details>
-    </div>
-  </section>
-
-  ////////
-  <section class="advice-section">
-    <h2 class="section-title">Advice From <span class="highlight">Successful Members</span></h2>
-    <div class="advice-container">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7ac9adee125e76f334ac744b15fe2e8eb1a09e500d8e9e003c2d5b9952d35068?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="decorative-image" />
-      @for (item of adviceItems; track item.name) {
-        <div class="advice-card">
-          <img [src]="item.imageSrc" [alt]="item.name" class="member-image" />
-          <h3 class="member-name">{{ item.name }}</h3>
-          <p class="member-advice">{{ item.advice }}</p>
-          <div class="rating">
-            <span class="star active"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-            <span class="star"></span>
-          </div>
-        </div>
-      }
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/855119a9d1139344466fafa51885fdcd4598aa42649ee112ccbdfc6c475657da?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" class="decorative-image" />
-    </div>
   </section>
 
 
