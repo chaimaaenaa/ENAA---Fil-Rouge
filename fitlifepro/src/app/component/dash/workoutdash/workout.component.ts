@@ -7,7 +7,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { CommonModule } from '@angular/common';
-import { UserService } from "../../core/service/user.service";
+import { UserService } from "../../../core/service/user.service";
 import { MatListModule } from "@angular/material/list";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatIcon} from "@angular/material/icon";

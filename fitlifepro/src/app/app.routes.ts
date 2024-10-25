@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
-import {ActivityComponent} from "./component/activity/activity.component";
-import {UserDashboardComponent} from "./component/dashboard/user-dashboard/user-dashboard.component";
-import {WorkoutDashComponent} from "./component/workoutdash/workout.component";
+import {ActivityComponent} from "./component/dash/activity/activity.component";
+import {UserDashboardComponent} from "./component/dash/user-dashboard/user-dashboard.component";
+import {WorkoutDashComponent} from "./component/dash/workoutdash/workout.component";
 import {HomeComponent} from "./component/home/home.component";
 import {BlogsComponent} from "./component/workout/blogs/blogs.component";
 import {Blogs1Component} from "./component/workout/blogs1/blogs1.component";
@@ -14,8 +14,8 @@ import {AboutUsComponent} from "./component/about-us/about-us.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {LoginComponent} from "./component/login/login.component";
-import {GoalComponent} from "./component/goal/goal.component";
-import {DashboardComponent} from "./component/dashboard/dashboard.component";
+import {GoalComponent} from "./component/dash/goal/goal.component";
+import {DashboardComponent} from "./component/dash/dashboard/dashboard.component";
 import {RecipePageComponent} from "./component/RECIPES/recipe-page-open/recipe-page-open.component";
 import {RecipesPageComponent} from "./component/RECIPES/recipes-page/recipes-page.component";
 import {NgModule} from "@angular/core";
@@ -23,10 +23,11 @@ import {LandingPageComponent} from "./component/landing-page/landing-page.compon
 
 
 export const routes: Routes = [
+
+
   { path:"app-all-recipe" , component:AllRecipeComponent},
   { path:"app-recipe-page" , component:RecipePageComponent},
   { path:"app-recipes-page" , component:RecipesPageComponent},
-
   {path:"home" , component:LandingPageComponent},
   {path:"app-blogs" , component:BlogsComponent },
   {path: "app-blogs1" , component:Blogs1Component},
@@ -37,9 +38,9 @@ export const routes: Routes = [
   {path: "app-contact-us" , component:ContactUsComponent},
   {path: "sign-up" , component:SignUpComponent},
   {path: "login" , component:LoginComponent},
-  { path: 'dashboards', component: UserDashboardComponent ,
+  { path: 'user-dashboard', component: UserDashboardComponent ,
        children:[
-         { path: 'dashboard', component: DashboardComponent },
+         { path: 'dashboards', component: DashboardComponent },
          { path: 'workout', component: WorkoutDashComponent },
          { path: 'activity', component: ActivityComponent },
          { path: 'goal', component: GoalComponent },

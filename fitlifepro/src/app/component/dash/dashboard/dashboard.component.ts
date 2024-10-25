@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
-import {UserService} from "../../core/service/user.service";
+import {UserService} from "../../../core/service/user.service";
 import {DatePipe, DecimalPipe} from "@angular/common";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
@@ -17,7 +17,7 @@ Chart.register(CategoryScale);
 
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'dashboards',
   standalone: true,
   imports: [
     MatGridListModule,

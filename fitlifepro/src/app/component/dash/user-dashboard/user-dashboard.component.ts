@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
-  selector: 'app-user-dashboard',
+  selector: 'user-dashboard',
   standalone: true,
   imports: [
     RouterLink,
