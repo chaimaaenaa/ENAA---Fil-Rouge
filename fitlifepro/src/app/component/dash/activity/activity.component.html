@@ -5,19 +5,19 @@
       <h2>Post New Activity</h2>
       <form [formGroup]="activityForm" (ngSubmit)="submitForm()">
         <mat-form-field appearance="outline">
-          <input matInput formControlName="caloriesBurned" placeholder="Enter the calories you burned">
+          <input matInput formControlName="caloriesBurned" placeholder="Enter the calories you burned" type="number">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <input matInput formControlName="distance" placeholder="Enter distance">
+          <input matInput formControlName="distance" placeholder="Enter distance" type="number">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <input matInput formControlName="steps" placeholder="Enter steps">
+          <input matInput formControlName="steps" placeholder="Enter steps" type="number">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Select date">
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Select date" type="date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>

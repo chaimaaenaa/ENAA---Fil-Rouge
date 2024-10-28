@@ -53,6 +53,7 @@ export class ActivityComponent implements OnInit {
 
   submitForm() {
     if (this.activityForm.valid) {
+      console.log(this.activityForm.value); // Confirm values
       this.userService.postActivity(this.activityForm.value).subscribe(
         (res: any) => {
           this.snackBar.open("Activity posted successfully", "Close", {

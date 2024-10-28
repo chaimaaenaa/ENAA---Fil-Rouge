@@ -2,14 +2,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {ActivityComponent} from "./component/dash/activity/activity.component";
 import {UserDashboardComponent} from "./component/dash/user-dashboard/user-dashboard.component";
 import {WorkoutDashComponent} from "./component/dash/workoutdash/workout.component";
-import {HomeComponent} from "./component/home/home.component";
 import {BlogsComponent} from "./component/workout/blogs/blogs.component";
 import {Blogs1Component} from "./component/workout/blogs1/blogs1.component";
 import {Blogs2Component} from "./component/workout/blogs2/blogs2.component";
 import {CategoryComponent} from "./component/workout/category/category.component";
 import {GiftAPlanComponent} from "./component/workout/gift-a-plan/gift-a-plan.component";
 import {AllRecipeComponent} from "./component/RECIPES/all-recipe/all-recipe.component";
-
 import {AboutUsComponent} from "./component/about-us/about-us.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
@@ -38,6 +36,7 @@ export const routes: Routes = [
   {path: "app-contact-us" , component:ContactUsComponent},
   {path: "sign-up" , component:SignUpComponent},
   {path: "login" , component:LoginComponent},
+
   { path: 'user-dashboard', component: UserDashboardComponent ,
        children:[
          { path: 'dashboards', component: DashboardComponent },

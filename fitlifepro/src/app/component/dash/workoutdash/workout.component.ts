@@ -1,36 +1,39 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatSelectModule } from "@angular/material/select";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatCardModule } from "@angular/material/card";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { CommonModule } from '@angular/common';
-import { UserService } from "../../../core/service/user.service";
-import { MatListModule } from "@angular/material/list";
-import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatIcon} from "@angular/material/icon";
-import {MatSidenav} from "@angular/material/sidenav";
-import {RouterLink} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule, MatOption} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatListModule} from "@angular/material/list";
+import {Component} from "@angular/core";
+import {UserService} from "../../../core/service/user.service";
+import {MatSelect} from "@angular/material/select";
+
 
 @Component({
   selector: 'app-workout',
   standalone: true,
-    imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatCardModule,
-        MatButtonModule,
-        MatListModule,
-        MatIcon,
-        MatSidenav,
-        RouterLink
-    ],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatDividerModule,
+    MatListModule,
+    MatSelect,
+    MatOption
+
+
+  ],
   templateUrl: './workout.component.html',
   styleUrls: ['./workout.component.css']
 })

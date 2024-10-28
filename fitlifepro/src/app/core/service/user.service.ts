@@ -9,6 +9,7 @@ const BASIC_URL = "http://localhost:8081/";
   providedIn: 'root'
 })
 export class UserService {
+  private apiUrl = 'http://localhost:8081/activities';
   constructor(private http: HttpClient) {}
 
   postActivity(activityDto: any): Observable<any> {

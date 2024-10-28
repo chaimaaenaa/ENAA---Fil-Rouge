@@ -9,7 +9,7 @@
       <mat-card>
         <mat-card-title>Post New Workout</mat-card-title>
         <mat-card-content>
-          <form *ngIf="workoutForm" [formGroup]="workoutForm" (ngSubmit)="submitForm()" class="custom-form">
+          <form  [formGroup]="workoutForm" (ngSubmit)="submitForm()" class="custom-form">
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Enter the calories you burned</mat-label>
               <input matInput type="text" formControlName="caloriesBurned" placeholder="Enter the calories you burned">
