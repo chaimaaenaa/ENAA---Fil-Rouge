@@ -22,32 +22,42 @@ import {LandingPageComponent} from "./component/landing-page/landing-page.compon
 
 export const routes: Routes = [
 
-
-  { path:"app-all-recipe" , component:AllRecipeComponent},
-  { path:"app-recipe-page" , component:RecipePageComponent},
-  { path:"app-recipes-page" , component:RecipesPageComponent},
-  {path:"home" , component:LandingPageComponent},
-  {path:"app-blogs" , component:BlogsComponent },
-  {path: "app-blogs1" , component:Blogs1Component},
-  {path: "app-blogs2" , component:Blogs2Component},
-  {path: "app-category" , component:CategoryComponent},
-  {path: "app-gift-a-plan" , component:GiftAPlanComponent},
-  {path: "app-about-us" , component:AboutUsComponent},
-  {path: "app-contact-us" , component:ContactUsComponent},
-  {path: "sign-up" , component:SignUpComponent},
-  {path: "login" , component:LoginComponent},
-
-  { path: 'user-dashboard', component: UserDashboardComponent ,
-       children:[
-         { path: 'dashboards', component: DashboardComponent },
-         { path: 'workout', component: WorkoutDashComponent },
-         { path: 'activity', component: ActivityComponent },
-         { path: 'goal', component: GoalComponent },
-       ]},
-
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirect to dashboard by default
-
+  {path: 'home' , component:LandingPageComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
+
+  { path: "all-recipe" , component:AllRecipeComponent},
+  { path: "blogs" , component:BlogsComponent },
+  { path: "about-us" , component:AboutUsComponent},
+  { path: "gift-a-plan" , component:GiftAPlanComponent},
+  { path: "contact-us" , component:ContactUsComponent},
+  { path: "sign-up" , component:SignUpComponent},
+  { path: "login" , component:LoginComponent},
+  { path: "category" , component:CategoryComponent},
+
+  // { path:"recipe-page" , component:RecipePageComponent},
+  // { path:"recipes-page" , component:RecipesPageComponent},
+  //
+  // {path: "blogs1" , component:Blogs1Component},
+  // {path: "blogs2" , component:Blogs2Component},
+  //
+  //
+  //
+  //
+  //
+  // {path: "rec" , component:RecComponent},
+  //
+  // { path: 'dashboard', component: UserDashboardComponent ,
+  //      children:[
+  //        { path: '', redirectTo: 'over-view', pathMatch: 'full' },
+  //        { path: 'over-view', component: DashboardComponent },
+  //        { path: 'workout', component: WorkoutDashComponent },
+  //        { path: 'activity', component: ActivityComponent },
+  //        { path: 'goal', component: GoalComponent },
+  //      ]},
+
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 
 

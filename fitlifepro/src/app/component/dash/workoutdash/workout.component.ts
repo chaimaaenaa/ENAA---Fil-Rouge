@@ -35,7 +35,7 @@ import {MatSelect} from "@angular/material/select";
 
   ],
   templateUrl: './workout.component.html',
-  styleUrls: ['./workout.component.css']
+  styleUrls: ['workout.component.css']
 })
 export class WorkoutDashComponent {
   workoutForm!: FormGroup;

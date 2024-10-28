@@ -38,7 +38,7 @@
               <mat-error *ngIf="workoutForm.get('type')?.invalid">Please input the type!</mat-error>
             </mat-form-field>
 
-            <button mat-raised-button color="primary" class="w-100" [disabled]="workoutForm.invalid">
+            <button mat-raised-button color="warning" class="w-100" [disabled]="workoutForm.invalid">
               Post Workout
             </button>
           </form>

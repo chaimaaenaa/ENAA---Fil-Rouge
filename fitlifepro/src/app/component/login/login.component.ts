@@ -85,7 +85,7 @@ export class LoginComponent {
         this.router.navigate(['/home']);
         break;
       case Role.ATHLETE.toString():
-        this.router.navigate(['/dashboards']);
+        this.router.navigate(['/dashboard']);
         break;
       default:
         console.error('Unknown role:', role);
