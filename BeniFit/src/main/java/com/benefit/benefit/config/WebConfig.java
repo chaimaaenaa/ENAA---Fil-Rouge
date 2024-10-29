@@ -8,7 +8,8 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 import java.util.List;
-
+//WebConfig kat-khdem l-routing options w CORS b7alchi helpers bach t-wli l-app
+// m9adya f routing w access.
 @Configuration
 public class WebConfig {
     @Bean

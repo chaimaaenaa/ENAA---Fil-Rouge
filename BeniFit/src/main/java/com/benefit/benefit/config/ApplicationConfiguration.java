@@ -10,7 +10,8 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+//ApplicationConfiguration katdir l-setup dyal beans li kat-kon services
+// dial security w database.
 @Configuration
 public class ApplicationConfiguration {
     private final UserRepository userRepository;

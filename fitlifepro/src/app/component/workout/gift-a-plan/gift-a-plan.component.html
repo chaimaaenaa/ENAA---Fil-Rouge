@@ -1,53 +1,5 @@
 <style>
   /* Garder le style navbar original */
-  .navbar {
-    font-family: 'Open Sans', sans-serif;
-    border-bottom: 1px solid #eee;
-  }
-
-  .navbar-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    gap: 20px;
-  }
-
-  .company-logo {
-    width: 120px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    font-size: 16px;
-  }
-
-  .nav-link {
-    color: #454545;
-    text-decoration: none;
-  }
-
-  .nav-link-active {
-    color: #fed233;
-    font-weight: 600;
-  }
-
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .nav-button {
-    background-color: #454545;
-    color: #fed233;
-    padding: 8px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 600;
-  }
 
   /* Nouveau style pour la section principale */
   .main-section {
@@ -252,24 +204,7 @@
   }
 </style>
 
-<nav class="navbar">
-  <div class="navbar-content">
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e5188a6ffa33ceac53e40d44849bdb63fa0d1aea68f686be38a0c0e68f884c5?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Company Logo" class="company-logo" />
-    <ul class="nav-links">
-      <li><a href="home" class="nav-link nav-link-active">Home</a></li>
-      <li><a href="app-about-us" class="nav-link">About Us</a></li>
-      <li><a href="app-contact-us" class="nav-link">Contact Us</a></li>
-      <li><a href="app-category" class="nav-link">Category</a></li>
-      <li><a href="app-blogs" class="nav-link">Blogs</a></li>
-      <li><a href="app-all-recipe" class="nav-link">Recipes</a></li>
-      <a href="app-gift-a-plan" class="nav-link">Gift A Plan</a>
-
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c40b77d621b039aa88ee37d9cd9f5caec0dae5a1264a5efa1db08d71e3b7e247?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Gift icon" class="gift-icon" />
-      <a href="app-login" class="nav-button">Login</a>
-      <a href="app-sign-up" class="nav-button">Sign up</a>
-    </ul>
-  </div>
-</nav>
+<app-header></app-header>
 
 <section class="main-section">
   <!-- Hero Section -->

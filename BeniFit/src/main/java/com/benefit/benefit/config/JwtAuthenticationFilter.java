@@ -18,7 +18,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import java.io.IOException;
-
+//JwtAuthenticationFilter kat-validi l-JWT token bach t9der
+// t-access l-endpoints li b security.
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired

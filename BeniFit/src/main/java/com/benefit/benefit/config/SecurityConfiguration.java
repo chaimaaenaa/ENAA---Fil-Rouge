@@ -16,6 +16,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.List;
+
+//SecurityConfiguration kat-khdem m3a JwtAuthenticationFilter bach y7mi
+// l-endpoints w ydwir access rules.
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
