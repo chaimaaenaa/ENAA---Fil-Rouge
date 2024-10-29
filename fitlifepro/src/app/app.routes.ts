@@ -1,7 +1,7 @@
 import { Routes} from '@angular/router';
-import {ActivityComponent} from "./component/dash/activity/activity.component";
+import {ActivityComponent} from "./component/dash/dashboard/activity/activity.component";
 import {UserDashboardComponent} from "./component/dash/user-dashboard/user-dashboard.component";
-import {WorkoutDashComponent} from "./component/dash/workoutdash/workout.component";
+import {WorkoutDashComponent} from "./component/dash/dashboard/workoutdash/workout.component";
 import {BlogsComponent} from "./component/workout/blogs/blogs.component";
 import {CategoryComponent} from "./component/workout/category/category.component";
 import {GiftAPlanComponent} from "./component/workout/gift-a-plan/gift-a-plan.component";
@@ -10,7 +10,7 @@ import {AboutUsComponent} from "./component/about-us/about-us.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {LoginComponent} from "./component/login/login.component";
-import {GoalComponent} from "./component/dash/goal/goal.component";
+import {GoalComponent} from "./component/dash/dashboard/goal/goal.component";
 import {DashboardComponent} from "./component/dash/dashboard/dashboard.component";
 import {LandingPageComponent} from "./component/landing-page/landing-page.component";
 

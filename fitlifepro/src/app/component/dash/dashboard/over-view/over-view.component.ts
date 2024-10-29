@@ -3,7 +3,7 @@ import {DatePipe, DecimalPipe} from "@angular/common";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {UserService} from "../../../../core/service/user.service";
-import {Chart} from "chart.js-auto";
+import {Chart} from "chart.js/auto";
 
 @Component({
   selector: 'app-over-view',

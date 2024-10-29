@@ -10,7 +10,7 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatListModule} from "@angular/material/list";
 import {Component} from "@angular/core";
-import {UserService} from "../../../core/service/user.service";
+import {UserService} from "../../../../core/service/user.service";
 import {MatSelect} from "@angular/material/select";
 
 
