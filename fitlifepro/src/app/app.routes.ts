@@ -27,6 +27,16 @@ export const routes: Routes = [
   { path: 'login' , component:LoginComponent},
   { path: 'category' , component:CategoryComponent},
 
+  { path: 'dashboard', component: UserDashboardComponent ,
+    children:[
+      // { path: '', redirectTo: 'over-view', pathMatch: 'full' },
+      { path: 'over-view', component: DashboardComponent },
+      { path: 'workout', component: WorkoutDashComponent },
+      { path: 'activity', component: ActivityComponent },
+      { path: 'goal', component: GoalComponent },
+    ]
+  },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 
@@ -42,14 +52,7 @@ export const routes: Routes = [
   //
   // {path: "rec" , component:RecComponent},
   //
-  { path: 'dashboard', component: UserDashboardComponent ,
-       children:[
-         { path: '', redirectTo: 'over-view', pathMatch: 'full' },
-         { path: 'over-view', component: DashboardComponent },
-         { path: 'workout', component: WorkoutDashComponent },
-         { path: 'activity', component: ActivityComponent },
-         { path: 'goal', component: GoalComponent },
-       ]},
+
 
   // { path: '**', redirectTo: 'home', pathMatch: 'full' },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },

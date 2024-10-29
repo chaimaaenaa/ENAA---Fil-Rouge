@@ -1,0 +1,89 @@
+<mat-grid-list cols="3" rowHeight="fit" gutterSize="20px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Total Calories Burned</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.totalCaloriesBurnes }}cal</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Total Distance Covered</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.distance | number: '1.1-1' }} km</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Total Steps Taken</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.steps }}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="3" rowHeight="fit" gutterSize="20px" style="margin-top: 20px;">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Total Time Spent</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.duration }} min</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Achieved Goals</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.achievedGoals }}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <mat-card>
+      <mat-card-title>Not Achieved Goals</mat-card-title>
+      <mat-card-content style="background-color: aliceblue;">
+        <p>{{ statsData.notAchievedGoals }}</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<div class="mat-grid" style="margin-top: 15px;">
+  <mat-grid-list cols="12" gutterSize="16px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" class="hidden-xs"></mat-grid-tile>
+    <mat-grid-tile [colspan]="4" [rowspan]="1" class="hidden-sm"></mat-grid-tile>
+    <mat-grid-tile [colspan]="6" [rowspan]="1" class="hidden-md"></mat-grid-tile>
+    <mat-grid-tile [colspan]="8" [rowspan]="1" class="hidden-lg"></mat-grid-tile>
+    <mat-grid-tile [colspan]="10" [rowspan]="1" class="hidden-xl"></mat-grid-tile>
+
+    <mat-grid-tile [colspan]="8" [rowspan]="1" class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-2">
+      <mat-card style="background-color: aliceblue;">
+        <mat-card-title>Recent Workouts</mat-card-title>
+        <mat-card-content>
+          <canvas #workoutLineChart></canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" [rowspan]="1" class="hidden-xs hidden-sm hidden-md hidden-lg hidden-xl">
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="8" [rowspan]="1" class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-2">
+      <mat-card style="background-color: aliceblue;">
+        <mat-card-title>Recent Activities</mat-card-title>
+        <mat-card-content>
+          <canvas #activityLineChart></canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

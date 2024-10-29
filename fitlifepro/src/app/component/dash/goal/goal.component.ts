@@ -3,7 +3,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserService } from '../../../core/service/user.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
-import { MatDatepicker, MatDatepickerInput, MatDatepickerToggle } from '@angular/material/datepicker';
+import {
+  MatDatepicker,
+  MatDatepickerInput,
+  MatDatepickerModule,
+  MatDatepickerToggle
+} from '@angular/material/datepicker';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import {MatList, MatListItem, MatNavList} from '@angular/material/list';
@@ -11,33 +16,46 @@ import { DatePipe } from '@angular/common';
 import {error} from "@ant-design/icons-angular";
 import {MatSidenav} from "@angular/material/sidenav";
 import {RouterLink} from "@angular/router";
+import {MatInput} from "@angular/material/input";
+import {MatButton} from "@angular/material/button";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+
 
 
 
 @Component({
   selector: 'app-goal',
   standalone: true,
-    imports: [
-        MatSnackBarModule,
-        MatError,
-        MatDatepicker,
-        MatLabel,
-        MatDatepickerToggle,
-        MatDatepickerInput,
-        MatFormField,
-        MatCardContent,
-        MatCardTitle,
-        MatCard,
-        MatCardHeader,
-        ReactiveFormsModule,
-        MatIcon,
-        MatListItem,
-        MatList,
-        DatePipe,
-        MatNavList,
-        MatSidenav,
-        RouterLink,
-    ],
+  imports: [
+    MatSnackBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule, // Import MatNativeDateModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatError,
+    MatDatepicker,
+    MatLabel,
+    MatDatepickerToggle,
+    MatDatepickerInput,
+    MatFormField,
+    MatCardContent,
+    MatCardTitle,
+    MatCard,
+    MatCardHeader,
+    ReactiveFormsModule,
+    MatIcon,
+    MatListItem,
+    MatList,
+    DatePipe,
+    MatNavList,
+    MatSidenav,
+    RouterLink,
+    MatInput,
+    MatButton,
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }, // specify the locale
+  ],
   templateUrl: './goal.component.html',
   styleUrls: ['./goal.component.css']
 })
