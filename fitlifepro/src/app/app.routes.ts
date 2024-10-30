@@ -1,7 +1,5 @@
 import { Routes} from '@angular/router';
-import {ActivityComponent} from "./component/dash/dashboard/activity/activity.component";
-import {UserDashboardComponent} from "./component/dash/user-dashboard/user-dashboard.component";
-import {WorkoutDashComponent} from "./component/dash/dashboard/workoutdash/workout.component";
+
 import {BlogsComponent} from "./component/workout/blogs/blogs.component";
 import {CategoryComponent} from "./component/workout/category/category.component";
 import {GiftAPlanComponent} from "./component/workout/gift-a-plan/gift-a-plan.component";
@@ -10,9 +8,12 @@ import {AboutUsComponent} from "./component/about-us/about-us.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {LoginComponent} from "./component/login/login.component";
-import {GoalComponent} from "./component/dash/dashboard/goal/goal.component";
-import {DashboardComponent} from "./component/dash/dashboard/dashboard.component";
 import {LandingPageComponent} from "./component/landing-page/landing-page.component";
+import {DashboardComponent} from "./component/dashboard/dashboard.component";
+import {OverViewComponent} from "./component/dashboard/over-view/over-view.component";
+import {WorkoutDashComponent} from "./component/dashboard/workoutdash/workout.component";
+import {ActivityComponent} from "./component/dashboard/activity/activity.component";
+import {GoalComponent} from "./component/dashboard/goal/goal.component";
 
 export const routes: Routes = [
 
@@ -27,10 +28,11 @@ export const routes: Routes = [
   { path: 'login' , component:LoginComponent},
   { path: 'category' , component:CategoryComponent},
 
-  { path: 'dashboard', component: UserDashboardComponent ,
+  { path: 'dashboard',
+    component: DashboardComponent ,
     children:[
-      // { path: '', redirectTo: 'over-view', pathMatch: 'full' },
-      { path: 'over-view', component: DashboardComponent },
+      { path: '', redirectTo: 'workout', pathMatch: 'full' },
+      { path: 'over-view', component: OverViewComponent },
       { path: 'workout', component: WorkoutDashComponent },
       { path: 'activity', component: ActivityComponent },
       { path: 'goal', component: GoalComponent },
@@ -38,7 +40,7 @@ export const routes: Routes = [
   },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  //{ path: '**', redirectTo: 'home', pathMatch: 'full' },
 
   // { path:"recipe-page" , component:RecipePageComponent},
   // { path:"recipes-page" , component:RecipesPageComponent},

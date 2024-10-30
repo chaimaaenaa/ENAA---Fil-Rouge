@@ -2,7 +2,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {DatePipe, DecimalPipe} from "@angular/common";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {UserService} from "../../../../core/service/user.service";
+import {UserService} from "../../../core/service/user.service";
 import {Chart} from "chart.js/auto";
 
 @Component({
@@ -23,8 +23,8 @@ import {Chart} from "chart.js/auto";
 export class OverViewComponent {
 
 
-  statsData:any;
-  workouts:any;
+  statsData: any = {};
+  workouts:any ;
   activities:any;
 
   @ViewChild('workoutLineChart') private workoutLineChartRef:ElementRef;

@@ -1,397 +1,198 @@
+<app-header></app-header>
+
 <style>
-  .main-content{
+  .contact-section {
     background-color: #111010;
     display: flex;
+    padding-bottom: 300px;
     flex-direction: column;
     overflow: hidden;
-    padding: 0 8px 645px 0;
-  }
-
-
-
-
-  .nav-link-active {
-    color: #fed233;
-    font-weight: 600;
-  }
-
-  .gift-plan {
-    align-self: stretch;
-    display: flex;
-    gap: 3px;
-    margin: auto 0;
-  }
-
-  .gift-text {
-    flex-grow: 1;
-  }
-
-  .gift-icon {
-    aspect-ratio: 1.04;
-    object-fit: contain;
-    object-position: center;
-    width: 49px;
-  }
-
-  .auth-buttons {
-    align-self: stretch;
-    display: flex;
-    gap: 29px;
-    font-size: 24px;
-    color: #fed233;
-    font-weight: 600;
-    margin: auto 0;
-  }
-
-  .auth-button {
-    border-radius: 20px;
-    background-color: #454545;
-    text-align: center;
-    padding: 9px 27px;
+    width: 100%;
+    align-self: center;
   }
 
   .main-content {
     align-self: center;
-    margin-top: 334px;
+    margin-top: 100px;
     width: 100%;
-    max-width: 1981px;
-  }
-
-  .content-wrapper {
-    display: flex;
-    gap: 20px;
+    max-width: 1200px;
+    padding: 0 100px;
   }
 
   .contact-info {
     background-color: #fed233;
-    z-index: 10;
     display: flex;
-    width: 100%;
     flex-direction: column;
+    gap: 10px;
     align-self: stretch;
     align-items: start;
     color: #454545;
     margin: auto;
-    padding: 101px 67px;
-    font: 600 42px Open Sans, sans-serif;
+    padding: 50px 30px;
+    font: 600 24px 'Open Sans', sans-serif;
   }
 
   .contact-title {
     text-align: center;
-    font: italic 700 72px Roboto, sans-serif;
+    font: italic 700 36px 'Roboto', sans-serif;
   }
 
-  .call-text {
+  .call-us {
     color: #5a5a5a;
+    font-size: 20px;
     text-align: center;
-    margin-top: 85px;
-  }
-
-  .phone-wrapper {
-    display: flex;
-    margin-top: 36px;
-    gap: 24px;
   }
 
   .phone-icon {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 70px;
+    width: 40px;
+    margin-right: auto;
   }
 
   .phone-number {
-    flex-basis: auto;
-    flex-grow: 1;
+    font-size: 18px;
     margin: auto 0;
   }
 
   .business-hours {
     color: #5a5a5a;
-    text-align: center;
-    margin-top: 55px;
+    text-align: left;
+    align-self: start;
+    font-size: 18px;
   }
 
   .social-icons {
-    aspect-ratio: 7.3;
-    object-fit: contain;
-    object-position: center;
-    width: 495px;
-    margin-top: 92px;
+    width: 200px;
+    align-self: center;
+    margin-top: 40px;
     max-width: 100%;
   }
 
-  .contact-form {
+  .contact-form-container {
     background-color: #fff;
-    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.07);
     display: flex;
-    width: 100%;
+    flex-grow: 1;
     flex-direction: column;
-    font-family: Open Sans, sans-serif;
+    align-items: start;
     color: #454545;
-    font-weight: 600;
-    margin: 0 auto;
-    padding: 51px 80px;
+    padding: 30px 40px;
+    font: 600 24px 'Open Sans', sans-serif;
+  }
+
+  .contact-formm {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
   }
 
   .form-title {
-    text-align: center;
-    align-self: center;
-    margin-left: 142px;
-    font: italic 700 72px Roboto, sans-serif;
+    font: italic 700 36px 'Roboto', sans-serif;
   }
 
   .form-label {
-    text-align: center;
-    font-size: 42px;
+    text-align: start;
     align-self: start;
-    margin-top: 45px;
+    margin-top: 20px;
+    font-size: 16px;
   }
 
   .form-input {
-    align-self: end;
     display: flex;
-    margin-top: 15px;
-    width: 892px;
-    max-width: 100%;
-    height: 85px;
+    margin-top: 10px;
+    height: 50px;
+    font-size: 16px;
+    padding: 8px;
     border: 1px solid #454545;
   }
 
   .form-textarea {
-    align-self: end;
     display: flex;
-    margin-top: 15px;
-    width: 892px;
-    max-width: 100%;
-    height: 189px;
+    margin-top: 10px;
+    height: 100px;
+    font-size: 16px;
+    padding: 8px;
     border: 1px solid #454545;
-  }
-
-  .submit-wrapper {
-    align-self: center;
-    display: flex;
-    margin-top: 49px;
-    width: 602px;
-    max-width: 100%;
-    align-items: start;
-    gap: 20px;
-    color: #fff;
-    white-space: nowrap;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   .submit-button {
     background-color: #454545;
-    margin-top: 13px;
-    overflow: hidden;
-    font-size: 32px;
-    padding: 10px 60px;
+    align-self: start;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #fff;
+    padding: 8px 24px;
   }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+  @media (max-width: 991px) {
 
+    .contact-container {
+      flex-direction: column;
+    }
 
+    .contact-section {
+      padding-bottom: 100px;
+    }
 
     .main-content {
       max-width: 100%;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    .content-wrapper {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0px;
+    .contact-info,
+    .contact-form-container {
+      padding: 30px 20px;
     }
 
-    .contact-info {
-      max-width: 100%;
-      margin: 40px -3px 0 0;
-      padding: 100px 20px 0;
-    }
-
-    .contact-title {
-      font-size: 40px;
-    }
-
-    .call-text {
-      margin-top: 40px;
-    }
-
-    .business-hours {
-      margin-top: 40px;
-    }
-
-    .social-icons {
-      margin-top: 40px;
-    }
-
-    .contact-form {
-      max-width: 100%;
-      padding: 0 20px;
-    }
-
+    .contact-title,
     .form-title {
-      font-size: 40px;
+      font-size: 28px;
     }
 
-    .form-label {
-      margin-top: 40px;
-    }
-
-    .submit-wrapper {
-      margin-top: 40px;
-      white-space: initial;
-    }
-
+    .call-us,
+    .business-hours,
+    .social-icons,
     .submit-button {
-      white-space: initial;
-      padding: 0 20px;
-    }
-    .navbar {
-      font-family: Open Sans, sans-serif;
-      padding-top: 3px;
-    }
-    .navbar-content {
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 0px;
-      gap: 20px;
-    }
-    .company-logo {
-      aspect-ratio: 0.99;
-      object-fit: contain;
-      width: 149px;
-      margin-top: -6px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 11px;
-      font-size: 18px;
-      color: #454545;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    .nav-link {
-      text-decoration: none;
-      color: inherit;
-    }
-    .nav-link-active {
-      color: #fed233;
-      font-weight: 600;
-    }
-    .nav-actions {
-      display: flex;
-      gap: 24px;
-      font-size: 24px;
-      align-items: center;
-    }
-    .cart-button {
-
-      background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
-      border: none;
-      cursor: pointer;
-    }
-    .nav-button {
-      border-radius: 20px;
-      background-color: #454545;
-      color: #fed233;
-      text-decoration: none;
-      padding: 9px 27px;
-      font-weight: 600;
-    }
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-    @media (max-width: 991px) {
-      .navbar-content {
-        flex-wrap: wrap;
-        padding: 0 20px;
-      }
-      .nav-links, .nav-actions {
-        flex-basis: 100%;
-        justify-content: center;
-      }
-      .nav-button {
-        padding: 9px 20px;
-      }
+      margin-top: 20px;
     }
 
-
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+    .form-input,
+    .form-textarea {
+      max-width: 100%;
+      font-size: 14px;
     }
-
+  }
 </style>
 
-<app-header></app-header>
-
+<section class="contact-section">
   <main class="main-content">
-    <div class="content-wrapper">
-      <section class="contact-info">
-        <h2 class="contact-title">Contact Us</h2>
-        <p class="call-text">Give us a call</p>
-        <div class="phone-wrapper">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/873844ed56cc990803b5ce80a9fac34992a49d1f1cd4c58d53b90c6c141ce52e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Phone Icon" class="phone-icon" />
+    <div class="contact-container d-flex flex-lg-row flex-md-column flex-sm-column">
+      <section class="contact-info col-lg-7 col-md-10 col-sm-10">
+        <h1 class="contact-title">Contact Us</h1>
+        <h2 class="call-us mb-0">Give us a call</h2>
+        <div class="d-flex gap-2">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75851159805bddb0e0ba635471363c507f2cd82bd56dba7ccf155cedfe9dc5ec?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Phone Icon" class="phone-icon" />
           <p class="phone-number">+91- 9876425797</p>
         </div>
-        <p class="business-hours">
-          Monday- Sunday <br />
-          09:00 – 21:00 IST
-        </p>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ab3afcbb4cfce7f771be040739f3f031bb81039c734f0daf9b9c6b294576c7d?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Social Media Icons" class="social-icons" />
+        <p class="call-us">Monday- Sunday 09:00 – 21:00 IST</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfa954d7b1fe377b1cdbe901a97fdeb11863ef2bdf9e2871db80f918f6de90f4?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Social Media Icons" class="social-icons" />
       </section>
-
-      <section class="contact-form">
-        <h2 class="form-title">Get In Touch</h2>
-        <form>
+      <section class="contact-form-container col-11">
+        <form class="contact-formm">
+          <h2 class="form-title">Get In Touch</h2>
           <label for="name" class="form-label">Name</label>
-          <input type="text" id="name" class="form-input" required />
+          <input type="text" id="name" name="name" class="form-input" required />
 
           <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" id="phone" class="form-input" required />
+          <input type="tel" id="phone" name="phone" class="form-input" required />
 
           <label for="email" class="form-label">Email Id</label>
-          <input type="email" id="email" class="form-input" required />
+          <input type="email" id="email" name="email" class="form-input" required />
 
           <label for="message" class="form-label">Message</label>
-          <textarea id="message" class="form-textarea" required></textarea>
+          <textarea id="message" name="message" class="form-textarea" required></textarea>
 
-          <div class="submit-wrapper">
-            <button type="submit" class="submit-button">Submit</button>
-          </div>
+          <button type="submit" class="submit-button">Submit</button>
         </form>
       </section>
     </div>
   </main>
-
+</section>

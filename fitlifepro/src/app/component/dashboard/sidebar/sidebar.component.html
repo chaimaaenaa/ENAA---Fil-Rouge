@@ -1,7 +1,6 @@
-<mat-sidenav-container class="layout">
   <mat-sidenav mode="side" opened>
     <div class="logo">
-      <img src="../../IMG/1000_F_208442470_4gH0kWBR8qkImXaz4R3AUALz1iJiUKiO.jpg" alt="Logo">
+      <img class="w-50" src="https://cdn.builder.io/api/v1/image/assets/TEMP/372f60e4228164299af14df192be288d95a20b0a28f094c02fd206a955333beb?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Logo">
       <div class="user-info">
         <strong>chaimaa</strong>
       </div>
@@ -9,30 +8,23 @@
 
 
     <mat-nav-list>
-      <a mat-list-item routerLink="/over-view">
+      <a mat-list-item routerLink="over-view">
         <mat-icon>dashboard</mat-icon>
         <span>Dashboard</span>
       </a>
-      <a mat-list-item routerLink="/workout">
+      <a mat-list-item routerLink="workout">
         <mat-icon>fitness_center</mat-icon>
         <span>Workout</span>
       </a>
 
-      <a mat-list-item routerLink="/activity">
+      <a mat-list-item routerLink="activity">
         <mat-icon>directions_run</mat-icon>
         <span>Activity</span>
       </a>
 
-      <a mat-list-item routerLink="/goal">
+      <a mat-list-item routerLink="goal">
         <mat-icon>assessment</mat-icon>
         <span>Goal</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
-
-  <mat-sidenav-content class="right-layout">
-    <div class="inner-content">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserService } from '../../../../core/service/user.service';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatError, MatFormField, MatLabel } from '@angular/material/form-field';
 import {
@@ -19,6 +18,7 @@ import {RouterLink} from "@angular/router";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
+import {UserService} from "../../../core/service/user.service";
 
 
 
