@@ -11,6 +11,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import {UserService} from "../../../core/service/user.service";
+import {Activity} from "../../../core/models/activity";
 
 @Component({
   selector: 'app-activity',
@@ -33,7 +34,7 @@ import {UserService} from "../../../core/service/user.service";
 })
 export class ActivityComponent implements OnInit {
   activityForm!: FormGroup;
-  activities: any[] = [];
+  activities: Activity[];
 
   constructor(
     private fb: FormBuilder,
@@ -70,12 +71,16 @@ export class ActivityComponent implements OnInit {
           });
         }
       );
+
     }
   }
 
+
+
   getAllActivities() {
-    this.userService.getActivities().subscribe(res => {
-      this.activities = res;
+    this.userService.getActivities().subscribe((res : Activity[]) => {
+      console.log("///////////:"+res)
+      if(res.length != 0) this.activities = res;
     });
   }
 }

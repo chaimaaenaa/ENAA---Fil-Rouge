@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -31,13 +33,9 @@ public class ActivityController {
         }
     }
     @GetMapping("/activities")
-    public ResponseEntity<?> getAllActivities() {
-        try {
+    public ResponseEntity<List<ActivityDTO>> getAllActivities() {
+
             return ResponseEntity.ok(activityService.getActivities());
-        }catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("some thing went wrong");
 
-
-        }
     }
 }

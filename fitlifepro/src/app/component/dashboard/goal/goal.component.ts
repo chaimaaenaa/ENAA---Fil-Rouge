@@ -19,6 +19,7 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {UserService} from "../../../core/service/user.service";
+import {Observable} from "rxjs";
 
 
 
@@ -79,6 +80,8 @@ export class GoalComponent {
     this.getAllGoals();
   }
 
+
+
   submitForm() {
     this.userService.postGoal(this.goalForm.value).subscribe(
       (res) => {
@@ -100,12 +103,35 @@ export class GoalComponent {
     );
   }
 
+  // getAllGoals() {
+  //   this.userService.getGoal().subscribe((res) => {
+  //     this.goals = res;
+  //     console.log(this.goals);
+  //   });
+  // }
+
   getAllGoals() {
-    this.userService.getGoal().subscribe((res) => {
-      this.goals = res;
-      console.log(this.goals);
-    });
+    console.log('Fetching all goals...');
+    this.userService.getGoal().subscribe(
+      (res) => {
+        this.goals = res;
+        console.log('Goals fetched successfully:', this.goals);
+      },
+      (error) => {
+        console.error('Error fetching goals:', error);
+        console.error('Error status:', error.status); // Ajouté
+        this.snackBar.open('Error fetching goals', 'Close', {
+          duration: 5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+        });
+      }
+    );
   }
+
+
+
+
   updateStatus(id: number) {
     this.userService.updateGoalStatus(id).subscribe(
       res => {

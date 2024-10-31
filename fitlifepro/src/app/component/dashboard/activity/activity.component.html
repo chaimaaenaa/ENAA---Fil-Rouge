@@ -17,10 +17,13 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Select date" type="date">
+          <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Select date">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
+
+
 
         <button mat-raised-button color="primary" type="submit" [disabled]="activityForm.invalid">
           Post Activity
@@ -32,7 +35,7 @@
       <h2>Past Activities</h2>
       <div class="activity-list">
         <div *ngFor="let activity of activities" class="activity-item">
-          <span>Calories Burned: {{ activity.caloriesBurned }} - Distance: {{ activity.distance }} KM - Steps: {{ activity.steps }} - Date: {{ activity.date | date:'MMM dd, yyyy' }}</span>
+          <span>Calories Burned: {{ activity?.caloriesBurned }} - Distance: {{ activity.distance }} KM - Steps: {{ activity.steps }} - Date: {{ activity.date | date:'MMM dd, yyyy' }}</span>
         </div>
       </div>
     </div>

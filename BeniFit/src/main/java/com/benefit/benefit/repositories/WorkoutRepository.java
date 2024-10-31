@@ -12,11 +12,10 @@ import java.util.List;
 
 @Repository
 public interface WorkoutRepository extends JpaRepository<Workout,Long> {
-    @Query("SELECT  SUN(w.duration) from Workout w")
-
+    @Query("SELECT  SUM(w.duration) from Workout w")
     Integer getTotalDuration();
-    @Query("SELECT SUM (w .caloriesBurned) FROM Workout w")
 
+    @Query(value = "SELECT SUM(workout.calories_burned) FROM workout;",nativeQuery = true)
     Integer getTotalCaloriesBurned();
 
     @Query("SELECT w FROM Workout w ORDER BY w.date DESC")

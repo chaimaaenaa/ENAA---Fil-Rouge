@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { NgModule } from '@angular/core';
+import {Activity} from "../models/activity";
 
 const BASIC_URL = "http://localhost:8081/";
 
@@ -16,8 +17,8 @@ export class UserService {
     return this.http.post<any>(BASIC_URL + "api/activity", activityDto);
   }
 
-  getActivities(): Observable<any> {
-    return this.http.get<any>(BASIC_URL + "api/activities");
+  getActivities(): Observable<Activity[]> {
+    return this.http.get<Activity[]>(BASIC_URL + "api/activities");
   }
 
   postWorkout(workoutDto: any): Observable<any> {
@@ -31,7 +32,6 @@ export class UserService {
   }
 
   getGoal(): Observable<any> {
-
     return this.http.get<any>(BASIC_URL + "api/goals");
   }
   updateGoalStatus(id:number): Observable<any> {
