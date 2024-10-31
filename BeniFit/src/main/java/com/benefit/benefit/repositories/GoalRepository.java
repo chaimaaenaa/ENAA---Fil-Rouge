@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface GoalRepository extends JpaRepository<Goal, Long> {
     @Query("SELECT  COUNT(g) FROM Goal g WHERE g.achieved=true ")
     Long countAchievedGoals();
-    @Query("SELECT COUNT (g) FROM Goal g WHERE g.achieved=false ")
+    @Query("SELECT COUNT(g) FROM Goal g WHERE g.achieved=false ")
     Long countNotAchievedGoals();
 
 

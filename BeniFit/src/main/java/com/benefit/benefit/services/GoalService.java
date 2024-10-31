@@ -27,6 +27,10 @@ public class GoalService {
         List<Goal> goals = goalRepository.findAll();
         return goals.stream().map(Goal::getGoalDTO).collect(Collectors.toList());
     }
+    //public List<GoalDTO> getGoals() {
+    //        List<Goal> goals = goalRepository.findAll();
+    //        return goals.stream().map(Goal-> GoalMapper.goalToGoalDTO(Goal)).toList();
+    //    }
 
     public GoalDTO updateStatus(Long id){
         Optional<Goal> optionalGoal = goalRepository.findById(id);

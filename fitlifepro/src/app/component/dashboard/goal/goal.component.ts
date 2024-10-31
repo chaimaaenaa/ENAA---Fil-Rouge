@@ -103,12 +103,7 @@ export class GoalComponent {
     );
   }
 
-  // getAllGoals() {
-  //   this.userService.getGoal().subscribe((res) => {
-  //     this.goals = res;
-  //     console.log(this.goals);
-  //   });
-  // }
+
 
   getAllGoals() {
     console.log('Fetching all goals...');
