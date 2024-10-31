@@ -89,7 +89,6 @@ export class OverViewComponent {
     const workoutCtx = this.workoutLineChartRef.nativeElement.getContext('2d');
     const activityCtx = this.activityLineChartRef.nativeElement.getContext('2d');
 
-
     new Chart(workoutCtx, {
       type: 'line',
       data: {

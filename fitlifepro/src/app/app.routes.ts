@@ -40,7 +40,7 @@ export const routes: Routes = [
   },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  //{ path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 
   // { path:"recipe-page" , component:RecipePageComponent},
   // { path:"recipes-page" , component:RecipesPageComponent},

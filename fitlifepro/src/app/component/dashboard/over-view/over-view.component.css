@@ -1,9 +1,11 @@
-body {
-  font-family: Arial, sans-serif;
 
-
-}
-mat-card-content canvas {
+canvas{
   width: 100% !important;
-  height: 300px !important;
+  height: auto !important;
+}
+
+@media (max-width: 460px) {
+  .canvas-container {
+    flex-direction: column !important;
+  }
 }

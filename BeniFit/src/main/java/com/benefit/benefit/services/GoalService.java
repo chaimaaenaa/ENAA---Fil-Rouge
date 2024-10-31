@@ -15,29 +15,29 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class GoalService {
     private final GoalRepository goalRepository;
-    public GoalDTO postGoal(GoalDTO dto) {
+    public Goal postGoal(GoalDTO dto) {
         Goal goal = new Goal();
         goal.setDescription(dto.getDescription());
         goal.setStartDate(dto.getStartDate());
         goal.setEndDate(dto.getEndDate());
         goal.setAchieved(false);
-        return goalRepository.save(goal).getGoalDTO();
+        return goalRepository.save(goal);
     }
-    public List<GoalDTO> getGoals() {
+    public List<Goal> getGoals() {
         List<Goal> goals = goalRepository.findAll();
-        return goals.stream().map(Goal::getGoalDTO).collect(Collectors.toList());
+        return goals;
     }
     //public List<GoalDTO> getGoals() {
     //        List<Goal> goals = goalRepository.findAll();
     //        return goals.stream().map(Goal-> GoalMapper.goalToGoalDTO(Goal)).toList();
     //    }
 
-    public GoalDTO updateStatus(Long id){
+    public Goal updateStatus(Long id){
         Optional<Goal> optionalGoal = goalRepository.findById(id);
         if (optionalGoal.isPresent()) {
             Goal existingGoal = optionalGoal.get();
             existingGoal.setAchieved(true);
-            return goalRepository.save(existingGoal).getGoalDTO();
+            return goalRepository.save(existingGoal);
 
         }
         throw new EntityNotFoundException("Goal Not found.");
