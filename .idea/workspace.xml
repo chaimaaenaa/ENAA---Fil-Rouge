@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be36ef5d-3bc0-4309-8058-d58fa5496264" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/model/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/model/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/services/GoalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/services/GoalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/dashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/over-view/over-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/repositories/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/repositories/ActivityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730405235567</updated>
-      <workItem from="1730405236312" duration="4707000" />
+      <workItem from="1730405236312" duration="9052000" />
     </task>
     <servers />
   </component>
