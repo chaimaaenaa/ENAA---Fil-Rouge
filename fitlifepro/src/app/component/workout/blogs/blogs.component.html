@@ -1,62 +1,263 @@
 
 
 <style>
-  .navbar {
-    font-family: Open Sans, sans-serif;
-    padding-top: 3px;
-  }
-  .navbar-content {
-    background-color: #fff;
+
+  .popular-articles-section {
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    gap: 40px;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 119px 45px;
   }
-  .company-logo {
-    aspect-ratio: 0.99;
-    object-fit: contain;
-    width: 149px;
-    margin-top: -6px;
+
+  @media (max-width: 991px) {
+    .popular-articles-section {
+      padding: 100px 20px;
+    }
   }
-  .nav-links {
+
+  .content-wrapper {
+    width: 100%;
+    max-width: 1672px;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrapper {
+      max-width: 100%;
+    }
+  }
+
+  .two-column-layout {
     display: flex;
-    gap: 11px;
-    font-size: 18px;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .two-column-layout {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    width: 54%;
+  }
+
+  @media (max-width: 991px) {
+    .left-column {
+      width: 100%;
+    }
+  }
+
+  .popular-articles-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 991px) {
+    .popular-articles-header {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .popular-articles-title {
     color: #454545;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    text-align: center;
+    align-self: flex-start;
+    font: 600 42px Open Sans, sans-serif;
   }
-  .nav-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .nav-link-active {
-    color: #fed233;
-    font-weight: 600;
-  }
-  .nav-actions {
+
+  .featured-image-container {
+    margin-right: 100px;
+    align-self: flex-end;
     display: flex;
-    gap: 24px;
-    font-size: 24px;
-    align-items: center;
+    width: 731px;
+    max-width: 100%;
+    flex-direction: column;
   }
-  .cart-button {
-    width: 50px;
-    height: 44px;
-    background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
-    border: none;
-    cursor: pointer;
+
+  @media (max-width: 991px) {
+    .featured-image-container {
+      margin-top: 40px;
+    }
   }
-  .nav-button {
-    border-radius: 20px;
-    background-color: #454545;
+
+  .yellow-accent {
+    background-color: #fed233;
+    align-self: flex-end;
+    display: flex;
+    width: 370px;
+    max-width: 100%;
+    height: 226px;
+    margin-right: -90px;
+  }
+
+  .image-wrapper {
+    z-index: 10;
+    margin-top: -93px;
+    width: 615px;
+    max-width: 100%;
+  }
+
+  .image-layout {
+    display: flex;
+    gap: 20px;
+  }
+
+  @media (max-width: 991px) {
+    .image-layout {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+
+  .yellow-box {
+    background-color: #fed233;
+    display: flex;
+    width: 292px;
+    max-width: 100%;
+    height: 185px;
+    margin: 173px auto 0;
+  }
+
+  @media (max-width: 991px) {
+    .yellow-box {
+      margin-top: 40px;
+    }
+  }
+
+  .featured-image {
+    aspect-ratio: 1.53;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  @media (max-width: 991px) {
+    .featured-image {
+      max-width: 100%;
+    }
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+  }
+
+  @media (max-width: 991px) {
+    .right-column {
+      width: 100%;
+    }
+  }
+
+  .article-content {
+    display: flex;
+    margin-top: 144px;
+    flex-grow: 1;
+    flex-direction: column;
+    font-family: Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .article-content {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+
+  .article-title {
     color: #fed233;
-    text-decoration: none;
-    padding: 9px 27px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 400;
   }
+
+  @media (max-width: 991px) {
+    .article-title {
+      max-width: 100%;
+    }
+  }
+
+  .article-description {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 991px) {
+    .article-description {
+      max-width: 100%;
+    }
+  }
+
+
+
+  .read-article-btn {
+    background-color: #fed233;
+    align-self: center;
+    width: 222px;
+    max-width: 100%;
+    overflow: hidden;
+    color: #fff;
+    margin: 17px 0 0 460px;
+    padding: 8px 22px;
+    font: 300 32px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .read-article-btn {
+      padding-left: 20px;
+    }
+  }
+
+  .additional-article {
+    display: flex;
+    width: 714px;
+    max-width: 100%;
+    flex-direction: column;
+    color: #fed233;
+    margin: 41px 0 0 10px;
+    font: 300 32px Open Sans, sans-serif;
+  }
+
+  @media (max-width: 991px) {
+    .additional-article {
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .additional-article-title {
+      max-width: 100%;
+    }
+  }
+
+  .additional-article-date {
+    align-self: flex-start;
+    margin-top: 17px;
+  }
+
+  .additional-read-btn {
+    background-color: #fed233;
+    align-self: flex-start;
+    margin-top: 17px;
+    overflow: hidden;
+    color: #fff;
+    padding: 8px 26px;
+  }
+
+  @media (max-width: 991px) {
+    .additional-read-btn {
+      padding-left: 20px;
+    }
+  }
+
   .visually-hidden {
     position: absolute;
     width: 1px;
@@ -68,35 +269,21 @@
     white-space: nowrap;
     border: 0;
   }
-  @media (max-width: 991px) {
-    .navbar-content {
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
-    .nav-links, .nav-actions {
-      flex-basis: 100%;
-      justify-content: center;
-    }
-    .nav-button {
-      padding: 9px 20px;
-    }
-  }
+
   .blogs-section { background-color: #242424; display: flex; flex-direction: column; overflow: hidden; padding: 143px 50px 517px; }
-  .section-title { color: #454545; text-align: center; font: italic 700 72px Roboto, sans-serif; }
-  .section-subtitle { color: #5a5a5a; text-align: center; margin-top: 27px; max-width: 849px; font: 600 42px Open Sans, sans-serif; }
+  .section-title { color: #fed233; text-align: center; font: italic 400 72px Roboto, sans-serif; }
+  .section-subtitle { color: #5a5a5a; text-align: center; margin-top: 27px; max-width: 1000px; font: 600 42px Open Sans, sans-serif; }
   .search-container { display: flex; width: 100%; max-width: 1725px; gap: 20px; justify-content: space-between; margin: 63px 0 0; font: 400 32px Open Sans, sans-serif; }
   .search-input { background-color: #f1f1f1; padding: 22px 33px; }
   .search-button { background-color: #fed233; width: 97px; height: 88px; }
-  .category-title { color: #454545; text-align: center; margin: 70px 0 0; font: 600 42px Open Sans, sans-serif; }
+  .category-title { color: #fed233; text-align: center; margin: 70px 0 0; font: 600 42px Open Sans, sans-serif; }
   .category-list { display: flex; width: 100%; max-width: 2043px; gap: 20px; justify-content: space-between; margin: 45px 0 0; font: 400 32px Open Sans, sans-serif; }
   .category-item { display: flex; flex-direction: column; align-items: center; }
   .category-image { aspect-ratio: 1; object-fit: contain; width: 100%; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); border-radius: 50%; }
-  .category-name { margin-top: 30px; }
-  .popular-articles-title { color: #454545; text-align: center; margin: 121px 0 0; font: 600 42px Open Sans, sans-serif; }
-  .article-grid { display: flex; margin-top: 50px; width: 100%; max-width: 2255px; gap: 40px 100px; flex-wrap: wrap; }
+  .category-name { margin-top: 30px; color: whitesmoke}
+  .popular-articles-title { color: #fed233; text-align: center; margin: 121px 0 0; font: 600 42px Open Sans, sans-serif; }
   .article-item { display: flex; flex-direction: column; }
-  .article-image { aspect-ratio: 1.47; object-fit: contain; width: 100%; max-width: 932px; }
-  .article-content { display: flex; flex-direction: column; color: #fed233; font: 400 32px Open Sans, sans-serif; }
+  .article-image { ; object-fit: contain; width: 90%; max-width: 932px; }
   .article-title { color: #fed233; }
   .article-description { color: #fff; font-size: 24px; font-weight: 300; margin-top: 24px; }
   .article-date { color: #454545; margin-top: 17px; }
@@ -125,98 +312,7 @@
     .all-articles-section { margin: 40px 10px 0 0; }
   }
 
-  .navbar {
-    font-family: Open Sans, sans-serif;
-    padding-top: 3px;
-  }
-  .navbar-content {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0px;
-    gap: 20px;
-  }
-  .company-logo {
-    aspect-ratio: 0.99;
-    object-fit: contain;
-    width: 149px;
-    margin-top: -6px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 11px;
-    font-size: 18px;
-    color: #454545;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .nav-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .nav-link-active {
-    color: #fed233;
-    font-weight: 600;
-  }
-  .nav-actions {
-    display: flex;
-    gap: 24px;
-    font-size: 24px;
-    align-items: center;
-  }
-  .cart-button {
 
-    background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
-    border: none;
-    cursor: pointer;
-  }
-  .nav-button {
-    border-radius: 20px;
-    background-color: #454545;
-    color: #fed233;
-    text-decoration: none;
-    padding: 9px 27px;
-    font-weight: 600;
-  }
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  @media (max-width: 991px) {
-    .navbar-content {
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
-    .nav-links, .nav-actions {
-      flex-basis: 100%;
-      justify-content: center;
-    }
-    .nav-button {
-      padding: 9px 20px;
-    }
-  }
-
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
 </style>
 
 
@@ -257,30 +353,41 @@
   </div>
 
   <h2 class="popular-articles-title">Popular Articles</h2>
-  <div class="article-grid">
-    <article class="article-item">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4e3b82c870c6e3fd9ab65a9e10134649a10fefb014eceb50e16f447b9232225?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Popular article image" class="article-image">
-      <div class="article-content">
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
-        <time class="article-date">24 January 2022</time>
-        <span class="article-author">-Name here</span>
-        <a href="app-blogs1" class="read-more-button">Read Article</a>
-      </div>
-    </article>
 
-    <article class="article-item">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4e3b82c870c6e3fd9ab65a9e10134649a10fefb014eceb50e16f447b9232225?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Popular article image" class="article-image">
-      <div class="article-content">
-        <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
-        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
-        <time class="article-date">24 January 2022</time>
-        <span class="article-author">-Name here</span>
-        <a href="#" class="read-more-button">Read Article</a>
+  <section class="popular-articles-section">
+    <div class="content-wrapper">
+      <div class="two-column-layout">
+        <div class="left-column">
+          <header class="popular-articles-header">
+
+            <div class="featured-image-container">
+              <div class="yellow-accent"></div>
+              <div class="image-wrapper">
+                <div class="image-layout">
+                  <div class="yellow-box"></div>
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/77b3884bb2531b0b2c35f4e1540e042b2bf384263c1c9ed97eb8a6cce21c5c28?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="featured-image" alt="Featured article image" />
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div class="right-column">
+          <article class="article-content">
+            <h3 class="article-title">Name of the article will be here Name of the article will be here</h3>
+            <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
+          </article>
+        </div>
       </div>
-    </article>
-    <!-- Repeat the article structure for other popular articles -->
-  </div>
+      <time datetime="2022-01-24" class="article-date">24 January 2022</time>
+      <a [routerLink]="['/app-blogs1']" class="read-article-btn">Read Article</a>
+      <article class="additional-article">
+        <h3 class="additional-article-title">Name of the article will be here Name of the article will be here</h3>
+        <p class="article-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor...</p>
+        <time datetime="2022-01-24" class="additional-article-date">24 January 2022</time>
+        <a href="#" class="additional-read-btn">Read Article</a>
+      </article>
+    </div>
+  </section>
 
   <h2 class="recent-articles-title">Recent Articles</h2>
   <div class="recent-articles-grid">
@@ -350,3 +457,4 @@
     </div>
   </section>
 </section>
+<app-footer></app-footer>

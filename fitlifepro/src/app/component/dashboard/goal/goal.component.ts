@@ -20,6 +20,7 @@ import {MatButton} from "@angular/material/button";
 import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {UserService} from "../../../core/service/user.service";
 import {Observable} from "rxjs";
+import {HeaderComponent} from "../../header/header.component";
 
 
 
@@ -27,33 +28,34 @@ import {Observable} from "rxjs";
 @Component({
   selector: 'app-goal',
   standalone: true,
-  imports: [
-    MatSnackBarModule,
-    MatDatepickerModule,
-    MatNativeDateModule, // Import MatNativeDateModule
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatError,
-    MatDatepicker,
-    MatLabel,
-    MatDatepickerToggle,
-    MatDatepickerInput,
-    MatFormField,
-    MatCardContent,
-    MatCardTitle,
-    MatCard,
-    MatCardHeader,
-    ReactiveFormsModule,
-    MatIcon,
-    MatListItem,
-    MatList,
-    DatePipe,
-    MatNavList,
-    MatSidenav,
-    RouterLink,
-    MatInput,
-    MatButton,
-  ],
+    imports: [
+        MatSnackBarModule,
+        MatDatepickerModule,
+        MatNativeDateModule, // Import MatNativeDateModule
+        ReactiveFormsModule,
+        MatSnackBarModule,
+        MatError,
+        MatDatepicker,
+        MatLabel,
+        MatDatepickerToggle,
+        MatDatepickerInput,
+        MatFormField,
+        MatCardContent,
+        MatCardTitle,
+        MatCard,
+        MatCardHeader,
+        ReactiveFormsModule,
+        MatIcon,
+        MatListItem,
+        MatList,
+        DatePipe,
+        MatNavList,
+        MatSidenav,
+        RouterLink,
+        MatInput,
+        MatButton,
+        HeaderComponent,
+    ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }, // specify the locale
   ],

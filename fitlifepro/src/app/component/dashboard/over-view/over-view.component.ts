@@ -14,23 +14,25 @@ import {Chart} from "chart.js/auto";
 import {MatRadioButton} from "@angular/material/radio";
 import {MatButton} from "@angular/material/button";
 import {MatGridListModule} from '@angular/material/grid-list';
+import {HeaderComponent} from "../../header/header.component";
 
 @Component({
   selector: 'app-over-view',
   standalone: true,
-  imports: [
-    DecimalPipe,
-    MatCard,
-    MatCardContent,
-    MatCardTitle,
-    MatGridList,
-    MatGridTile,
-    MatRadioButton,
-    MatCardHeader,
-    MatCardImage,
-    MatCardActions,
-    MatButton
-  ],
+    imports: [
+        DecimalPipe,
+        MatCard,
+        MatCardContent,
+        MatCardTitle,
+        MatGridList,
+        MatGridTile,
+        MatRadioButton,
+        MatCardHeader,
+        MatCardImage,
+        MatCardActions,
+        MatButton,
+        HeaderComponent
+    ],
   templateUrl: './over-view.component.html',
   styleUrl: './over-view.component.css',
   providers:[DatePipe,MatGridListModule]

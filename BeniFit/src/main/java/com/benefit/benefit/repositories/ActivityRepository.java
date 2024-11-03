@@ -25,5 +25,5 @@ public interface ActivityRepository extends JpaRepository<Activity, Long> {
     @Query("SELECT a FROM Activity a ORDER BY a.date DESC")
     List<Activity> findLast7Activities(Pageable pageable);
 
- 
+
 }

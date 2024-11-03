@@ -3,6 +3,7 @@ import {MatIcon} from "@angular/material/icon";
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatSidenav, MatSidenavContainer, MatSidenavContent} from "@angular/material/sidenav";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {HeaderComponent} from "../../header/header.component";
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +16,8 @@ import {RouterLink, RouterOutlet} from "@angular/router";
         MatSidenavContainer,
         MatSidenavContent,
         RouterLink,
-        RouterOutlet
+        RouterOutlet,
+        HeaderComponent
     ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'

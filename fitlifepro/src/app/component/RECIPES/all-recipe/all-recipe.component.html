@@ -1,471 +1,253 @@
-<style>
-  .recipes-container {
-    background-color: #242424;
-    display: flex;
-    padding: 0 0 156px;
-    flex-direction: column;
-    overflow: hidden;
-    align-items: center;
-  }
 
 
-  .main-content {
-    align-self: start;
-    width: 100%;
-    max-width: 1760px;
-  }
+  <style>
 
-  .hero-section {
-    gap: 20px;
-    display: flex;
-  }
 
-  .hero-image {
-    background-color: #fed233;
-    display: flex;
-    width: 668px;
-    max-width: 100%;
-    height: 1064px;
-    margin: 0 auto;
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    min-height: 900px;
-    margin-top: 82px;
-    width: 100%;
-    padding: 65px 80px;
-  }
-
-  .hero-background {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .hero-title {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    align-self: start;
-    font: italic 700 72px Roboto, sans-serif;
-  }
-
-  .hero-description {
-    position: relative;
-    color: #fff;
-    margin-top: 19px;
-    font: 400 32px Open Sans, sans-serif;
-  }
-
-  .hero-controls {
-    position: relative;
-    align-self: center;
-    display: flex;
-    margin-top: 444px;
-    width: 415px;
-    max-width: 100%;
-    gap: 20px;
-    justify-content: space-between;
-  }
-
-  .control-button {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 48px;
-  }
-
-  .control-indicators {
-    display: flex;
-    align-items: center;
-    gap: 21px;
-    margin: auto 0;
-  }
-
-  .indicator {
-    background-color: #fff;
-    border-radius: 50%;
-    align-self: stretch;
-    display: flex;
-    width: 28px;
-    height: 28px;
-  }
-
-  .indicator-small {
-    width: 18px;
-    height: 18px;
-    margin: auto 0;
-  }
-
-  .search-bar {
-    background-color: #f1f1f1;
-    display: flex;
-    width: 1222px;
-    max-width: 100%;
-    padding-left: 33px;
-    gap: 20px;
-    color: #5a5a5a;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 110px 0 0 50px;
-    font: 400 32px Open Sans, sans-serif;
-  }
-
-  .search-input {
-    margin: auto 0;
-  }
-
-  .search-button {
-    background-color: #fed233;
-    display: flex;
-    width: 97px;
-    height: 88px;
-  }
-
-  .category-section {
-    align-self: stretch;
-    display: flex;
-    margin-top: 110px;
-    width: 100%;
-    flex-direction: column;
-    padding: 0 50px;
-  }
-
-  .section-title {
-    color: #fed233;
-    text-align: center;
-    align-self: start;
-    margin-left: 15px;
-    font: italic 700 72px Roboto, sans-serif;
-  }
-
-  .category-grid {
-    display: flex;
-    margin-top: 80px;
-    gap: 40px 51px;
-    color: #5a5a5a;
-    text-align: center;
-    flex-wrap: wrap;
-    font: 400 32px Open Sans, sans-serif;
-  }
-
-  .category-item {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .category-image {
-    aspect-ratio: 1;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07);
-    border-radius: 50%;
-  }
-
-  .category-name {
-    align-self: center;
-    margin-top: 30px;
-  }
-
-  .popular-recipes {
-    margin-top: 80px;
-  }
-
-  .recipe-card {
-    gap: 20px;
-    display: flex;
-  }
-
-  .recipe-image {
-    background-color: #000;
-    display: flex;
-    width: 986px;
-    max-width: 100%;
-    height: 701px;
-    margin: 0 auto;
-  }
-
-  .recipe-content {
-    display: flex;
-    margin-top: 95px;
-    flex-grow: 1;
-    flex-direction: column;
-    align-items: start;
-    font-family: Open Sans, sans-serif;
-  }
-
-  .recipe-details {
-    align-self: stretch;
-    display: flex;
-    padding-left: 8px;
-    flex-direction: column;
-  }
-
-  .recipe-title {
-    color: #000;
-    text-align: center;
-    font-size: 42px;
-    font-weight: 600;
-    align-self: start;
-  }
-
-  .recipe-description {
-    color: #fff;
-    font-size: 32px;
-    font-weight: 400;
-    margin-top: 30px;
-  }
-
-  .recipe-author {
-    color: #000;
-    font-size: 42px;
-    font-weight: 600;
-    margin-top: 65px;
-  }
-
-  .recipe-date {
-    color: #000;
-    font-size: 42px;
-    font-weight: 600;
-  }
-
-  .read-recipe-button {
-    background-color: #fed233;
-    margin-top: 57px;
-    overflow: hidden;
-    font-size: 32px;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px 25px;
-  }
-
-  .video-section {
-    margin-top: 195px;
-  }
-
-  .video-content {
-    display: flex;
-    margin-top: 95px;
-    flex-grow: 1;
-    flex-direction: column;
-    align-items: start;
-    font-family: Open Sans, sans-serif;
-  }
-
-  .video-title {
-    color: #fed233;
-    text-align: center;
-    font-size: 42px;
-    font-weight: 600;
-    align-self: start;
-  }
-
-  .video-button {
-    background-color: #000;
-    margin-top: 57px;
-    overflow: hidden;
-    font-size: 32px;
-    color: #fff;
-    font-weight: 600;
-    padding: 10px 25px;
-  }
-
-  .video-thumbnail {
-    aspect-ratio: 1.41;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    flex-grow: 1;
-  }
-
-  .all-recipes-section {
-    display: flex;
-    margin-top: 153px;
-    width: 100%;
-    max-width: 1819px;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .all-recipes-title {
-    color: #fed233;
-    text-align: center;
-    font: italic 700 72px Roboto, sans-serif;
-  }
-
-  .view-all-link {
-    color: #004ca6;
-    align-self: end;
-    margin-top: 33px;
-    font: 400 32px Open Sans, sans-serif;
-  }
-
-  .recipe-grid {
-    margin-top: 80px;
-    width: 100%;
-    max-width: 1821px;
-  }
-
-  .recipe-row {
-    gap: 20px;
-    display: flex;
-  }
-
-  .recipe-column {
-    display: flex;
-    flex-direction: column;
-    line-height: normal;
-    width: 33%;
-    margin-left: 0;
-  }
-
-  .recipe-image {
-    aspect-ratio: 1.64;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    flex-grow: 1;
-  }
-
-  .recipe-info {
-    margin-top: 30px;
-    width: 100%;
-    max-width: 1821px;
-  }
-
-  .recipe-meta {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    color: #fff;
-    font: 400 32px Open Sans, sans-serif;
-  }
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  @media (max-width: 991px) {
     .recipes-container {
-      padding-bottom: 100px;
+      background-color: #242424;
+      display: flex;
+      padding: 10px 90px  156px;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
     }
 
-    .header {
-      max-width: 100%;
-      padding: 0 20px;
-    }
-
-    .nav-menu {
-      max-width: 100%;
-    }
 
     .main-content {
-      max-width: 100%;
-    }
-
-    .hero-section {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-    }
-
-    .hero-image {
+      align-self: start;
       width: 100%;
+      max-width: 1730px;
     }
 
-    .hero-content {
-      max-width: 100%;
-      margin-top: 40px;
-      padding: 0 20px;
-    }
 
-    .hero-title {
-      max-width: 100%;
-      font-size: 40px;
-    }
+    .recipes-container { background-color: #242424; display: flex; flex-direction: column; overflow: hidden; align-items: center; padding: 148px 80px 530px; }
+    @media (max-width: 991px) { .recipes-container { padding: 100px 20px; } }
+    .content-wrapper { display: flex; width: 100%; max-width: 2328px; flex-direction: column; align-items: center; }
+    @media (max-width: 991px) { .content-wrapper { max-width: 100%; } }
+    .main-content { margin-left: 33px; width: 1760px; max-width: 100%; }
+    .content-row { gap: 20px; display: flex; }
+    @media (max-width: 991px) { .content-row { flex-direction: column; align-items: stretch; gap: 0; } }
+    .sidebar { display: flex; flex-direction: column; line-height: normal; width: 29%; margin-left: 0; }
+    @media (max-width: 991px) { .sidebar { width: 100%; } }
+    .sidebar-content { background-color: #fed233; display: flex; width: 668px; max-width: 100%; height: 1064px; margin: 0 auto; }
+    .main-column { display: flex; flex-direction: column; line-height: normal; width: 71%; margin-left: 20px; }
+    @media (max-width: 991px) { .main-column { width: 100%; } }
+    .recipe-details { display: flex; flex-direction: column; position: relative; min-height: 900px; width: 100%; margin: 35px 0 0 -1px; padding: 65px 80px; }
+    @media (max-width: 991px) { .recipe-details { max-width: 100%; margin-top: 40px; padding: 0 20px; } }
+    .recipe-image {     margin-left: -40px;     margin-top: -200px;position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; }
+    .recipe-title { position: relative; color: #fff; text-align: center; align-self: start; font: italic 700 72px Roboto, sans-serif; }
+    @media (max-width: 991px) { .recipe-title { max-width: 100%; font-size: 40px; } }
+    .recipe-description { position: relative; color: #fff; margin-top: 19px; font: 400 32px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .recipe-description { max-width: 100%; } }
+    .recipe-actions { position: relative; align-self: end; display: flex; width: 511px; max-width: 100%; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between; margin: 444px 240px 0 0; }
+    @media (max-width: 991px) { .recipe-actions { margin: 40px 10px 0 0; } }
+    .action-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 48px; align-self: stretch; }
+    .rating-dots { align-self: stretch; display: flex; align-items: center; gap: 21px; margin: auto 0; }
+    .rating-dot-large { background-color: #fff; border-radius: 50%; align-self: stretch; display: flex; width: 28px; height: 28px; }
+    .rating-dot-small { background-color: #fff; border-radius: 50%; align-self: stretch; display: flex; width: 18px; height: 18px; margin: auto 0; }
+    .share-icons { align-self: stretch; display: flex; gap: 22px; margin: auto 0; }
+    .share-icon { background-color: #fff; border-radius: 50%; display: flex; width: 18px; height: 18px; }
+    .bookmark-icon { aspect-ratio: 0.59; object-fit: contain; object-position: center; width: 17px; align-self: stretch; margin: auto 0; }
+    .search-bar { display: flex; margin-top: 80px; width: 1319px; max-width: 100%; color: #5a5a5a; text-align: center; flex-wrap: wrap; font: 400 32px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .search-bar { margin-top: 40px; } }
+    .search-input { background-color: #f1f1f1; flex-grow: 1; width: fit-content; padding: 22px 70px; }
+    @media (max-width: 991px) { .search-input { max-width: 100%; padding: 0 20px; } }
+    .search-icon { aspect-ratio: 1.1; object-fit: contain; object-position: center; width: 97px; }
+    @media (max-width: 991px) { .category-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
 
-    .hero-description {
-      max-width: 100%;
-    }
+    .popular-recipes-container { display: flex; gap: 40px 100px; padding-right: 20px; }
+    .recipes-header { display: flex; flex-direction: column; align-items: flex-start; }
+    @media (max-width: 991px) { .recipes-header { max-width: 100%; } }
+    .popular-recipes-title { color: #fed233; text-align: center; margin-left: -4px; font: italic 700 72px Roboto, sans-serif; }
+    @media (max-width: 991px) { .popular-recipes-title { max-width: 100%; font-size: 40px; } }
+    .yellow-rectangle { background-color: #fed233; width: 716px; max-width: 100%; height: 189px; margin: 101px 0 0 23px; }
+    @media (max-width: 991px) { .yellow-rectangle { margin-top: 40px; } }
+    .imagee-container { align-self: stretch; }
+    @media (max-width: 991px) { .imagee-container { max-width: 100%; } }
+    .imagee-wrapper { gap: 20px; display: flex; }
+    @media (max-width: 991px) { .imagee-wrapper { flex-direction: column; align-items: stretch; gap: 0; } }
+    .imagee-column { display: flex; flex-direction: column; line-height: normal; width: 58%; margin-left: 0; }
+    @media (max-width: 991px) { .imagee-column { width: 100%; } }
+    .recipe-imagee { aspect-ratio: -1.79; object-fit: contain; object-position: top; width: 100%; flex-grow: 1; margin: -1px 0 0 45px; }
+    @media (max-width: 991px) { .recipe-imagee { max-width: 100%; } }
+    .yellow-column { display: flex; flex-direction: column; line-height: normal; width: 42%; margin-left: 20px; }
+    @media (max-width: 991px) { .yellow-column { width: 100%; } }
+    .yellow-rectangle-2 { background-color: #fed233; width: 674px; max-width: 100%; height: 189px; margin: 184px auto 0; }
+    @media (max-width: 991px) { .yellow-rectangle-2 { margin-top: 40px; } }
+    .recipe-details { align-self: flex-end; z-index: 10; display: flex; flex-direction: column; align-items: flex-start; font-family: Open Sans, sans-serif; margin: 259px -25px 0 0; }
+    @media (max-width: 991px) { .recipe-details { max-width: 100%; margin-top: 40px; } }
+    .recipe-content { align-self: stretch; display: flex; padding-left: 8px; flex-direction: column; }
+    @media (max-width: 991px) { .recipe-content { max-width: 100%; } }
+    .recipe-name { color: #fed233; text-align: center; font-size: 42px; font-weight: 600; align-self: flex-start; }
+    @media (max-width: 991px) { .recipe-name { max-width: 100%; } }
+    .recipe-description { color: #fff; font-size: 32px; font-weight: 400; margin-top: 30px; }
+    @media (max-width: 991px) { .recipe-description { max-width: 100%; } }
+    .author-name { color: #fffdf6; font-size: 42px; font-weight: 600; margin-top: 65px; }
+    @media (max-width: 991px) { .author-name { margin-top: 40px; } }
+    .recipe-date { color: #fffefa; font-size: 42px; font-weight: 600; }
+    .read-recipe-btn { background-color: #fed233; margin-top: 57px; font-size: 32px; color: #fff; font-weight: 600; padding: 10px 25px; border: none; cursor: pointer; }
+    @media (max-width: 991px) { .read-recipe-btn { margin-top: 40px; padding: 10px 20px; } }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-    .hero-controls {
-      margin-top: 40px;
-    }
 
-    .search-bar {
-      padding-left: 20px;
-      margin-top: 40px;
-    }
 
     .category-section {
-      max-width: 100%;
-      margin-top: 40px;
-      padding: 0 20px;
+      align-self: stretch;
+      display: flex;
+      margin-top: 110px;
+      width: 100%;
+      flex-direction: column;
+      padding: 0 50px;
     }
 
     .section-title {
-      max-width: 100%;
-      font-size: 40px;
+      color: #fed233;
+      text-align: center;
+      align-self: start;
+      margin-left: 15px;
+      font: italic 700 72px Roboto, sans-serif;
     }
 
     .category-grid {
-      max-width: 100%;
-      margin-top: 40px;
+      display: flex;
+      margin-top: 80px;
+      gap: 40px 51px;
+      color: #5a5a5a;
+      text-align: center;
+      flex-wrap: wrap;
+      font: 400 32px Open Sans, sans-serif;
     }
 
-    .popular-recipes {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-
-    .recipe-card {
+    .category-item {
+      display: flex;
       flex-direction: column;
-      align-items: stretch;
-      gap: 0;
+      flex: 1;
     }
 
-    .recipe-image {
-      margin-top: 40px;
+    .category-image {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07);
+      border-radius: 50%;
+    }
+
+    .category-name {
+      align-self: center;
+      margin-top: 30px;
+    }
+
+
+    .recipe-preview {
+      display: flex;
+      gap: 20px;
     }
 
     .recipe-content {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-
-    .recipe-details {
-      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-family: Open Sans, sans-serif;
+      margin-left: 29px;
+      width: 41%;
     }
 
     .recipe-title {
-      max-width: 100%;
+      color: #fed233;
+      font-size: 42px;
+      font-weight: 600;
+      align-self: flex-start;
     }
 
     .recipe-description {
-      max-width: 100%;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 400;
+      margin-top: 30px;
     }
 
-    .read-recipe-button {
-      margin-top: 40px;
-      padding: 0 20px;
+    .author-name {
+      color: #fed233;
+      font-size: 42px;
+      font-weight: 600;
+      margin-top: 65px;
+    }
+
+    .publish-date {
+      color: #fed233;
+      font-size: 42px;
+      font-weight: 600;
+    }
+
+    .read-recipe-btn {
+      background-color: #fed233;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 600;
+      padding: 10px 25px;
+      margin-top: 57px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .recipe-imageee-container {
+      width: 59%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .imageee-top-bar {
+      background-color: #fed233;
+      width: 100%;
+      height: 189px;
+    }
+
+    .recipe-imageee {
+      width: 100%;
+      aspect-ratio: 1.52;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .imageee-bottom-bar {
+      background-color: #fed233;
+      width: 100%;
+      height: 189px;
+      margin-top: 199px;
+    }
+
+    @media (max-width: 991px) {
+      .recipe-preview {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .recipe-content,
+      .recipe-image-container {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .recipe-content {
+        margin-top: 40px;
+      }
+
+      .recipe-title,
+      .recipe-description {
+        max-width: 100%;
+      }
+
+      .author-name,
+      .read-recipe-btn,
+      .imageee-bottom-bar {
+        margin-top: 40px;
+      }
+
+      .read-recipe-btn {
+        padding: 10px 20px;
+      }
     }
 
     .video-section {
@@ -488,169 +270,91 @@
       margin-top: 40px;
     }
 
-    .all-recipes-section {
-      max-width: 100%;
-      margin-top: 40px;
-    }
 
-    .all-recipes-title {
-      font-size: 40px;
-    }
-
-    .recipe-grid {
-      max-width: 100%;
-    }
-
-    .recipe-row {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-    }
-
-    .recipe-column {
-      width: 100%;
-    }
-
-    .recipe-image {
-      max-width: 100%;
-      margin-top: 40px;
-    }
-
-    .recipe-info {
-      max-width: 100%;
-    }
-
-    .recipe-meta {
-      margin-top: 40px;
-    }
-  }
-  .navbar {
-    font-family: Open Sans, sans-serif;
-    padding-top: 3px;
-  }
-  .navbar-content {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0px;
-    gap: 20px;
-  }
-  .company-logo {
-    aspect-ratio: 0.99;
-    object-fit: contain;
-    width: 149px;
-    margin-top: -6px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 11px;
-    font-size: 18px;
-    color: #454545;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .nav-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .nav-link-active {
-    color: #fed233;
-    font-weight: 600;
-  }
-  .nav-actions {
-    display: flex;
-    gap: 24px;
-    font-size: 24px;
-    align-items: center;
-  }
-  .cart-button {
-
-    background: url('app/component/home/path-to-cart-icon.svg') no-repeat center;
-    border: none;
-    cursor: pointer;
-  }
-  .nav-button {
-    border-radius: 20px;
-    background-color: #454545;
-    color: #fed233;
-    text-decoration: none;
-    padding: 9px 27px;
-    font-weight: 600;
-  }
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  @media (max-width: 991px) {
-    .navbar-content {
-      flex-wrap: wrap;
-      padding: 0 20px;
-    }
-    .nav-links, .nav-actions {
-      flex-basis: 100%;
-      justify-content: center;
-    }
-    .nav-button {
-      padding: 9px 20px;
-    }
-  }
+    @media (max-width: 991px) { .read-recipe-btn { margin-top: 40px; padding: 0 20px; } }
+    .video-section-title { color: #fed233; text-align: center; align-self: start; margin-top: 86px; font: italic 700 72px Roboto, sans-serif; }
+    @media (max-width: 991px) { .video-section-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
+    .video-container { background-color: #fed233; display: flex; margin-top: 160px; width: 1662px; max-width: 100%; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between; padding: 0 42px; }
+    @media (max-width: 991px) { .video-container { margin-top: 40px; padding: 0 20px; } }
+    .video-control { aspect-ratio: 1; object-fit: contain; object-position: center; width: 95px; align-self: stretch; z-index: 10; margin: auto 0; }
+    .video-thumbnail { aspect-ratio: 1.52; object-fit: contain; object-position: center; width: 100%; align-self: stretch; margin: auto 0; }
+    @media (max-width: 991px) { .video-thumbnail { max-width: 100%; } }
+    .video-control-end { aspect-ratio: 1; object-fit: contain; object-position: center; width: 124px; align-self: stretch; max-width: 100%; margin: auto 0; }
+    .video-title { color: #fed233; text-align: center; margin-top: 123px; font: 600 42px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .video-title { max-width: 100%; margin-top: 40px; } }
+    .view-all-btn { background-color: #fed233; margin-top: 10px; width: 258px; max-width: 100%; overflow: hidden; color: #f1f1f1; padding: 10px 60px; font: 600 32px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .view-all-btn { padding: 0 20px; } }
+    .all-recipes-section { align-self: stretch; display: flex; margin-top: 153px; width: 100%; flex-direction: column; padding: 0 6px; }
+    @media (max-width: 991px) { .all-recipes-section { max-width: 100%; margin-top: 40px; } }
+    .all-recipes-header { display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; }
+    @media (max-width: 991px) { .all-recipes-header { max-width: 100%; } }
+    .all-recipes-title { color: #fed233; text-align: center; font: italic 700 72px Roboto, sans-serif; }
+    @media (max-width: 991px) { .all-recipes-title { font-size: 40px; } }
+    .view-all-link { color: #004ca6; align-self: end; margin-top: 33px; font: 400 32px Open Sans, sans-serif; }
+    .all-recipes-grid { margin-top: 80px; width: 100%; max-width: 2154px; }
+    @media (max-width: 991px) { .all-recipes-grid { max-width: 100%; margin-top: 40px; } }
+    .all-recipes-row { gap: 20px; display: flex; }
+    @media (max-width: 991px) { .all-recipes-row { flex-direction: column; align-items: stretch; gap: 0; } }
+    .all-recipes-column { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
+    @media (max-width: 991px) { .all-recipes-column { width: 100%; } }
+    .all-recipe-card { display: flex; flex-grow: 1; flex-direction: column; font-family: Open Sans, sans-serif; }
+    @media (max-width: 991px) { .all-recipe-card { max-width: 100%; margin-top: 40px; } }
+    .all-recipe-image { aspect-ratio: 1.64; object-fit: contain; object-position: center; width: 100%; }
+    @media (max-width: 991px) { .all-recipe-image { max-width: 100%; } }
+    .all-recipe-title { color: #fed233; font-size: 32px; font-weight: 400; margin-top: 30px; }
+    @media (max-width: 991px) { .all-recipe-title { max-width: 100%; } }
+    .all-recipe-excerpt { color: #f1f1f1; font-size: 24px; font-weight: 300; margin-top: 13px; }
+    @media (max-width: 991px) { .all-recipe-excerpt { max-width: 100%; } }
+    .recipe-meta { display: flex; width: 100%; max-width: 2265px; gap: 40px 100px; flex-wrap: wrap; margin: 57px 54px 0 0; }
+    @media (max-width: 991px) { .recipe-meta { max-width: 100%; margin-right: 10px; } }
+    .recipe-meta-group { flex-grow: 1; flex-basis: auto; }
+    @media (max-width: 991px) { .recipe-meta-group { max-width: 100%; } }
+    .recipe-meta-row { gap: 20px; display: flex; }
+    @media (max-width: 991px) { .recipe-meta-row { flex-direction: column; align-items: stretch; gap: 0; } }
+    .recipe-meta-column { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
+    @media (max-width: 991px) { .recipe-meta-column { width: 100%; } }
+    .read-recipe-button { background-color: #fed233; margin-top: 41px; flex-grow: 1; overflow: hidden; color: #f1f1f1; width: 200px; padding: 13px 1px 10px;; font: 400 32px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .read-recipe-button { margin-top: 40px; padding: 0 20px; } }
+    .recipe-date-author { display: flex; flex-grow: 1; flex-direction: column; color: #fff; font: 400 32px Open Sans, sans-serif; }
+    @media (max-width: 991px) { .recipe-date-author { margin-top: 40px; } }
+    .recipe-author-name { align-self: start; margin-top: 13px; }
+  </style>
 
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>
-<app-header></app-header>
-
-<section class="recipes-container">
-
-  <main class="main-content">
-    <section class="hero-section">
-      <div class="hero-image"></div>
-      <div class="hero-content">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8970ccbcd9da3cb5e7bbecddb91f2a1775ff41de1fd60d45045970a5e579f055?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Hero background" class="hero-background" />
-        <h1 class="hero-title">Recipe name will be here</h1>
-        <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus</p>
-        <div class="hero-controls">
-          <button class="control-button" aria-label="Previous slide">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d316dc02c9f1328e6981e02afe6be882b23fcae5f2c8d973c6177f989aacf8e0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" />
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d316dc02c9f1328e6981e02afe6be882b23fcae5f2c8d973c6177f989aacf8e0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" />
-          </button>
-          <div class="control-indicators">
-            <span class="indicator"></span>
-            <span class="indicator indicator-small"></span>
-            <span class="indicator indicator-small"></span>
-            <span class="indicator indicator-small"></span>
-            <span class="indicator indicator-small"></span>
-          </div>
-          <button class="control-button" aria-label="Next slide">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d3d010608a8368607fbdc83a3a1ee1f88850189d32ccf81a8fefa1169576df59?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="" />
-          </button>
-        </div>
+  <section class="recipes-container">
+    <div class="main-content">
+      <div class="content-row">
+        <aside class="sidebar">
+          <div class="sidebar-content"></div>
+        </aside>
+        <main class="main-column">
+          <article class="recipe-details">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8970ccbcd9da3cb5e7bbecddb91f2a1775ff41de1fd60d45045970a5e579f055?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe" class="recipe-image" />
+            <h1 class="recipe-title">Recipe name will be here</h1>
+            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus</p>
+            <div class="recipe-actions">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d316dc02c9f1328e6981e02afe6be882b23fcae5f2c8d973c6177f989aacf8e0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Action icon" class="action-icon" />
+              <div class="rating-dots">
+                <div class="rating-dot-large"></div>
+                <div class="rating-dot-small"></div>
+                <div class="rating-dot-small"></div>
+              </div>
+              <div class="share-icons">
+                <div class="share-icon"></div>
+                <div class="share-icon"></div>
+              </div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3454d276356b43f10a6699d4788adb9f4e260753de9399f0b9db0380d49815b9?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Bookmark" class="bookmark-icon" />
+            </div>
+          </article>
+        </main>
       </div>
-    </section>
-
+    </div>
     <form class="search-bar" role="search">
-      <label for="search-input" class="visually-hidden">Search recipes</label>
-      <input type="search" id="search-input" class="search-input" placeholder="Search here..." aria-label="Search recipes">
-      <button type="submit" class="search-button" aria-label="Submit search"></button>
+      <label for="recipe-search" class="visually-hidden">Search recipes</label>
+      <input type="search" id="recipe-search" class="search-input" placeholder="Search here..." aria-label="Search recipes" />
+      <button type="submit" aria-label="Submit search">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a0161062ab88816065965ad90b4bbf629e99c338356ee9b345168a640706184?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Search" class="search-icon" />
+      </button>
     </form>
 
     <section class="category-section">
@@ -686,24 +390,54 @@
       </div>
     </section>
 
-    <section class="popular-recipes">
-      <h2 class="section-title">
-        <span style="color: #b1ae8c;">Popular</span>
-        <span style="color: #fed233;">Healthy Recipes</span>
-      </h2>
-      <article class="recipe-card">
-        <div class="recipe-image"></div>
-        <div class="recipe-content">
-          <div class="recipe-details">
-            <h3 class="recipe-title">Name of the recipe will come here</h3>
-            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+
+
+    <section class="popular-recipes-container">
+      <header class="recipes-header">
+        <h2 class="popular-recipes-title">
+          <span style="color: #b1ae8c;">Popular</span>
+          <span style="color: #fed233;">Healthy Recipes</span>
+        </h2>
+        <div class="yellow-rectangle"></div>
+        <div class="imagee-container">
+          <div class="imagee-wrapper">
+            <div class="imagee-column">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4e3bb3ae778024c6bf06c55052edf4ad090892e0c232cda71023096ee9fd5a0b?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" class="recipe-imagee" alt="Popular healthy recipe" />
+            </div>
+            <div class="yellow-column">
+              <div class="yellow-rectangle-2"></div>
+            </div>
           </div>
-          <p class="recipe-author">Name will be here</p>
-          <time class="recipe-date" datetime="2022-01-21">21 January, 2022</time>
-          <a href="app-recipe-page" class="read-recipe-button">Read Recipe</a>
         </div>
+      </header>
+      <article class="recipe-details">
+        <div class="recipe-content">
+          <h3 class="recipe-name">Name of the recipe will come here</h3>
+          <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+        </div>
+        <p class="author-name">Name will be here</p>
+        <time class="recipe-date" datetime="2022-01-21">21 January, 2022</time>
+        <button class="read-recipe-btn" onclick="alert('Read Recipe clicked!')">Read Recipe</button>
       </article>
     </section>
+
+    <section class="recipe-preview">
+      <article class="recipe-content">
+        <h2 class="recipe-title">Name of the recipe will come here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+        <p class="author-name">Name will be here</p>
+        <time class="publish-date" datetime="2022-01-21">21 January, 2022</time>
+        <button class="read-recipe-btn">Read Recipe</button>
+      </article>
+
+      <div class="recipe-imageee-container">
+        <div class="imageee-top-bar"></div>
+        <img class="recipe-imageee" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d864ed34b322c20f973cd741b46a2bb481c13411fb8d77833a1066032cea729?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe preview image" loading="lazy">
+        <div class="imageee-bottom-bar"></div>
+      </div>
+    </section>
+
+
 
     <section class="video-section">
       <h2 class="section-title">
@@ -711,73 +445,66 @@
         <span style="color: #fed233;">Healthy Recipes Videos</span>
       </h2>
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5c25ce23e7a772c0ca643d626b3913ea5a20fc8f580b99f3b2142b20aa979de?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe video thumbnail" class="video-thumbnail" />
-      <h3 class="video-title">Name of the recipe will come here</h3>
       <a href="app-recipe-page" class="view-all-link">View all</a>
     </section>
 
+
+
+    <h3 class="video-title">Name of the recipe will come here</h3>
+    <a href="#" class="view-all-btn">View all</a>
     <section class="all-recipes-section">
-      <h2 class="all-recipes-title">All Recipes</h2>
-      <a href="#" class="view-all-link">View all</a>
+      <header class="all-recipes-header">
+        <h2 class="all-recipes-title">All Recipes</h2>
+        <a href="#" class="view-all-link">View all</a>
+      </header>
+      <div class="all-recipes-grid">
+        <div class="all-recipes-row">
+          <div class="all-recipes-column">
+            <article class="all-recipe-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe" class="all-recipe-image" />
+              <h3 class="all-recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
+              <p class="all-recipe-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <div class="recipe-date-author">
+                <time datetime="2022-01-24">24 January 2022</time>
+                <span class="recipe-author-name">-Name here</span>
+                <div class="recipe-meta-column">
+                  <a href="#" class="read-recipe-button">Read Recipe</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="all-recipes-column">
+            <article class="all-recipe-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe" class="all-recipe-image" />
+              <h3 class="all-recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
+              <p class="all-recipe-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <div class="recipe-date-author">
+                <time datetime="2022-01-24">24 January 2022</time>
+                <span class="recipe-author-name">-Name here</span>
+                <div class="recipe-meta-column">
+                  <a href="#" class="read-recipe-button">Read Recipe</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="all-recipes-column">
+            <article class="all-recipe-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe" class="all-recipe-image" />
+              <h3 class="all-recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
+              <p class="all-recipe-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+              <div class="recipe-date-author">
+                <time datetime="2022-01-24">24 January 2022</time>
+                <span class="recipe-author-name">-Name here</span>
+                <div class="recipe-meta-column">
+                  <a href="#" class="read-recipe-button">Read Recipe</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+
     </section>
-
-    <div class="recipe-grid">
-      <div class="recipe-row">
-        <div class="recipe-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/16dcc524faf0e938785bd0c21fc8838734b193b2cab27ad7317f3d2b0e839289?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe 1" class="recipe-image" />
-        </div>
-        <div class="recipe-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6c8b5349ba6d6faebcadf9bbb3c68788e333b79e52b344be59b6f17dd4edb92e?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe 2" class="recipe-image" />
-        </div>
-        <div class="recipe-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2fa1d878482d94c9878394a05a64513c56414ba59c79e72c6142fcd48f5319c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe 3" class="recipe-image" />
-        </div>
-      </div>
-    </div>
-
-    <div class="recipe-info">
-      <div class="recipe-row">
-        <div class="recipe-column">
-          <div class="recipe-meta">
-            <h3 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
-            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
-        </div>
-        <div class="recipe-column">
-          <div class="recipe-meta">
-            <h3 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
-            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
-        </div>
-        <div class="recipe-column">
-          <div class="recipe-meta">
-            <h3 class="recipe-title">Name of the recipe will be here Name of the recipe will be here</h3>
-            <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="recipe-info">
-      <div class="recipe-row">
-        <div class="recipe-column">
-          <a href="#" class="read-recipe-button">Read Recipe</a>
-        </div>
-        <div class="recipe-column">
-          <div class="recipe-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <p class="recipe-author">-Name here</p>
-          </div>
-          <a href="#" class="read-recipe-button">Read Recipe</a>
-        </div>
-        <div class="recipe-column">
-          <div class="recipe-meta">
-            <time datetime="2022-01-24">24 January 2022</time>
-            <p class="recipe-author">-Name here</p>
-          </div>
-          <a href="#" class="read-recipe-button">Read Recipe</a>
-        </div>
-      </div>
-    </div>
-  </main>
-</section>
+  </section>
 

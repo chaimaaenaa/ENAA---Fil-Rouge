@@ -12,25 +12,27 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import {UserService} from "../../../core/service/user.service";
 import {Activity} from "../../../core/models/activity";
+import {HeaderComponent} from "../../header/header.component";
 
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.css'],
   standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatDividerModule,
-    MatListModule
-  ]
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatSnackBarModule,
+        MatDividerModule,
+        MatListModule,
+        HeaderComponent
+    ]
 })
 export class ActivityComponent implements OnInit {
   activityForm!: FormGroup;

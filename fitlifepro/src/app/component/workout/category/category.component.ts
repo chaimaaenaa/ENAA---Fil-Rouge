@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {HeaderComponent} from "../../header/header.component";
+import {FooterComponent} from "../../footer/footer.component";
 
 @Component({
   selector: 'app-category',
   standalone: true,
   templateUrl: './category.component.html',
-    imports: [
-        NgForOf,
-        HeaderComponent
-    ],
+  imports: [
+    NgForOf,
+    HeaderComponent,
+    FooterComponent
+  ],
   styleUrls: ['./category.component.css'] // Fixed 'styleUrl' to 'styleUrls'
 })
 export class CategoryComponent {

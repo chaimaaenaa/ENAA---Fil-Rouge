@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import {FooterComponent} from "../../footer/footer.component";
 
 @Component({
-  selector: 'app-recipes-page',
-  standalone: true,
-  templateUrl: 'recipes-page.component.html',
-  styleUrls: ['recipes-page.component.css']
+    selector: 'app-recipes-page',
+    standalone: true,
+    templateUrl: 'recipes-page.component.html',
+    imports: [
+        FooterComponent
+    ],
+    styleUrls: ['recipes-page.component.css']
 })
 export class RecipesPageComponent {
   recipes = [

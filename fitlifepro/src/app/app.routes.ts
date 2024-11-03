@@ -14,6 +14,11 @@ import {OverViewComponent} from "./component/dashboard/over-view/over-view.compo
 import {WorkoutDashComponent} from "./component/dashboard/workoutdash/workout.component";
 import {ActivityComponent} from "./component/dashboard/activity/activity.component";
 import {GoalComponent} from "./component/dashboard/goal/goal.component";
+import {RecipePageComponent} from "./component/RECIPES/recipe-page-open/recipe-page-open.component";
+import {RecipesPageComponent} from "./component/RECIPES/recipes-page/recipes-page.component";
+import {Blogs1Component} from "./component/workout/blogs1/blogs1.component";
+import {Blogs2Component} from "./component/workout/blogs2/blogs2.component";
+import {HeadDashComponent} from "./component/head-dash/head-dash.component";
 
 export const routes: Routes = [
 
@@ -36,24 +41,26 @@ export const routes: Routes = [
       { path: 'workout', component: WorkoutDashComponent },
       { path: 'activity', component: ActivityComponent },
       { path: 'goal', component: GoalComponent },
+      {path: "head-dash" , component: HeadDashComponent
+        },
     ]
   },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 
-  // { path:"recipe-page" , component:RecipePageComponent},
-  // { path:"recipes-page" , component:RecipesPageComponent},
-  //
-  // {path: "blogs1" , component:Blogs1Component},
-  // {path: "blogs2" , component:Blogs2Component},
-  //
-  //
-  //
-  //
-  //
-  // {path: "rec" , component:RecComponent},
-  //
+  { path:"recipe-page" , component:RecipePageComponent},
+  { path:"recipes-page" , component:RecipesPageComponent},
+
+  {path: "blogs1" , component:Blogs1Component},
+  {path: "blogs2" , component:Blogs2Component},
+  {path: "footer" , component:Blogs2Component},
+
+
+
+
+
+
 
 
   // { path: '**', redirectTo: 'home', pathMatch: 'full' },
