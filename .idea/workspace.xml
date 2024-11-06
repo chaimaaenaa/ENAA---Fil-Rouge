@@ -6,29 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="be36ef5d-3bc0-4309-8058-d58fa5496264" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/BeniFit/src/main/java/com/benefit/benefit/config/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/auth.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/auth.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/all-recipe/all-recipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/all-recipe/all-recipe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/all-recipe/all-recipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/all-recipe/all-recipe.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipe-page-open/recipe-page-open.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipe-page-open/recipe-page-open.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipe-page-open/recipe-page-open.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipe-page-open/recipe-page-open.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipes-page/recipes-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipes-page/recipes-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipes-page/recipes-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/RECIPES/recipes-page/recipes-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/about-us/about-us.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/header/header.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/landing-page/landing-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs/blogs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs/blogs.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs/blogs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs/blogs.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs1/blogs1.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs1/blogs1.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs1/blogs1.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs1/blogs1.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs2/blogs2.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs2/blogs2.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs2/blogs2.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/blogs2/blogs2.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/category/category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/workout/category/category.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/activity/activity.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/activity/activity.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/sidebar/sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/sidebar/sidebar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/sidebar/sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/workoutdash/workout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/fitlifepro/src/app/component/dashboard/workoutdash/workout.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730405235567</updated>
-      <workItem from="1730405236312" duration="92416000" />
+      <workItem from="1730405236312" duration="93147000" />
     </task>
     <servers />
   </component>
