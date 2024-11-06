@@ -45,10 +45,6 @@ export const routes: Routes = [
         },
     ]
   },
-
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home', pathMatch: 'full' },
-
   { path:"recipe-page" , component:RecipePageComponent},
   { path:"recipes-page" , component:RecipesPageComponent},
 
@@ -57,14 +53,18 @@ export const routes: Routes = [
   {path: "footer" , component:Blogs2Component},
 
 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 
 
 
 
 
 
-  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+
+
+
 
 
 

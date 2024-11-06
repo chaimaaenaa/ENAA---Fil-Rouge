@@ -26,7 +26,7 @@
     @media (max-width: 991px) { .content-wrapper { max-width: 100%; } }
     .main-content { margin-left: 33px; width: 1760px; max-width: 100%; }
     .content-row { gap: 20px; display: flex; }
-    @media (max-width: 991px) { .content-row { flex-direction: column; align-items: stretch; gap: 0; } }
+    @media (max-width: 991px) { .content-row {  flex-direction: column; align-items: stretch; gap: 0; } }
     .sidebar { display: flex; flex-direction: column; line-height: normal; width: 29%; margin-left: 0; }
     @media (max-width: 991px) { .sidebar { width: 100%; } }
     .sidebar-content { background-color: #fed233; display: flex; width: 668px; max-width: 100%; height: 1064px; margin: 0 auto; }
@@ -318,7 +318,18 @@
     .recipe-date-author { display: flex; flex-grow: 1; flex-direction: column; color: #fff; font: 400 32px Open Sans, sans-serif; }
     @media (max-width: 991px) { .recipe-date-author { margin-top: 40px; } }
     .recipe-author-name { align-self: start; margin-top: 13px; }
+    .recipe-imagehome{
+      margin-left: -300px;
+      margin-top: -200px;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 1000px;
+      object-fit: cover;
+      object-position: center;
+    }
   </style>
+  <app-header></app-header>
 
 
   <section class="recipes-container">
@@ -328,8 +339,9 @@
           <div class="sidebar-content"></div>
         </aside>
         <main class="main-column">
+
           <article class="recipe-details">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8970ccbcd9da3cb5e7bbecddb91f2a1775ff41de1fd60d45045970a5e579f055?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe" class="recipe-image" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8970ccbcd9da3cb5e7bbecddb91f2a1775ff41de1fd60d45045970a5e579f055?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Featured recipe" class="recipe-imagehome" />
             <h1 class="recipe-title">Recipe name will be here</h1>
             <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus</p>
             <div class="recipe-actions">
@@ -383,14 +395,25 @@
           <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d215df709bbfa829153715a10bce70404f4e30713c558557148d7d34cc13f532?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 5" class="category-image" />
           <span class="category-name">Category 5</span>
         </div>
-        <div class="category-item">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/829004b0effcc974bceb14d906b38680721c41ed03b6ec25d6e22ee500dd4fd0?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category 6" class="category-image" />
-          <span class="category-name">Category 6</span>
-        </div>
+
       </div>
     </section>
 
+    <section class="recipe-preview">
+      <article class="recipe-content">
+        <h2 class="recipe-title">Name of the recipe will come here</h2>
+        <p class="recipe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros...</p>
+        <p class="author-name">Name will be here</p>
+        <time class="publish-date" datetime="2022-01-21">21 January, 2022</time>
+        <button  (click)="onclick()" class="read-recipe-btn">Read Recipe</button>
+      </article>
 
+      <div class="recipe-imageee-container">
+        <div class="imageee-top-bar"></div>
+        <img class="recipe-imageee" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7d864ed34b322c20f973cd741b46a2bb481c13411fb8d77833a1066032cea729?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Recipe preview image" loading="lazy">
+        <div class="imageee-bottom-bar"></div>
+      </div>
+    </section>
 
     <section class="popular-recipes-container">
       <header class="recipes-header">
@@ -507,4 +530,4 @@
 
     </section>
   </section>
-
+<app-footer></app-footer>

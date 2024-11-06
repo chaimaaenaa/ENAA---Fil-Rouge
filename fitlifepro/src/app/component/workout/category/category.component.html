@@ -1,115 +1,84 @@
 <style>
-  .category-section { background-color: #242424; display: flex; flex-direction: column; overflow: hidden; align-items: flex-start; padding: 267px 56px 905px; }
-  @media (max-width: 991px) { .category-section { padding: 100px 20px; } }
-  .content-wrapper { display: flex; margin-left: 13px; width: 1779px; max-width: 100%; flex-direction: column; align-items: flex-start; }
-  .category-title { color: #fed233; text-align: center; margin-left: 92px; font: italic 700 72px Roboto, sans-serif; }
-  @media (max-width: 991px) { .category-title { max-width: 100%; font-size: 40px; } }
-  .category-subtitle { color: #fff; margin: 38px 0 0 60px; font: 600 42px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .category-subtitle { max-width: 100%; } }
-  .content-container { align-self: flex-end; margin-top: 83px; width: 1653px; max-width: 100%; }
-  @media (max-width: 991px) { .content-container { margin-top: 40px; } }
-  .content-row { gap: 20px; display: flex; }
-  @media (max-width: 991px) { .content-row { flex-direction: column; align-items: stretch; gap: 0; } }
-  .content-column { display: flex; flex-direction: column; line-height: normal; width: 50%; margin-left: 0; }
-  @media (max-width: 991px) { .content-column { width: 100%; } }
-  .content-text { color: #fff; margin-top: 67px; font: 400 20px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .content-text { max-width: 100%; margin-top: 40px; } }
-  .image-column { display: flex; flex-direction: column; line-height: normal; width: 50%; margin-left: 20px; }
-  @media (max-width: 991px) { .image-column { width: 100%; } }
-  .image-wrapper { flex-grow: 1; }
-  @media (max-width: 991px) { .image-wrapper { max-width: 100%; margin-top: 40px; } }
-  .image-container { gap: 20px; display: flex; }
-  @media (max-width: 991px) { .image-container { flex-direction: column; align-items: stretch; gap: 0; } }
-  .yellow-bar { background-color: #fed233; display: flex; width: 184px; height: 416px; margin: 0 auto; }
-  .main-image { aspect-ratio: 1.95; object-fit: contain; object-position: center; width: 100%; z-index: 10; margin: 53px -184px 0 0; }
-  @media (max-width: 991px) { .main-image { max-width: 100%; margin-top: 40px; } }
-  .yellow-bar-right { background-color: #fed233; display: flex; width: 184px; height: 416px; margin: 53px auto 0; }
-  @media (max-width: 991px) { .yellow-bar-right { margin-top: 40px; } }
-  .solution-title { color: #fed233; text-align: center; margin-top: 170px; font: italic 700 72px Roboto, sans-serif; }
-  @media (max-width: 991px) { .solution-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
-  .solution-subtitle { color: #fff; margin-top: 50px; font: 600 42px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .solution-subtitle { max-width: 100%; margin-top: 40px; } }
-  .solution-container { align-self: flex-end; margin-top: 85px; width: 1682px; max-width: 100%; }
-  @media (max-width: 991px) { .solution-container { margin-top: 40px; } }
-  .solution-row { gap: 20px; display: flex; }
-  @media (max-width: 991px) { .solution-row { flex-direction: column; align-items: stretch; gap: 0; } }
-  .solution-image { aspect-ratio: 1.99; object-fit: contain; object-position: center; width: 100%; }
-  @media (max-width: 991px) { .solution-image { max-width: 100%; margin-top: 40px; } }
-  .solution-steps { display: flex; width: 100%; flex-direction: column; font-family: Open Sans, sans-serif; }
-  @media (max-width: 991px) { .solution-steps { max-width: 100%; margin-top: 40px; } }
-  .step { display: flex; gap: 18px; flex-wrap: wrap; }
-  .step-number { background-color: #fff; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); border-radius: 50%; font-size: 42px; color: #fed233; font-weight: 600; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; }
-  @media (max-width: 991px) { .step-number { padding: 0 20px; } }
-  .step-text { color: #fff; font-size: 24px; font-weight: 400; flex-grow: 1; width: 628px; flex-basis: auto; margin: auto 0; }
-  @media (max-width: 991px) { .step-text { max-width: 100%; } }
-  .advantages-section { display: flex; margin-top: 32px; width: 100%; max-width: 2477px; flex-direction: column; }
-  @media (max-width: 991px) { .advantages-section { max-width: 100%; } }
-  .advantages-title { color: #fed233; text-align: center; align-self: flex-start; font: italic 700 72px Roboto, sans-serif; }
-  @media (max-width: 991px) { .advantages-title { max-width: 100%; font-size: 40px; } }
-  .advantages-subtitle { color: #fff; align-self: flex-start; margin-top: 50px; font: 600 42px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .advantages-subtitle { max-width: 100%; margin-top: 40px; } }
-  .advantages-container { align-self: flex-end; display: flex; margin-top: 89px; width: 2380px; max-width: 100%; gap: 40px 100px; color: #fff; text-align: center; flex-wrap: wrap; font: 400 32px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .advantages-container { margin-top: 40px; } }
-  .advantage-item { display: flex; flex-direction: column; flex: 1; }
-  .advantage-image { aspect-ratio: 1; object-fit: contain; object-position: center; width: 100%; border-radius: 50%; }
-  .advantage-text { align-self: center; margin-top: 32px; }
-  .testimonials-title { color: #fed233; text-align: center; align-self: flex-start; margin: 189px 0 0 351px; font: italic 700 72px Roboto, sans-serif; }
-  @media (max-width: 991px) { .testimonials-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
-  .testimonials-subtitle { color: #fff; align-self: center; width: 1820px; margin: 50px 0 0 22px; font: 600 32px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .testimonials-subtitle { max-width: 100%; margin-top: 40px; } }
-  .testimonials-container { align-self: flex-end; width: 1659px; max-width: 100%; margin: 117px 172px 0 0; }
-  @media (max-width: 991px) { .testimonials-container { margin: 40px 10px 0 0; } }
-  .testimonials-row { gap: 20px; display: flex; }
-  @media (max-width: 991px) { .testimonials-row { flex-direction: column; align-items: stretch; gap: 0; } }
-  .testimonial-column { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
-  @media (max-width: 991px) { .testimonial-column { width: 100%; } }
-  .testimonial-card { background-color: #fff; display: flex; flex-direction: column; width: 100%; padding: 11px 20px 47px 9px; }
-  @media (max-width: 991px) { .testimonial-card { max-width: 100%; margin-top: 40px; } }
-  .testimonial-image-wrapper { display: flex; flex-direction: column; position: relative; aspect-ratio: 1; width: 72px; overflow: hidden; }
-  .testimonial-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; }
-  .testimonial-text { color: #000; text-align: center; margin-top: 5px; font: 400 24px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .testimonial-text { max-width: 100%; } }
-  .client-info { align-self: flex-end; display: flex; width: 1431px; max-width: 100%; align-items: flex-start; gap: 40px 100px; flex-wrap: wrap; margin: 7px 300px 0 0; }
-  @media (max-width: 991px) { .client-info { margin-right: 10px; } }
-  .client-item { display: flex; gap: 19px; flex: 1; }
-  .client-image-wrapper { display: flex; flex-direction: column; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); border-radius: 50%; position: relative; aspect-ratio: 1; width: 69px; }
-  .client-image { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; }
-  .client-details { display: flex; flex-direction: column; color: #fff; font: 300 24px Open Sans, sans-serif; }
-  .client-date { align-self: flex-start; }
-  .success-stories-title { color: #fed233; align-self: flex-start; margin: 276px 0 0 164px; font: italic 700 72px Roboto, sans-serif; }
-  @media (max-width: 991px) { .success-stories-title { max-width: 100%; margin-top: 40px; font-size: 40px; } }
-  .success-stories-subtitle { color: #fff; width: 1820px; margin: 50px 0 0 164px; font: 600 32px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .success-stories-subtitle { max-width: 100%; margin-top: 40px; } }
-  .success-stories-container { align-self: center; width: 2177px; max-width: 100%; margin: 68px 0 0 42px; }
-  @media (max-width: 991px) { .success-stories-container { margin-top: 40px; } }
-  .success-stories-row { gap: 20px; display: flex; }
-  @media (max-width: 991px) { .success-stories-row { flex-direction: column; align-items: stretch; gap: 0; } }
-  .success-story-column { display: flex; flex-direction: column; line-height: normal; width: 39%; margin-left: 0; }
-  @media (max-width: 991px) { .success-story-column { width: 100%; } }
-  .success-story-card { background-color: #fed233; display: flex; flex-direction: column; font-family: Open Sans, sans-serif; color: #5a5a5a; text-align: center; justify-content: center; width: 100%; padding: 55px 50px; }
-  @media (max-width: 991px) { .success-story-card { max-width: 100%; margin-top: 40px; padding: 0 20px; } }
-  .success-story-content { background-color: rgba(255, 255, 255, 0.5); display: flex; flex-direction: column; padding: 78px 42px; }
-  @media (max-width: 991px) { .success-story-content { max-width: 100%; padding: 0 20px; } }
-  .success-story-title { font-size: 42px; font-weight: 600; align-self: center; }
-  @media (max-width: 991px) { .success-story-title { max-width: 100%; } }
-  .success-story-text { font-size: 32px; font-weight: 400; margin-top: 37px; }
-  @media (max-width: 991px) { .success-story-text { max-width: 100%; } }
-  .success-story-images { display: flex; margin-top: 7px; width: 100%; flex-direction: column; }
-  @media (max-width: 991px) { .success-story-images { max-width: 100%; margin-top: 40px; } }
-  .before-after-container { display: flex; gap: 40px 100px; color: #fff; white-space: nowrap; text-align: center; flex-wrap: wrap; font: 600 42px Open Sans, sans-serif; }
-  @media (max-width: 991px) { .before-after-container { max-width: 100%; white-space: initial; } }
-  .before-after-item { display: flex; flex-direction: column; flex: 1; }
-  @media (max-width: 991px) { .before-after-item { max-width: 100%; white-space: initial; } }
-  .before-after-image { aspect-ratio: 0.82; object-fit: contain; object-position: center; width: 100%; }
-  @media (max-width: 991px) { .before-after-image { max-width: 100%; } }
-  .before-after-label { align-self: center; margin: 25px 0 0 36px; }
-  .slider-container { align-self: center; display: flex; width: 486px; max-width: 100%; gap: 20px; flex-wrap: wrap; justify-content: space-between; margin: 32px 0 0 48px; }
-  .slider-arrow { aspect-ratio: 0.59; object-fit: contain; object-position: center; width: 17px; }
-  .slider-dots { display: flex; gap: 21px; margin: auto 0; }
-  .slider-dot { border-radius: 50%; display: flex; width: 18px; height: 18px; }
-  .slider-dot-active { background-color: #fed233; }
-  .slider-dot-inactive { background-color: #fff; }
-  .slider-controls { display: flex; gap: 40px 57px; }
+  .category-section { background-color: #242424; display: flex; flex-direction: column; overflow: hidden; padding: 167px 0; }
+  .content-wrapper { display: flex; width: 100%; flex-direction: column; align-items: start; padding: 0 50px; }
+  .category-title { color: #fed233; text-align: center; font: italic 700 72px Roboto, sans-serif; }
+  .category-subtitle { color: #fff; margin-top: 50px; font: 600 42px Open Sans, sans-serif; }
+  .main-content { align-self: stretch; margin-top: 85px; width: 100%; }
+  .content-columns { gap: 20px; display: flex; }
+  .text-column { display: flex; flex-direction: column; line-height: normal; width: 46%; }
+  .description-text { color: #fff; margin-top: 53px; font: 400 32px Open Sans, sans-serif; }
+  .image-column { display: flex; flex-direction: column; line-height: normal; width: 54%; }
+  .image-wrapper { display: flex; flex-grow: 1; align-items: start; }
+  .yellow-block-left { background-color: #fed233; width: 184px; height: 416px; }
+  .main-image { aspect-ratio: 1.52; object-fit: contain; object-position: center; width: 100%; z-index: 10; margin: 53px -183px 0 0; }
+  .yellow-block-right { background-color: #fed233; align-self: end; margin-top: 341px; width: 184px; height: 416px; }
+  .section-title { color: #fed233; text-align: center; margin-top: 145px; font: italic 700 72px Roboto, sans-serif; }
+  .problem-solution { align-self: stretch; margin-top: 85px; }
+  .solution-columns { gap: 20px; display: flex; }
+  .solution-image { background-color: #fed233; width: 1150px; max-width: 100%; height: 691px; margin: 0 auto; }
+  .solution-text { display: flex; flex-direction: column; align-self: stretch; color: #fff; margin: auto 0; font: 400 32px Open Sans, sans-serif; }
+  .solution-item { margin-top: 41px; }
+  .advantages-grid { align-self: stretch; margin-top: 85px; }
+  .advantages-row { gap: 20px; display: flex; }
+  .advantage-item { background-color: #fed233; display: flex; flex-grow: 1; flex-direction: column; color: #fff; text-align: center; width: 100%; padding: 11px 32px 44px 9px; font: 400 32px Open Sans, sans-serif; }
+  .advantage-icon { aspect-ratio: 1; object-fit: contain; object-position: center; width: 72px; }
+  .advantage-text { align-self: end; margin-top: 4px; }
+  .testimonials-wrapper { display: flex; margin-top: 56px; width: 100%; max-width: 1529px; gap: 40px 100px; color: #fff; flex-wrap: wrap; font: 300 24px Open Sans, sans-serif; }
+  .testimonial-item { display: flex; gap: 19px; flex: 1; }
+  .testimonial-avatar { aspect-ratio: 1; object-fit: contain; object-position: center; width: 69px; box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.07); border-radius: 50%; }
+  .testimonial-content { display: flex; flex-direction: column; }
+  .success-stories-section { background-color: #fed233; display: flex; margin-top: 85px; width: 100%; flex-direction: column; padding: 61px 50px; }
+  .story-content { width: 100%; }
+  .story-columns { gap: 20px; display: flex; }
+  .story-text { background-color: #fff; display: flex; margin-top: 59px; flex-grow: 1; flex-direction: column; font-family: Open Sans, sans-serif; color: #fff; text-align: center; width: 100%; padding: 78px 43px; }
+  .client-name { font-size: 42px; font-weight: 600; align-self: center; }
+  .client-story { font-size: 32px; font-weight: 400; margin-top: 37px; }
+  .story-images { flex-grow: 1; }
+  .image-comparison { gap: 20px; display: flex; }
+  .comparison-column { display: flex; flex-grow: 1; flex-direction: column; color: #fff; white-space: nowrap; text-align: center; font: 600 42px Open Sans, sans-serif; }
+  .comparison-image { background-color: #242424; height: 542px; }
+  .comparison-label { align-self: center; margin-top: 18px; }
+  .navigation-controls { align-self: end; display: flex; gap: 40px 42px; margin: 25px 241px 0 0; }
+  .nav-arrow { aspect-ratio: 1; object-fit: contain; object-position: center; width: 48px; }
+  .nav-dots { display: flex; gap: 21px; margin: auto 0; }
+  .nav-dot { border-radius: 50%; width: 18px; height: 18px; }
+  .nav-dot-active { background-color: #fed233; }
+  .nav-dot-inactive { background-color: #242424; }
+
+  @media (max-width: 991px) {
+    .category-section { padding: 100px 0; }
+    .content-wrapper { max-width: 100%; padding: 0 20px; }
+    .category-title { max-width: 100%; font-size: 40px; }
+    .category-subtitle { max-width: 100%; margin-top: 40px; }
+    .main-content { max-width: 100%; margin: 40px 2px 0 0; }
+    .content-columns { flex-direction: column; align-items: stretch; gap: 0; }
+    .text-column, .image-column { width: 100%; }
+    .description-text { max-width: 100%; margin-top: 40px; }
+    .image-wrapper { max-width: 100%; margin-top: 40px; }
+    .main-image { max-width: 100%; margin-top: 40px; }
+    .yellow-block-right { margin-top: 40px; }
+    .section-title { max-width: 100%; margin-top: 40px; font-size: 40px; }
+    .problem-solution { max-width: 100%; margin: 40px 2px 0 0; }
+    .solution-columns { flex-direction: column; align-items: stretch; gap: 0; }
+    .solution-image { margin-top: 22px; }
+    .solution-text { max-width: 100%; margin-top: 40px; }
+    .solution-item { max-width: 100%; margin-top: 40px; }
+    .advantages-grid { max-width: 100%; margin-top: 40px; }
+    .advantages-row { flex-direction: column; align-items: stretch; gap: 0; }
+    .advantage-item { max-width: 100%; margin-top: 40px; padding: 0 20px; }
+    .testimonials-wrapper { max-width: 100%; margin-top: 40px; }
+    .success-stories-section { max-width: 100%; margin-top: 40px; padding: 0 20px; }
+    .story-content { max-width: 100%; }
+    .story-columns { flex-direction: column; align-items: stretch; gap: 0; }
+    .story-text { max-width: 100%; margin-top: 40px; padding: 0 20px; }
+    .client-name { max-width: 100%; }
+    .client-story { max-width: 100%; }
+    .story-images { max-width: 100%; margin-top: 40px; }
+    .image-comparison { flex-direction: column; align-items: stretch; gap: 0; }
+    .comparison-column { max-width: 100%; margin-top: 40px; white-space: initial; }
+    .comparison-image { max-width: 100%; }
+    .navigation-controls { margin-right: 10px; }
+  }
 </style>
 <app-header></app-header>
 
@@ -117,139 +86,135 @@
   <div class="content-wrapper">
     <h1 class="category-title">Name Of The Category</h1>
     <p class="category-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
-    <div class="content-container">
-      <div class="content-row">
-        <div class="content-column">
-          <p class="content-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida</p>
+    <div class="main-content">
+      <div class="content-columns">
+        <div class="text-column">
+          <p class="description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque. Augue porttitor volutpat fringilla nulla pretium rhoncus. Faucibus id faucibus sit venenatis sit eros, vulputate tempus aliquam. Adipiscing natoque congue in volutpat at pharetra sit viverra. Metus et tempus bibendum egestas pellentesque. Amet, sem sed sed leo egestas. Quis in ullamcorper massa malesuada egestas vitae. Lobortis at vitae eget nibh ornare gravida. Purus ultrices pulvinar sit mi. Faucibus mauris sit felis massa malesuada enim felis viverra viverra. Fermentum enim nunc, in lorem eu. A risus tristique senectus quam. Ultrices enim in amet tempus gravida</p>
         </div>
         <div class="image-column">
           <div class="image-wrapper">
-            <div class="image-container">
-              <div class="yellow-bar"></div>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8dd3c00be18aa897a5e1165a51ed5dcef2d8d306944c03b6e35e2c3254e8a965?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Category illustration" class="main-image" loading="lazy">
-              <div class="yellow-bar-right"></div>
-            </div>
+            <div class="yellow-block-left"></div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/872c1c426efbad00bcfb713a9596567a595288a6ffe7330b676ca838beb4f2e7?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Category illustration" class="main-image" />
+            <div class="yellow-block-right"></div>
           </div>
         </div>
       </div>
     </div>
-    <h2 class="solution-title">How To <span>Solve The Problem</span></h2>
-    <p class="solution-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
-    <div class="solution-container">
-      <div class="solution-row">
-        <div class="content-column">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2bfb2307f7bfa31754edcbd123c18ecf07cd53c4aae483a0fb97e11ac998572?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Solution illustration" class="solution-image" loading="lazy">
-        </div>
-        <div class="image-column">
-          <div class="solution-steps">
-            <div class="step">
-              <div class="step-number">1</div>
-              <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <p class="step-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-            </div>
-          </div>
+    <h2 class="section-title">How To <span style="color: #fed233;">Solve The Problem</span></h2>
+    <p class="category-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="problem-solution">
+      <div class="solution-columns">
+        <div class="solution-image"></div>
+        <div class="solution-text">
+          <p class="solution-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+          <p class="solution-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+          <p class="solution-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+          <p class="solution-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="advantages-section">
-    <h2 class="advantages-title">Advantage <span>To Join Us</span></h2>
-    <p class="advantages-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
-    <div class="advantages-container">
-      <div class="advantage-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/77a2b954875a1ca0083b9b11e7f3378cdfc7182908b6c7923bed18db58e98db7?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Advantage 1" class="advantage-image" loading="lazy">
-        <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="advantage-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6dfcf45aa4ea605924bbb2e0cd13b4b93d706ecc6dd87e3651397ab695f71087?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Advantage 2" class="advantage-image" loading="lazy">
-        <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="advantage-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13e3e7e0cd9ee43384ddaeb1da909abd4d60716c1f55f8fcc9a44a53ec1f5bfc?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Advantage 3" class="advantage-image" loading="lazy">
-        <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-      <div class="advantage-item">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0f94ccacdcf27d0934290d3bf7b88c039cdb5da05a8ff2d8ba31fcdca551a24?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Advantage 4" class="advantage-image" loading="lazy">
-        <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
-      </div>
-    </div>
-    <h2 class="testimonials-title">Our Clients <span>Testimonials</span></h2>
-    <p class="testimonials-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
-    <div class="testimonials-container">
-      <div class="testimonials-row">
-        <div class="testimonial-column">
-          <div class="testimonial-card">
-            <div class="testimonial-image-wrapper">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Testimonial 1" class="testimonial-image" loading="lazy">
-            </div>
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-          </div>
+    <h2 class="section-title">Advantage <span style="color: #fed233;">To Join Us</span></h2>
+    <p class="category-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="advantages-grid">
+      <div class="advantages-row">
+        <div class="advantage-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/77a2b954875a1ca0083b9b11e7f3378cdfc7182908b6c7923bed18db58e98db7?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Advantage icon" class="advantage-icon" />
+          <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
         </div>
-        <div class="testimonial-column">
-          <div class="testimonial-card">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Testimonial 2" class="testimonial-image" loading="lazy">
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-          </div>
+        <div class="advantage-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6dfcf45aa4ea605924bbb2e0cd13b4b93d706ecc6dd87e3651397ab695f71087?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Advantage icon" class="advantage-icon" />
+          <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
         </div>
-        <div class="testimonial-column">
-          <div class="testimonial-card">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Testimonial 3" class="testimonial-image" loading="lazy">
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
-          </div>
+        <div class="advantage-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/13e3e7e0cd9ee43384ddaeb1da909abd4d60716c1f55f8fcc9a44a53ec1f5bfc?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Advantage icon" class="advantage-icon" />
+          <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+        <div class="advantage-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0f94ccacdcf27d0934290d3bf7b88c039cdb5da05a8ff2d8ba31fcdca551a24?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Advantage icon" class="advantage-icon" />
+          <p class="advantage-text">Lorem ipsum dolor sit amet, consectetur</p>
         </div>
       </div>
     </div>
-
-    <h2 class="success-stories-title"><span>Our Clients</span> Success Stories</h2>
-    <p class="success-stories-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
-    <div class="success-stories-container">
-      <div class="success-stories-row">
-        <div class="success-story-column">
-          <div class="success-story-card">
-            <div class="success-story-content">
-              <h3 class="success-story-title">Name of the client here</h3>
-              <p class="success-story-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+    <h2 class="section-title">Our Clients <span style="color: #fed233;">Testimonials</span></h2>
+    <p class="category-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    <div class="testimonials-wrapper">
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8b9ff011b0d22abba8cb36d665e3047b7a8331cfe049c21630036de43c51be?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis dictum quisque at amet pellentesque.</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-wrapper">
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a7b637747532b6d14fac3326e65114059a6f187b007279c8d8a0289827adfad8?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <p>Name will be here</p>
+          <p>22 Jan, 2022</p>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a7b637747532b6d14fac3326e65114059a6f187b007279c8d8a0289827adfad8?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <p>Name will be here</p>
+          <p>22 Jan, 2022</p>
+        </div>
+      </div>
+      <div class="testimonial-item">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a7b637747532b6d14fac3326e65114059a6f187b007279c8d8a0289827adfad8?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Client avatar" class="testimonial-avatar" />
+        <div class="testimonial-content">
+          <div class="testimonial-content">
+            <p>Name will be here</p>
+            <p>22 Jan, 2022</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="section-title"><span style="color: #fed233;">Our Clients</span> Success Stories</h2>
+      <p class="category-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam</p>
+    </div>
+    <div class="success-stories-section">
+      <div class="story-content">
+        <div class="story-columns">
+          <div class="story-text">
+            <h3 class="client-name">Name of the client here</h3>
+            <p class="client-story">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet, rem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam sagittis aliquam, tortor sollicitudin egestas convallis. Lorem ipsum dolor sit amet,</p>
+          </div>
+          <div class="story-images">
+            <div class="image-comparison">
+              <div class="comparison-column">
+                <div class="comparison-image"></div>
+                <p class="comparison-label">Before</p>
+              </div>
+              <div class="comparison-column">
+                <div class="comparison-image"></div>
+                <p class="comparison-label">After</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="success-story-column">
-          <div class="success-story-images">
-            <div class="before-after-container">
-              <div class="before-after-item">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/005825dffec620f14f1214a537bcee0d0862fd2d6cf381b7a926e50fdf7c00e3?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Before" class="before-after-image" loading="lazy">
-                <p class="before-after-label">Before</p>
-              </div>
-              <div class="before-after-item">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/900e3c902dabf23a8baffc4431ea80770239903e51098888e1f0b4673e5c626c?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="After" class="before-after-image" loading="lazy">
-                <p class="before-after-label">After</p>
-              </div>
-            </div>
-            <div class="slider-container">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ac6d390b4a1ee223dc28f0fb74dff0ad1381ba0cc767f79e5b7b29e2eff378de?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Previous" class="slider-arrow" loading="lazy">
-              <div class="slider-dots">
-                <div class="slider-dot slider-dot-active"></div>
-                <div class="slider-dot slider-dot-inactive"></div>
-                <div class="slider-dot slider-dot-inactive"></div>
-                <div class="slider-dot slider-dot-inactive"></div>
-              </div>
-              <div class="slider-controls">
-                <div class="slider-dot slider-dot-inactive"></div>
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b26df0a1c44ae86a997fcf6b88b64d1260ba155ff767988295ea7c66002e9bde?placeholderIfAbsent=true&apiKey=fcaa7293172548b6a2e1a132d616c7c2" alt="Next" class="slider-arrow" loading="lazy">
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="navigation-controls">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66606a5c0ae6645f3bad7635401ca055973e7db6757d8928c01d25b67a50d20e?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Previous story" class="nav-arrow" />
+        <div class="nav-dots">
+          <div class="nav-dot nav-dot-active"></div>
+          <div class="nav-dot nav-dot-inactive"></div>
+          <div class="nav-dot nav-dot-inactive"></div>
+          <div class="nav-dot nav-dot-inactive"></div>
+          <div class="nav-dot nav-dot-inactive"></div>
         </div>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8ac4fd6c50bbb572c4a88abb1e7385e2ca1fcd1cae72ec8cb3ab617477a6c7f6?placeholderIfAbsent=true&apiKey=87958a50c5c8459d9a6c648e91c33c3f" alt="Next story" class="nav-arrow" />
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../../header/header.component";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {FooterComponent} from "../../footer/footer.component";
 
 @Component({
@@ -15,5 +15,11 @@ import {FooterComponent} from "../../footer/footer.component";
   styleUrl: './blogs.component.css'
 })
 export class BlogsComponent {
+  constructor(private router: Router) {}
+
+  onblogs() {
+    this.router.navigate(['/blogs1']);
+  }
+
 
 }
